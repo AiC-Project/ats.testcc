@@ -1,15 +1,18 @@
 package com.zenika.aic.core.automator;
 
 import android.os.RemoteException;
+import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiAutomatorTestCase;
+import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.widget.TextView;
 
 public abstract class AiCAbstractTestCase extends UiAutomatorTestCase {
-	
+	protected UiDevice device = null;
 	protected String appName;
 	protected String packageName;
 	
@@ -19,17 +22,20 @@ public abstract class AiCAbstractTestCase extends UiAutomatorTestCase {
 	}
 		
 	public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
-		getUiDevice().pressHome();
-		getUiDevice().waitForWindowUpdate("", 2000);
-		UiObject allAppsButton = new UiObject(new UiSelector().description("Apps"));
-		allAppsButton.clickAndWaitForNewWindow();
-		UiObject appsTab = new UiObject(new UiSelector().text("Apps"));
-		appsTab.click();
+        device = UiDevice.getInstance(getInstrumentation());
+        device.pressHome();
+        device.waitForWindowUpdate("", 2000);
+
+		UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
+		allAppsButton.click();
+        device.waitForWindowUpdate("", 2000);
+
 		UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
 		appViews.setAsHorizontalList();
+
 		UiObject settingsApp = appViews.getChildByText(new UiSelector().className(TextView.class.getName()), appName);
 		settingsApp.clickAndWaitForNewWindow();
-		UiObject settingsValidation = new UiObject(new UiSelector().packageName(packageName));
-		assertTrue("Unable to detect Sensor app", settingsValidation.exists()); 
+
+		assertTrue("Unable to detect Sensor app", settingsApp != null);
 	}
 }

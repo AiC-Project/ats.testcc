@@ -1,9 +1,13 @@
 package com.zenika.aic.demo.sensor;
 
+import android.content.Context;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.RemoteException;
-import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
+import android.util.Log;
 
 import com.zenika.aic.core.automator.AiCAbstractTestCase;
 import com.zenika.aic.core.libs.sensor.LocationDelegate;
@@ -55,19 +59,33 @@ public class LocationTestCase extends AiCAbstractTestCase {
 	public void testUS4() throws UiObjectNotFoundException, RemoteException {
 		
 		LocationDelegate.getInstance().setPosition(48.878725f, 2.327036f);
+
+        LocationManager locManager = (LocationManager)getInstrumentation().getTargetContext().getSystemService(Context.LOCATION_SERVICE);
+
+        Location location = locManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+
+        double latitude=0;
+        double longitude=0;
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+
+        Log.w("sensor:: 1", latitude + "");
+        Log.w("sensor:: 1", longitude + "");
+
 		LocationDelegate.getInstance().setPosition(48.877917f, 2.326929f);
 		LocationDelegate.getInstance().setPosition(48.878133f, 2.330110f);
 		LocationDelegate.getInstance().setPosition(48.878997f, 2.329611f);	
 	}
 	
 	private void selectMap() throws UiObjectNotFoundException, RemoteException {
-		UiObject navigationDrawerButton = new UiObject(new UiSelector().text("Sensor"));
-		assertTrue("Navigation drawer button not found", navigationDrawerButton.exists());
-		navigationDrawerButton.click();
+        UiObject2 navigationDrawerButton = device.findObject(By.text("Sensor"));
+        assertTrue("Navigation drawer button not found", navigationDrawerButton != null);
+        navigationDrawerButton.click();
 
-		UiObject batteryItem = new UiObject(new UiSelector().text("Map"));
-		assertTrue("Battery item not found", navigationDrawerButton.exists());
-		batteryItem.click();
+        device.waitForWindowUpdate("",1000);
+
+        UiObject2 batteryItem = device.findObject(By.text("Map"));
+        assertTrue("Map item not found", navigationDrawerButton != null);
+        batteryItem.click();
 	}
-
 }

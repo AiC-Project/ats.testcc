@@ -1,10 +1,9 @@
 package com.zenika.aic.demo.sensor;
 
 import android.os.RemoteException;
-import android.support.test.uiautomator.UiDevice;
-import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
-import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.UiWatcher;
 import android.test.InstrumentationTestSuite;
 import android.widget.Button;
@@ -35,7 +34,7 @@ public class BatteryTestCase extends AiCAbstractTestCase {
 	}
 	
 	public void testUS1() throws UiObjectNotFoundException {
-		this.setLevel(100,50);
+        this.setLevel(100,50);
 	}
 	
 	public void testUS2() throws UiObjectNotFoundException {
@@ -43,46 +42,44 @@ public class BatteryTestCase extends AiCAbstractTestCase {
 	}
 	
 	private void selectBattery() throws UiObjectNotFoundException, RemoteException {
-		UiObject navigationDrawerButton = new UiObject(new UiSelector().text("Sensor"));
-		assertTrue("Navigation drawer button not found", navigationDrawerButton.exists());
-		navigationDrawerButton.click();
-		
-		UiObject batteryItem = new UiObject(new UiSelector().text("Battery"));
-		assertTrue("Battery item not found", navigationDrawerButton.exists());
-		batteryItem.click();
+        UiObject2 navigationDrawerButton = device.findObject(By.text("Sensor"));
+        assertTrue("Navigation drawer button not found", navigationDrawerButton != null);
+        navigationDrawerButton.click();
+
+        device.waitForWindowUpdate("",1000);
+
+        UiObject2 batteryItem = device.findObject(By.text("Battery"));
+        assertTrue("Battery item not found", navigationDrawerButton != null);
+        batteryItem.click();
 	}
 	
 	private void setLevel(int oldL, int newL) throws UiObjectNotFoundException {
 		UiWatcher okBatteryDialogWatcher = new UiWatcher() {
 			@Override
 			public boolean checkForCondition() {
-				UiObject okCancelDialog = new UiObject(new UiSelector().textContains("Connect charger"));
-				if(okCancelDialog.exists()){
-					UiObject okButton = new UiObject(new UiSelector().className(Button.class.getName()).text("OK"));
-					try {
-						okButton.click();
-					} catch (UiObjectNotFoundException e) {
-						e.printStackTrace();
-					}
-					return (okCancelDialog.waitUntilGone(25000));
+                UiObject2 okCancelDialog = device.findObject(By.textContains("Connect charger"));
+				if(okCancelDialog != null){
+                    UiObject2 okButton = device.findObject(By.clazz(Button.class.getName()).text("OK"));
+					okButton.click();
+                    return device.waitForWindowUpdate("",25000);
 				}
 				return false;
 			}
 		};
-		
-		UiDevice.getInstance().registerWatcher("Battery dialog watcher", okBatteryDialogWatcher);
-		UiDevice.getInstance().runWatchers();
-		
-		UiObject batteryLevel = new UiObject(new UiSelector().text(oldL + " %"));
-		assertTrue("Battery level not found", batteryLevel.exists());
-		
+
+        device.registerWatcher("Battery dialog watcher", okBatteryDialogWatcher);
+        device.runWatchers();
+
+        UiObject2 batteryLevel = device.findObject(By.text(oldL + " %"));
+		assertTrue("Battery level not found", batteryLevel != null);
+
 		//batteryLevel.registerState();
-		
+        sleep(5000);
 		BatteryDelegate.getInstance().setBatteryLevel(newL);
-		
+        sleep(5000);
 		//Log.w("Battery",batteryLevel.waitUntilChange(10000)+"");
-		
-		batteryLevel = new UiObject(new UiSelector().text(newL + " %"));
-		assertTrue("Battery level not found", batteryLevel.exists());
+
+		batteryLevel = device.findObject(By.text(newL + " %"));
+		assertTrue("Battery level not found", batteryLevel != null);
 	}
 }
