@@ -10,7 +10,7 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.util.Log;
 
 import com.zenika.aic.core.automator.AiCAbstractTestCase;
-import com.zenika.aic.core.libs.sensor.LocationDelegate;
+import com.zenika.aic.core.libs.sensor.Gps;
 
 public class LocationTestCase extends AiCAbstractTestCase {
 
@@ -47,18 +47,18 @@ public class LocationTestCase extends AiCAbstractTestCase {
 		UiDevice.getInstance().runWatchers();
 		*/
 		
-		LocationDelegate.getInstance().setPosition(ZENIKA_LAT, ZENIKA_LONG);
+		Gps.getInstance().setPosition(ZENIKA_LAT, ZENIKA_LONG);
 		//sleep(10000);
 	}
 
 	@Override
 	public void tearDown() throws RemoteException, UiObjectNotFoundException {
-		LocationDelegate.getInstance().setPosition(ZENIKA_LAT, ZENIKA_LONG);
+		Gps.getInstance().setPosition(ZENIKA_LAT, ZENIKA_LONG);
 	}
 
 	public void testUS4() throws UiObjectNotFoundException, RemoteException {
 		
-		LocationDelegate.getInstance().setPosition(48.878725f, 2.327036f);
+		Gps.getInstance().setPosition(48.878725f, 2.327036f);
 
         LocationManager locManager = (LocationManager)getInstrumentation().getTargetContext().getSystemService(Context.LOCATION_SERVICE);
 
@@ -72,9 +72,9 @@ public class LocationTestCase extends AiCAbstractTestCase {
         Log.w("sensor:: 1", latitude + "");
         Log.w("sensor:: 1", longitude + "");
 
-		LocationDelegate.getInstance().setPosition(48.877917f, 2.326929f);
-		LocationDelegate.getInstance().setPosition(48.878133f, 2.330110f);
-		LocationDelegate.getInstance().setPosition(48.878997f, 2.329611f);	
+		Gps.getInstance().setPosition(48.877917f, 2.326929f);
+		Gps.getInstance().setPosition(48.878133f, 2.330110f);
+		Gps.getInstance().setPosition(48.878997f, 2.329611f);
 	}
 	
 	private void selectMap() throws UiObjectNotFoundException, RemoteException {

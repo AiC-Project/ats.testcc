@@ -6,6 +6,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    packagingOptions {
+        exclude 'NOTICE'
+        exclude 'LICENSE.txt'
+    }
     defaultConfig {
         minSdkVersion 19
         targetSdkVersion 22

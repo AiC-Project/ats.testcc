@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="aic_tests" default="all">
+  
+  
+  <property file="aic_tests.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.android_api_22_platform" value="${jdk.home.android_api_22_platform}/../../../usr/lib/jvm/java-8-oracle/bin"/>
+  <path id="jdk.classpath.android_api_22_platform">
+    <fileset dir="${jdk.home.android_api_22_platform}">
+      <include name="platforms/android-22/android.jar"/>
+      <include name="platforms/android-22/data/res"/>
+    </fileset>
+  </path>
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.appcompat-v7-22.0.0.classpath">
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/res"/>
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"/>
+  </path>
+  
+  <path id="library.common-22.0.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.android.tools/common/22.0/b14da9a195d71bdaa9af6225199a3b77d831c03c/common-22.0.jar"/>
+  </path>
+  
+  <path id="library.ddmlib-22.0.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.android.tools.ddms/ddmlib/22.0/addc5c963132605ee6194a73b57c7d04c2c2d8bc/ddmlib-22.0.jar"/>
+  </path>
+  
+  <path id="library.gson-2.3.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.3.1/ecb6e1f8e4b0e84c4b886c2f14a1500caf309757/gson-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.guava-13.0.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/com.google.guava/guava/13.0.1/d6f22b1e60a2f1ef99e22c9f5fde270b2088365/guava-13.0.1.jar"/>
+  </path>
+  
+  <path id="library.hamcrest-core-1.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.1/860340562250678d1a344907ac75754e259cdb14/hamcrest-core-1.1.jar"/>
+  </path>
+  
+  <path id="library.junit-dep-4.10.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/junit/junit-dep/4.10/64417b3bafdecd366afa514bd5beeae6c1f85ece/junit-dep-4.10.jar"/>
+  </path>
+  
+  <path id="library.kxml2-2.3.0.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/net.sf.kxml/kxml2/2.3.0/ccbc77a5fd907ef863c29f3596c6f54ffa4e9442/kxml2-2.3.0.jar"/>
+  </path>
+  
+  <path id="library.simple-xml-2.7.1.classpath">
+    <pathelement location="${basedir}/../../.gradle/caches/modules-2/files-2.1/org.simpleframework/simple-xml/2.7.1/dd91fb744c2ff921407475cb29a1e3fee397d411/simple-xml-2.7.1.jar"/>
+  </path>
+  
+  <path id="library.support-annotations-22.0.0.classpath">
+    <pathelement location="${basedir}/../../android-sdk-linux/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"/>
+  </path>
+  
+  <path id="library.support-v4-22.0.0.classpath">
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/res"/>
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"/>
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"/>
+  </path>
+  
+  <path id="library.testing-support-lib-0.1.classpath">
+    <pathelement location="${basedir}/aicdemos/aicdemologin/build/intermediates/exploded-aar/com.android.support.test/testing-support-lib/0.1/res"/>
+    <pathelement location="${basedir}/aicdemos/aicdemologin/build/intermediates/exploded-aar/com.android.support.test/testing-support-lib/0.1/classes.jar"/>
+  </path>
+  
+  <path id="library.uiautomator-v18-2.0.0.classpath">
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support.test.uiautomator/uiautomator-v18/2.0.0/res"/>
+    <pathelement location="${basedir}/aiccore/aicautomator/build/intermediates/exploded-aar/com.android.support.test.uiautomator/uiautomator-v18/2.0.0/classes.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/.idea/module_aic_tests.xml"/>
+  
+  <import file="${basedir}/aiccore/aicautomator/module_aicautomator.xml"/>
+  
+  <import file="${basedir}/aicdemos/module_aicdemos.xml"/>
+  
+  <import file="${basedir}/aiccore/aiclibs/module_aiclibs.xml"/>
+  
+  <import file="${basedir}/aiccore/module_aiccore.xml"/>
+  
+  <import file="${basedir}/aicdemos/aicdemologin/module_aicdemologin.xml"/>
+  
+  <import file="${basedir}/aicdemos/aicdemosensor/module_aicdemosensor.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.aic_tests, clean.module.aicautomator, clean.module.aicdemos, clean.module.aiclibs, clean.module.aiccore, clean.module.aicdemologin, clean.module.aicdemosensor" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.aic_tests, compile.module.aicautomator, compile.module.aicdemos, compile.module.aiclibs, compile.module.aiccore, compile.module.aicdemologin, compile.module.aicdemosensor" description="build all modules"/>
+  
+  <target name="all" depends="build.modules" description="build all"/>
+</project>

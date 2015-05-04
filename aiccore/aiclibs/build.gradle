@@ -12,6 +12,10 @@ android {
         versionCode 1
         versionName "1.0"
     }
+    packagingOptions {
+        exclude 'NOTICE'
+        exclude 'LICENSE.txt'
+    }
     buildTypes {
         release {
             minifyEnabled false

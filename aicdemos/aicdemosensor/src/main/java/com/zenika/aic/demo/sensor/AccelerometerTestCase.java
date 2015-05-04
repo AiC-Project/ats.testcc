@@ -9,7 +9,7 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.widget.LinearLayout;
 
 import com.zenika.aic.core.automator.AiCAbstractTestCase;
-import com.zenika.aic.core.libs.sensor.SensorDelegate;
+import com.zenika.aic.core.libs.sensor.Sensor;
 
 public class AccelerometerTestCase extends AiCAbstractTestCase {
 
@@ -25,7 +25,7 @@ public class AccelerometerTestCase extends AiCAbstractTestCase {
 
 	@Override
 	public void tearDown() throws RemoteException, UiObjectNotFoundException {
-        SensorDelegate.getInstance().setAccelerometerValue(0f, 9f, 1f);
+        Sensor.getInstance().setAccelerometerValue(0f, 9f, 1f);
 	}
 
 	public void testUS3() throws UiObjectNotFoundException, RemoteException {
@@ -48,8 +48,8 @@ public class AccelerometerTestCase extends AiCAbstractTestCase {
 	}
 
 	private void setOrientation() throws UiObjectNotFoundException {
-		SensorDelegate.getInstance().setAccelerometerValue(9f, 0f, 1f);
-		sleep(2000);
+		Sensor.getInstance().setAccelerometerValue(9f, 0f, 1f);
+		//sleep(2000);
 
         try {
             UiObject2 xLabel = UiDevice.getInstance(getInstrumentation()).findObject(By.text("9.0"));

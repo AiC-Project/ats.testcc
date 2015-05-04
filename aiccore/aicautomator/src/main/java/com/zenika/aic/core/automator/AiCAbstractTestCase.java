@@ -9,9 +9,10 @@ import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
+import android.test.InstrumentationTestCase;
 import android.widget.TextView;
 
-public abstract class AiCAbstractTestCase extends UiAutomatorTestCase {
+public abstract class AiCAbstractTestCase extends InstrumentationTestCase {
 	protected UiDevice device = null;
 	protected String appName;
 	protected String packageName;

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_aicdemologin" default="compile.module.aicdemologin">
+  <dirname property="module.aicdemologin.basedir" file="${ant.file.module_aicdemologin}"/>
+  
+  <property name="module.jdk.home.aicdemologin" value="${jdk.home.android_api_22_platform}"/>
+  <property name="module.jdk.bin.aicdemologin" value="${jdk.bin.android_api_22_platform}"/>
+  <property name="module.jdk.classpath.aicdemologin" value="jdk.classpath.android_api_22_platform"/>
+  
+  <property name="compiler.args.aicdemologin" value="-encoding UTF-8 -source 1.7 ${compiler.args}"/>
+  
+  <property name="aicdemologin.output.dir" value="${module.aicdemologin.basedir}/build/intermediates/classes/debug"/>
+  <property name="aicdemologin.testoutput.dir" value="${module.aicdemologin.basedir}/build/intermediates/classes/test/debug"/>
+  
+  <path id="aicdemologin.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="aicdemologin.module.production.classpath">
+    <path refid="${module.jdk.classpath.aicdemologin}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="library.junit-dep-4.10.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.hamcrest-core-1.1.classpath"/>
+    <path refid="library.testing-support-lib-0.1.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <pathelement location="${aiccore.output.dir}"/>
+    <pathelement location="${aicautomator.output.dir}"/>
+    <pathelement location="${aiclibs.output.dir}"/>
+  </path>
+  
+  <path id="aicdemologin.runtime.production.module.classpath">
+    <pathelement location="${aicdemologin.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="library.junit-dep-4.10.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.hamcrest-core-1.1.classpath"/>
+    <path refid="library.testing-support-lib-0.1.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="aiccore.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="aicdemologin.module.classpath">
+    <path refid="${module.jdk.classpath.aicdemologin}"/>
+    <pathelement location="${aicdemologin.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="library.junit-dep-4.10.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.hamcrest-core-1.1.classpath"/>
+    <path refid="library.testing-support-lib-0.1.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <pathelement location="${aiccore.testoutput.dir}"/>
+    <pathelement location="${aiccore.output.dir}"/>
+    <pathelement location="${aicautomator.testoutput.dir}"/>
+    <pathelement location="${aicautomator.output.dir}"/>
+    <pathelement location="${aiclibs.testoutput.dir}"/>
+    <pathelement location="${aiclibs.output.dir}"/>
+  </path>
+  
+  <path id="aicdemologin.runtime.module.classpath">
+    <pathelement location="${aicdemologin.testoutput.dir}"/>
+    <pathelement location="${aicdemologin.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="library.junit-dep-4.10.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.hamcrest-core-1.1.classpath"/>
+    <path refid="library.testing-support-lib-0.1.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="aiccore.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.aicdemologin">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.aicdemologin">
+    <patternset refid="excluded.from.module.aicdemologin"/>
+  </patternset>
+  
+  <path id="aicdemologin.module.sourcepath">
+    <dirset dir="${module.aicdemologin.basedir}">
+      <include name="build/generated/source/r/debug"/>
+      <include name="build/generated/source/aidl/debug"/>
+      <include name="build/generated/source/buildConfig/debug"/>
+      <include name="build/generated/source/rs/debug"/>
+      <include name="build/generated/res/rs/debug"/>
+      <include name="src/main/res"/>
+      <include name="src/main/java"/>
+    </dirset>
+  </path>
+  
+  <path id="aicdemologin.module.test.sourcepath">
+    <dirset dir="${module.aicdemologin.basedir}">
+      <include name="build/generated/source/r/test/debug"/>
+      <include name="build/generated/source/aidl/test/debug"/>
+      <include name="build/generated/source/buildConfig/test/debug"/>
+      <include name="build/generated/source/rs/test/debug"/>
+      <include name="build/generated/res/rs/test/debug"/>
+      <include name="src/androidTest/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.aicdemologin" depends="compile.module.aicdemologin.production,compile.module.aicdemologin.tests" description="Compile module aicdemologin"/>
+  
+  <target name="compile.module.aicdemologin.production" depends="register.custom.compilers,compile.module.aiccore" description="Compile module aicdemologin; production classes">
+    <mkdir dir="${aicdemologin.output.dir}"/>
+    <javac2 destdir="${aicdemologin.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.aicdemologin}/javac">
+      <compilerarg line="${compiler.args.aicdemologin}"/>
+      <bootclasspath refid="aicdemologin.module.bootclasspath"/>
+      <classpath refid="aicdemologin.module.production.classpath"/>
+      <src refid="aicdemologin.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.aicdemologin"/>
+    </javac2>
+    
+    <copy todir="${aicdemologin.output.dir}">
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/r/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/aidl/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/buildConfig/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/res/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/src/main/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.aicdemologin.tests" depends="register.custom.compilers,compile.module.aicdemologin.production" description="compile module aicdemologin; test classes" unless="skip.tests">
+    <mkdir dir="${aicdemologin.testoutput.dir}"/>
+    <javac2 destdir="${aicdemologin.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.aicdemologin}/javac">
+      <compilerarg line="${compiler.args.aicdemologin}"/>
+      <bootclasspath refid="aicdemologin.module.bootclasspath"/>
+      <classpath refid="aicdemologin.module.classpath"/>
+      <src refid="aicdemologin.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.aicdemologin"/>
+    </javac2>
+    
+    <copy todir="${aicdemologin.testoutput.dir}">
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/r/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/aidl/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/buildConfig/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/source/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/build/generated/res/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aicdemologin.basedir}/src/androidTest/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.aicdemologin" description="cleanup module">
+    <delete dir="${aicdemologin.output.dir}"/>
+    <delete dir="${aicdemologin.testoutput.dir}"/>
+  </target>
+</project>

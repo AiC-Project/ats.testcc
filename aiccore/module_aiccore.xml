@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_aiccore" default="compile.module.aiccore">
+  <dirname property="module.aiccore.basedir" file="${ant.file.module_aiccore}"/>
+  
+  <property name="module.jdk.home.aiccore" value="${jdk.home.android_api_22_platform}"/>
+  <property name="module.jdk.bin.aiccore" value="${jdk.bin.android_api_22_platform}"/>
+  <property name="module.jdk.classpath.aiccore" value="jdk.classpath.android_api_22_platform"/>
+  
+  <property name="compiler.args.aiccore" value="-encoding UTF-8 -source 1.7 ${compiler.args}"/>
+  
+  <property name="aiccore.output.dir" value="${module.aiccore.basedir}/build/intermediates/classes/debug"/>
+  <property name="aiccore.testoutput.dir" value="${module.aiccore.basedir}/build/intermediates/classes/test/debug"/>
+  
+  <path id="aiccore.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="aiccore.module.production.classpath">
+    <path refid="${module.jdk.classpath.aiccore}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <pathelement location="${aicautomator.output.dir}"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <pathelement location="${aiclibs.output.dir}"/>
+  </path>
+  
+  <path id="aiccore.runtime.production.module.classpath">
+    <pathelement location="${aiccore.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="aicautomator.runtime.production.module.classpath"/>
+    <path refid="aiclibs.runtime.production.module.classpath"/>
+  </path>
+  
+  <path id="aiccore.module.classpath">
+    <path refid="${module.jdk.classpath.aiccore}"/>
+    <pathelement location="${aiccore.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <pathelement location="${aicautomator.testoutput.dir}"/>
+    <pathelement location="${aicautomator.output.dir}"/>
+    <path refid="library.uiautomator-v18-2.0.0.classpath"/>
+    <pathelement location="${aiclibs.testoutput.dir}"/>
+    <pathelement location="${aiclibs.output.dir}"/>
+  </path>
+  
+  <path id="aiccore.runtime.module.classpath">
+    <pathelement location="${aiccore.testoutput.dir}"/>
+    <pathelement location="${aiccore.output.dir}"/>
+    <path refid="library.appcompat-v7-22.0.0.classpath"/>
+    <path refid="library.common-22.0.classpath"/>
+    <path refid="library.gson-2.3.1.classpath"/>
+    <path refid="library.ddmlib-22.0.classpath"/>
+    <path refid="library.support-v4-22.0.0.classpath"/>
+    <path refid="library.guava-13.0.1.classpath"/>
+    <path refid="library.simple-xml-2.7.1.classpath"/>
+    <path refid="library.support-annotations-22.0.0.classpath"/>
+    <path refid="library.kxml2-2.3.0.classpath"/>
+    <path refid="aicautomator.runtime.module.classpath"/>
+    <path refid="aiclibs.runtime.module.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.aiccore">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.aiccore">
+    <patternset refid="excluded.from.module.aiccore"/>
+  </patternset>
+  
+  <path id="aiccore.module.sourcepath">
+    <dirset dir="${module.aiccore.basedir}">
+      <include name="build/generated/source/r/debug"/>
+      <include name="build/generated/source/aidl/debug"/>
+      <include name="build/generated/source/buildConfig/debug"/>
+      <include name="build/generated/source/rs/debug"/>
+      <include name="build/generated/res/rs/debug"/>
+      <include name="src/main/res"/>
+    </dirset>
+  </path>
+  
+  <path id="aiccore.module.test.sourcepath">
+    <dirset dir="${module.aiccore.basedir}">
+      <include name="build/generated/source/r/test/debug"/>
+      <include name="build/generated/source/aidl/test/debug"/>
+      <include name="build/generated/source/buildConfig/test/debug"/>
+      <include name="build/generated/source/rs/test/debug"/>
+      <include name="build/generated/res/rs/test/debug"/>
+      <include name="src/androidTest/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.aiccore" depends="compile.module.aiccore.production,compile.module.aiccore.tests" description="Compile module aiccore"/>
+  
+  <target name="compile.module.aiccore.production" depends="register.custom.compilers,compile.module.aicautomator,compile.module.aiclibs" description="Compile module aiccore; production classes">
+    <mkdir dir="${aiccore.output.dir}"/>
+    <javac2 destdir="${aiccore.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.aiccore}/javac">
+      <compilerarg line="${compiler.args.aiccore}"/>
+      <bootclasspath refid="aiccore.module.bootclasspath"/>
+      <classpath refid="aiccore.module.production.classpath"/>
+      <src refid="aiccore.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.aiccore"/>
+    </javac2>
+    
+    <copy todir="${aiccore.output.dir}">
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/r/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/aidl/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/buildConfig/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/res/rs/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/src/main/res">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.aiccore.tests" depends="register.custom.compilers,compile.module.aiccore.production" description="compile module aiccore; test classes" unless="skip.tests">
+    <mkdir dir="${aiccore.testoutput.dir}"/>
+    <javac2 destdir="${aiccore.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.aiccore}/javac">
+      <compilerarg line="${compiler.args.aiccore}"/>
+      <bootclasspath refid="aiccore.module.bootclasspath"/>
+      <classpath refid="aiccore.module.classpath"/>
+      <src refid="aiccore.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.aiccore"/>
+    </javac2>
+    
+    <copy todir="${aiccore.testoutput.dir}">
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/r/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/aidl/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/buildConfig/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/source/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/build/generated/res/rs/test/debug">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.aiccore.basedir}/src/androidTest/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.aiccore" description="cleanup module">
+    <delete dir="${aiccore.output.dir}"/>
+    <delete dir="${aiccore.testoutput.dir}"/>
+  </target>
+</project>

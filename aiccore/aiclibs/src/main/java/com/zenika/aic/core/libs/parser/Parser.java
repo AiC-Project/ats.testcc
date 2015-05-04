@@ -35,6 +35,14 @@ public class Parser {
 		}
 	}
 
+    public Parser() {
+        try {
+            readFiles(new File(getClass().getClassLoader().getResource("test.txt").getPath()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 	public void readFiles(final File folder) throws IOException {
 		for (final File fileEntry : folder.listFiles()) {
 			if (fileEntry.isDirectory()) {
@@ -142,9 +150,9 @@ public class Parser {
 			}
 		};
 
-		InstrumentationResultParser parser = new InstrumentationResultParser(testName, listener);
+        InstrumentationResultParser parser = new InstrumentationResultParser(testName, listener);
 
-		String[] lines = content.split("\n");;
+        String[] lines = content.split("\n");;
 		parser.processNewLines(lines);
 		parser.done();
 	}
