@@ -3,7 +3,7 @@ package com.zenika.aic.core.libs.network;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
-public class ByteUtils {
+public final class ByteUtils {
 
 	private static volatile ByteUtils instance = null;
 	private final short FLOAT_SIZE = 4;

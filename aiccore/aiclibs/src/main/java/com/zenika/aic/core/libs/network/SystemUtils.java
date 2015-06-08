@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by thomas on 30/04/15.
  */
-public class SystemUtils {
+public final class SystemUtils {
     private static volatile SystemUtils instance = null;
 
     private Process process = null;

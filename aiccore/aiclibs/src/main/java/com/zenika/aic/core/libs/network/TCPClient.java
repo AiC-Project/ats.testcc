@@ -7,7 +7,7 @@ import java.net.Socket;
 /**
  * Created by thomas on 24/02/15.
  */
-public class TCPClient {
+public final class TCPClient {
 	
 	private Socket socket;
 

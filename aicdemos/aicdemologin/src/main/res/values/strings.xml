@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AiCDemoLogin</string>
+
+    <string name="app_name">Login</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="no_account">No account ? Click </string>
+    <string name="here">here</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="password_error">Password cannot be empty</string>
+    <string name="username_error">Username cannot be empty</string>
+    <string name="title_activity_register">register</string>
+    <string name="register_frame">Register</string>
+    <string name="login_ok">Successfully logged in</string>
 </resources>

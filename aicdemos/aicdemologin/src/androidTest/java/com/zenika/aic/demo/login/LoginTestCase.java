@@ -32,7 +32,7 @@ public class LoginTestCase extends AiCAbstractTestCase {
 	void clearText(UiObject editText) throws UiObjectNotFoundException {
 		editText.clickBottomRight();
 		while(!editText.getText().isEmpty()) {
-			getUiDevice().pressDelete();
+			//getUiDevice().pressDelete();
 		}
 	}
 

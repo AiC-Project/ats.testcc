@@ -1,3 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">AiCDemoSensor</string>
+    <!--Navigation drawer-->
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="home">Home</string>
+    <string name="battery">Battery</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="map">Map</string>
+    <string name="picture">Picture</string>
+    <string name="video">Video</string>
+
+    <!--Battery fragment-->
+    <string name="battery_level_label">Battery level</string>
+    <string name="battery_health_label">Health</string>
+    <string name="battery_plugged_label">Power source</string>
+    <string name="battery_status_label">Status</string>
+    <string name="battery_technology_label">Technology</string>
+    <string name="battery_temperature_label">Temperature</string>
+    <string name="battery_voltage_label">Voltage</string>
+
+    <!--Accelerometer fragment-->
+    <string name="accelerometer_x_label">X</string>
+    <string name="accelerometer_y_label">Y</string>
+    <string name="accelerometer_z_label">Z</string>
+
+    <!--Sensor-->
+    <string name="sensor_name">Name</string>
+    <string name="sensor_vendor">Vendor</string>
+    <string name="sensor_power">Power</string>
+    <string name="sensor_range">Range</string>
+    <string name="sensor_resolution">Resolution</string>
+
+    <!--Other-->
+    <string name="app_name">Sensor</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
