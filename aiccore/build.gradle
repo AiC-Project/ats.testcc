@@ -6,15 +6,15 @@ android {
     lintOptions {
         abortOnError false
     }
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 19
+        versionCode 1
+        versionName "1.0"
+    }
     packagingOptions {
         exclude 'NOTICE'
         exclude 'LICENSE.txt'
-    }
-    defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
     }
     buildTypes {
         release {
@@ -27,8 +27,12 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:22.0.0'
-    compile project(':aiccore:aiclibs')
-    compile project(':aiccore:aicautomator')
+    compile 'com.android.tools.ddms:ddmlib:22.0'
+    compile('org.simpleframework:simple-xml:2.7.1' ){
+        exclude module: 'stax'
+        exclude module: 'stax-api'
+        exclude module: 'xpp3'
+    }
+    compile 'org.apache.httpcomponents:httpclient:4.4'
+    compile 'com.google.code.gson:gson:2.3.1'
 }
-
-

@@ -1,1 +1,1 @@
-include ':aiccore', ':aiccore:aicautomator', ':aiccore:aiclibs', ':aicdemos:aicdemosensor', ':aicdemos:aicdemologin'
+include ':aiccore', ':aicdemos:aicdemosensor', ':aicdemos:aicdemologin'

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 22
-    buildToolsVersion "22.0.0"
+    buildToolsVersion '22.0.0'
 
     lintOptions {
         abortOnError false
@@ -13,10 +13,11 @@ android {
     }
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 22
+        targetSdkVersion 19
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -26,20 +27,14 @@ android {
     }
 }
 
-afterEvaluate {
-    tasks.findByName("assembleDebug").dependsOn("assembleDebugTest")
-}
-
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.0.0'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:+'
     compile 'com.google.android.gms:play-services:+'
     compile 'com.androidplot:androidplot-core:0.6.1'
 
     androidTestCompile 'com.android.support.test:runner:0.3'
     androidTestCompile 'com.android.support.test:rules:0.3'
-    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2'
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
-
     compile project(':aiccore')
 }

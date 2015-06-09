@@ -2,20 +2,50 @@ package com.zenika.aic.demo.sensor;
 
 import android.os.RemoteException;
 import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiScrollable;
+import android.support.test.uiautomator.UiSelector;
 import android.support.test.uiautomator.UiWatcher;
+import android.test.InstrumentationTestCase;
 import android.test.InstrumentationTestSuite;
 import android.widget.Button;
-import com.zenika.aic.core.automator.AiCAbstractTestCase;
-import com.zenika.aic.core.libs.sensor.Battery;
+import android.widget.TextView;
 
-public class BatteryTestCase extends AiCAbstractTestCase {
+import com.zenika.aic.core.libs.sensor.Device;
+
+public class BatteryTestCase extends InstrumentationTestCase {
 
 	protected long startTime;
-	
+
+	private UiDevice device;
+
+	private String appName;
+	private String packageName;
+
+	public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
+		device = UiDevice.getInstance(getInstrumentation());
+		device.pressHome();
+		device.waitForWindowUpdate("", 2000);
+
+		UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
+		allAppsButton.click();
+		device.waitForWindowUpdate("", 2000);
+
+		UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
+		appViews.setAsHorizontalList();
+
+		UiObject settingsApp = appViews.getChildByText(new UiSelector().className(TextView.class.getName()), appName);
+		settingsApp.clickAndWaitForNewWindow();
+
+		assertTrue("Unable to detect Sensor app", settingsApp != null);
+	}
+
 	public BatteryTestCase() throws RemoteException, UiObjectNotFoundException {
-		super("Sensor", "aic.zenika.fr.sensor");
+		this.appName = "Sensor";
+		this.packageName = "aic.zenika.com.sensor";
 	}
 
 	@Override
@@ -27,7 +57,7 @@ public class BatteryTestCase extends AiCAbstractTestCase {
 	
 	@Override
 	public void tearDown() throws RemoteException, UiObjectNotFoundException {
-		Battery.get().setBatteryLevel(100);
+		Device.getInstance().battery().setLevel(100);
 		InstrumentationTestSuite.warning("message");
 		System.out.println("INSTRUMENTATION_STATUS: time=" + (System.currentTimeMillis() - startTime) / 1000.0);
 	}
@@ -74,7 +104,7 @@ public class BatteryTestCase extends AiCAbstractTestCase {
 
 		//batteryLevel.registerState();
         //sleep(5000);
-		Battery.get().setBatteryLevel(newL);
+		Device.getInstance().battery().setLevel(newL);
         //sleep(5000);
 		//Log.w("Battery",batteryLevel.waitUntilChange(10000)+"");
 
