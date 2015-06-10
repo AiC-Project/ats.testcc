@@ -1,7 +1,10 @@
 package com.zenika.aic.demo.login;
 
 import android.os.RemoteException;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.SearchCondition;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
 import android.support.test.uiautomator.UiObject2;
@@ -9,10 +12,17 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.test.InstrumentationTestCase;
+import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+import java.io.IOException;
+
+@RunWith(AndroidJUnit4.class)
 public class LoginTestCase extends InstrumentationTestCase {
 
 	private static final String LOG_TAG = "LoginDemo";
@@ -22,17 +32,22 @@ public class LoginTestCase extends InstrumentationTestCase {
     private String appName;
     private String packageName;
 
-    public LoginTestCase() {
-        this.appName = "Login";
-        this.packageName = "aic.zenika.com.login";
-    }
+	@Before
+    public void runApp() throws UiObjectNotFoundException, RemoteException {
+		this.appName = "Login";
+		this.packageName = "aic.zenika.com.login";
 
-    public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
-        device = UiDevice.getInstance(getInstrumentation());
+        device = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
         device.pressHome();
         device.waitForWindowUpdate("", 2000);
 
-        UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
+		try {
+			device.dumpWindowHierarchy(System.out);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
         allAppsButton.click();
         device.waitForWindowUpdate("", 2000);
 
@@ -44,35 +59,23 @@ public class LoginTestCase extends InstrumentationTestCase {
 
         assertTrue("Unable to detect Sensor app", settingsApp != null);
     }
-    @Override
-    public void setUp() throws RemoteException, UiObjectNotFoundException {
-        this.runApp(appName, packageName);
-    }
 
-    @Override
-    public void tearDown() throws RemoteException, UiObjectNotFoundException {
-        //Empty for the moment
-    }
-
-	void clearText(UiObject editText) throws UiObjectNotFoundException {
-		editText.clickBottomRight();
-		while(!editText.getText().isEmpty()) {
-			//getUiDevice().pressDelete();
-		}
-	}
-
+	@Test
     public void testUS1() {
         checkLayout();
     }
 
+	@Test
     public void testUS2() {
         emptyPassword();
     }
 
+	@Test
     public void testUS3() {
         emptyUsername();
     }
 
+	@Test
     public void testUS4() {
         loginSuccess();
     }
@@ -95,60 +98,65 @@ public class LoginTestCase extends InstrumentationTestCase {
 	}
 
 	public void emptyPassword() {
-		UiObject2 usernameInput = device.findObject(By.clazz(EditText.class.getName()).res("username_input"));
+		UiObject2 usernameInput = device.findObject(By.res("aic.zenika.com.login","username_input"));
 		assertTrue("Username input not found", usernameInput != null);
-		usernameInput.clear();
 		usernameInput.setText("SomeCorrectUsername");
 
-		UiObject2 passwordInput = device.findObject(By.clazz(EditText.class.getName()).res("password_input"));
+		UiObject2 passwordInput = device.findObject(By.res("aic.zenika.com.login", "password_input"));
 		assertTrue("Password input not found", passwordInput != null);
-		passwordInput.clear();
 
 		UiObject2 loginButton = device.findObject(By.clazz(Button.class.getName()).text("Login"));
 		assertTrue("Login button not found", loginButton != null);
 		loginButton.click();
 
-		UiObject2 infoLabel = device.findObject(By.clazz(TextView.class.getName()).res("info"));
+		UiObject2 infoLabel = device.findObject(By.res("aic.zenika.com.login","info"));
 		assertTrue("Info label not found", infoLabel != null);
 		assertTrue("Info label does not contain the right message", infoLabel.getText().equals("Password cannot be empty"));
 	}
 
 	public void emptyUsername() {
-		UiObject2 usernameInput = device.findObject(By.clazz(EditText.class.getName()).res("username_input"));
+		UiObject2 usernameInput = device.findObject(By.res("aic.zenika.com.login","username_input"));
 		assertTrue("Username input not found", usernameInput != null);
-        usernameInput.clear();
+        usernameInput.setText("");
 
-		UiObject2 passwordInput = device.findObject(By.clazz(EditText.class.getName()).res("password_input"));
+		UiObject2 passwordInput = device.findObject(By.res("aic.zenika.com.login", "password_input"));
 		assertTrue("Password input not found", passwordInput != null);
-        passwordInput.clear();
+
+		Log.w("TEST", "message :" + passwordInput.getText());
+
 		passwordInput.setText("SomeCorrectPassword");
 
 		UiObject2 loginButton = device.findObject(By.clazz(Button.class.getName()).text("Login"));
 		assertTrue("Login button not found", loginButton != null);
 		loginButton.click();
 
-		UiObject2 infoLabel = device.findObject(By.clazz(TextView.class.getName()).res("info"));
+		UiObject2 infoLabel = device.findObject(By.res("aic.zenika.com.login","info"));
 		assertTrue("Info label not found", infoLabel != null);
 		assertTrue("Info label does not contain the right message", infoLabel.getText().equals("Username cannot be empty"));
 	}
 
 	public void loginSuccess() {
-		UiObject2 usernameInput = device.findObject(By.clazz(EditText.class.getName()).res("username_input"));
+		UiObject2 usernameInput = device.findObject(By.res("aic.zenika.com.login", "username_input"));
 		assertTrue("Username input not found", usernameInput != null);
-        usernameInput.clear();
+
+		Log.w("TEST", "message :" + usernameInput.getText());
+
 		usernameInput.setText("SomeCorrectUsername");
 
-		UiObject2 passwordInput = device.findObject(By.clazz(EditText.class.getName()).res("password_input"));
+		UiObject2 passwordInput = device.findObject(By.res("aic.zenika.com.login","password_input"));
 		assertTrue("Password input not found", passwordInput != null);
-		passwordInput.clear();
+
+		Log.w("TEST", "message :" + passwordInput.getText());
+
 		passwordInput.setText("SomeCorrectPassword");
 
 		UiObject2 loginButton = device.findObject(By.clazz(Button.class.getName()).text("Login"));
 		assertTrue("Login button not found", loginButton != null);
+		loginButton.click();
 
-        device.waitForWindowUpdate("",5000);
+		device.waitForWindowUpdate(null,5000);
 
-		UiObject2 successMessage = device.findObject(By.clazz(TextView.class.getName()).res("info"));
+		UiObject2 successMessage = device.findObject(By.res("aic.zenika.com.login","info"));
 		assertTrue("Success message not found", successMessage != null);
 		assertTrue("Success message incorrect", successMessage.getText().equals("Successfully logged in"));
 	}

@@ -6,6 +6,7 @@
     tools:context="aic.zenika.com.login.RegisterActivity">
 
     <TextView
+        android:id="@+id/info"
         android:text="@string/login_ok"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
