@@ -77,9 +77,13 @@ public class AccelerometerTestCase extends InstrumentationTestCase {
 
 	private void setOrientation() throws UiObjectNotFoundException {
 		Device.getInstance().accelerometer().setValue(0f, 9f, 1f);
-		//sleep(2000);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 
-        try {
+		try {
             UiObject2 xLabel = UiDevice.getInstance(getInstrumentation()).findObject(By.text("9.0"));
             UiObject2 yLabel = UiDevice.getInstance(getInstrumentation()).findObject(By.text("0.0"));
             UiObject2 zLabel = UiDevice.getInstance(getInstrumentation()).findObject(By.text("1.0"));

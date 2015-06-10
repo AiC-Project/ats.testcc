@@ -12,7 +12,6 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import aic.zenika.com.sensor.R;
 import aic.zenika.com.sensor.view.element.CameraPreview;
 
 /**

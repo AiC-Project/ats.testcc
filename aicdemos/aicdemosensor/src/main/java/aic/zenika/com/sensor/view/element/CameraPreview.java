@@ -9,8 +9,6 @@ import android.view.SurfaceView;
 import java.io.IOException;
 import java.util.List;
 
-import aic.zenika.com.sensor.R;
-
 /**
  * Created by thomas on 27/04/15.
  */

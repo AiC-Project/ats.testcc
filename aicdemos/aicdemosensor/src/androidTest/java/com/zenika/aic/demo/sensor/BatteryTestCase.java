@@ -99,13 +99,21 @@ public class BatteryTestCase extends InstrumentationTestCase {
         device.registerWatcher("Battery dialog watcher", okBatteryDialogWatcher);
         device.runWatchers();
 
-        UiObject2 batteryLevel = device.findObject(By.text(oldL + " %"));
+        UiObject2 batteryLevel = device.findObject(By.clazz(TextView.class.getName()).text(oldL+""));
 		assertTrue("Battery level not found", batteryLevel != null);
 
 		//batteryLevel.registerState();
-        //sleep(5000);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		Device.getInstance().battery().setLevel(newL);
-        //sleep(5000);
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		//Log.w("Battery",batteryLevel.waitUntilChange(10000)+"");
 
 		batteryLevel = device.findObject(By.text(newL + " %"));
