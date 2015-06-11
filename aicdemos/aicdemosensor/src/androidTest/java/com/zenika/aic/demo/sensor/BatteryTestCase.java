@@ -58,6 +58,7 @@ public class BatteryTestCase extends InstrumentationTestCase {
 	@Override
 	public void tearDown() throws RemoteException, UiObjectNotFoundException {
 		Device.getInstance().battery().setLevel(100);
+        device.waitForWindowUpdate("aic.zenika.com.sensor",2000);
 		InstrumentationTestSuite.warning("message");
 		System.out.println("INSTRUMENTATION_STATUS: time=" + (System.currentTimeMillis() - startTime) / 1000.0);
 	}
@@ -90,7 +91,7 @@ public class BatteryTestCase extends InstrumentationTestCase {
 				if(okCancelDialog != null){
                     UiObject2 okButton = device.findObject(By.clazz(Button.class.getName()).text("OK"));
 					okButton.click();
-                    return device.waitForWindowUpdate("",25000);
+                    return device.waitForWindowUpdate("",5000);
 				}
 				return false;
 			}
@@ -99,24 +100,17 @@ public class BatteryTestCase extends InstrumentationTestCase {
         device.registerWatcher("Battery dialog watcher", okBatteryDialogWatcher);
         device.runWatchers();
 
-        UiObject2 batteryLevel = device.findObject(By.clazz(TextView.class.getName()).text(oldL+""));
-		assertTrue("Battery level not found", batteryLevel != null);
+        device.waitForWindowUpdate("aic.zenika.com.sensor",2000);
 
-		//batteryLevel.registerState();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
+        UiObject2 batteryLevel = device.findObject(By.res("aic.zenika.com.sensor","battery_level"));
+		assertTrue("Battery level not found", batteryLevel != null);
+		assertTrue("Wrong level", batteryLevel.getText().contains(oldL+""));
+
 		Device.getInstance().battery().setLevel(newL);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		//Log.w("Battery",batteryLevel.waitUntilChange(10000)+"");
 
-		batteryLevel = device.findObject(By.text(newL + " %"));
-		assertTrue("Battery level not found", batteryLevel != null);
+        device.waitForWindowUpdate("aic.zenika.com.sensor", 10000);
+
+        batteryLevel = device.findObject(By.res("aic.zenika.com.sensor","battery_level"));
+		assertTrue("Battery level not found", batteryLevel.getText().contains(newL+""));
 	}
 }
