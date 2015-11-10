@@ -2,9 +2,7 @@ package com.zenika.aic.core.libs.sensor;
 
 import com.zenika.aic.core.libs.network.ByteUtils;
 import com.zenika.aic.core.libs.network.TCPClient;
-
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
+import com.zenika.aic.core.libs.sensor.SensorsPacket;
 
 /**
  * Created by thomas on 09/06/15.
@@ -30,18 +28,17 @@ public class Accelerometer implements AccelerometerInterface {
 
     @Override
     public void setValue(float x, float y, float z) {
-        ByteBuffer buffer = ByteBuffer.allocate(15);
-        try {
-            buffer.put(byteUtils.intToBytes(13,2));
-            buffer.put(byteUtils.intToBytes(ACCELEROMETER_ID, 1));
-            buffer.put(byteUtils.floatToBytes(x));
-            buffer.put(byteUtils.floatToBytes(y));
-            buffer.put(byteUtils.floatToBytes(z));
 
-            new TCPClient(SENSOR_HOST,ACCELEROMETER_PORT,buffer.array());
-        } catch(UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+        SensorsPacket.sensors_packet.SensorAcceleroPayload.Builder acceleroBuilder = SensorsPacket.sensors_packet.SensorAcceleroPayload.newBuilder();
+        acceleroBuilder.setX(x);
+        acceleroBuilder.setY(y);
+        acceleroBuilder.setZ(z);
+        builder.setAccelero(acceleroBuilder);
+        packet = builder.build();
+
+        new TCPClient(SENSOR_HOST,ACCELEROMETER_PORT,packet);
     }
 
     @Override
