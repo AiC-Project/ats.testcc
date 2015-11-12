@@ -6,31 +6,9 @@ package com.zenika.aic.core.libs.sensor;
 public interface AccelerometerInterface {
 
     /**
-     *
      * @param x
      * @param y
      * @param z
      */
     void setValue(float x, float y, float z);
-
-    /**
-     *
-     * @param x
-     * @return
-     */
-    AccelerometerInterface setX(float x);
-
-    /**
-     *
-     * @param y
-     * @return
-     */
-    AccelerometerInterface setY(float y);
-
-    /**
-     *
-     * @param z
-     * @return
-     */
-    AccelerometerInterface setZ(float z);
 }

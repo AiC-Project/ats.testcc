@@ -16,12 +16,13 @@ import java.nio.channels.SocketChannel;
  * Created by thomas on 24/02/15.
  */
 public final class TCPClient {
-	
+
+
+    private final String SENSOR_HOST = "127.0.0.1";
 	private Socket socket;
 
 	/**
-	 * 
-	 * @param host
+	 *
 	 * @param port
 	 * @param packet
 	 */
@@ -38,12 +39,12 @@ public final class TCPClient {
 		}
 	}*/
 
-    public TCPClient(String host, int port, SensorsPacket.sensors_packet packet) {
+    public TCPClient(int port, SensorsPacket.sensors_packet packet) {
         try {
 			SocketChannel serverSocket;
 			serverSocket = SocketChannel.open();
 			serverSocket.socket().setReuseAddress(true);
-			serverSocket.connect(new InetSocketAddress(host, port));
+			serverSocket.connect(new InetSocketAddress(SENSOR_HOST, port));
 			serverSocket.configureBlocking(true);
 
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();

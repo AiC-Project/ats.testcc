@@ -28,7 +28,7 @@ public class AccelerometerFragment extends Fragment implements SensorEventListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_accelerometer, container, false);
 
-        sensorDelegate.initializeAccelerometer();
+        sensorDelegate.initializeSensor(Sensor.TYPE_ACCELEROMETER);
         sensorDelegate.registerListener(Sensor.TYPE_ACCELEROMETER,this);
         sensorDelegate.createAccelerometerHistory(v.getContext(), (XYPlot) v.findViewById(R.id.aprHistoryPlot));
 

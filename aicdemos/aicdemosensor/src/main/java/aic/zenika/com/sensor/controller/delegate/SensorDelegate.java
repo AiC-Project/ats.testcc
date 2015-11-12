@@ -19,7 +19,7 @@ import aic.zenika.com.sensor.R;
 import aic.zenika.com.sensor.controller.activity.MainActivity;
 
 /**
- * Created by thomas on 26/02/15.
+ * Created by pierre on 10/11/15.
  */
 public class SensorDelegate {
     private static volatile SensorDelegate instance = null;
@@ -29,6 +29,35 @@ public class SensorDelegate {
     private SensorManager accelerometerManager = null;
     private Sensor accelerometer = null;
 
+    private SensorManager linearAccelerometerManager= null;
+    private Sensor linearAccelerometer = null;
+
+    private SensorManager barometerManager = null;
+    private Sensor barometer = null;
+
+    private SensorManager photometerManager = null;
+    private Sensor photometer = null;
+
+    private SensorManager thermometerManager = null;
+    private Sensor thermometer = null;
+
+    private SensorManager ambientThermometerManager = null;
+    private Sensor ambientThermometer = null;
+
+    private SensorManager proximitySensorManager = null;
+    private Sensor proximitySensor = null;
+
+    private SensorManager gravitometerManager = null;
+    private Sensor gravitometer = null;
+
+    private SensorManager magnetometerManager = null;
+    private Sensor magnetometer = null;
+
+    private SensorManager podometerManager = null;
+    private Sensor podometer = null;
+
+    private SensorManager gyroscopeManager = null;
+    private Sensor gyroscope = null;
 
     private XYPlot accelerometerHistory = null;
     private SimpleXYSeries xSeries = null;
@@ -60,9 +89,53 @@ public class SensorDelegate {
         this.mainActivity = mainActivity;
     }
 
-    public void initializeAccelerometer() {
-        accelerometerManager = (SensorManager)mainActivity.getSystemService(Context.SENSOR_SERVICE);
-        accelerometer = accelerometerManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+    public void initializeSensor(int sensor) {
+        switch(sensor) {
+            case Sensor.TYPE_ACCELEROMETER:
+                accelerometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                accelerometer = accelerometerManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                break;
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+                linearAccelerometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                linearAccelerometer = linearAccelerometerManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+                break;
+            case Sensor.TYPE_PRESSURE:
+                barometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                barometer = barometerManager.getDefaultSensor(Sensor.TYPE_PRESSURE);
+                break;
+            case Sensor.TYPE_LIGHT:
+                photometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                photometer = photometerManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+                break;
+            case Sensor.TYPE_TEMPERATURE:
+                thermometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                thermometer = thermometerManager.getDefaultSensor(Sensor.TYPE_TEMPERATURE);
+                break;
+            case Sensor.TYPE_AMBIENT_TEMPERATURE:
+                ambientThermometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                ambientThermometer = ambientThermometerManager.getDefaultSensor(Sensor.TYPE_AMBIENT_TEMPERATURE);
+                break;
+            case Sensor.TYPE_PROXIMITY:
+                proximitySensorManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                proximitySensor = proximitySensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+                break;
+            case Sensor.TYPE_GRAVITY:
+                gravitometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                gravitometer = gravitometerManager.getDefaultSensor(Sensor.TYPE_GRAVITY);
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                magnetometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                magnetometer = magnetometerManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+                break;
+            case Sensor.TYPE_STEP_COUNTER:
+                podometerManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                podometer = podometerManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
+                break;
+            case Sensor.TYPE_GYROSCOPE:
+                gyroscopeManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                gyroscope = gyroscopeManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+                break;
+        }
     }
 
     public void createAccelerometerHistory(Context c, XYPlot xyPlot) {
@@ -147,13 +220,43 @@ public class SensorDelegate {
     }
 
     public void unregisterListener(int sensor, SensorEventListener listener) {
-        SensorManager s = null;
+        SensorManager sm = null;
         switch(sensor) {
             case Sensor.TYPE_ACCELEROMETER:
-                s = accelerometerManager;
+                sm = accelerometerManager;
+                break;
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+                sm = linearAccelerometerManager;
+                break;
+            case Sensor.TYPE_PRESSURE:
+                sm = barometerManager;
+                break;
+            case Sensor.TYPE_LIGHT:
+                sm = photometerManager;
+                break;
+            case Sensor.TYPE_TEMPERATURE:
+                sm = thermometerManager;
+                break;
+            case Sensor.TYPE_AMBIENT_TEMPERATURE:
+                sm = ambientThermometerManager;
+                break;
+            case Sensor.TYPE_PROXIMITY:
+                sm = proximitySensorManager;
+                break;
+            case Sensor.TYPE_GRAVITY:
+                sm = gravitometerManager;
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                sm = magnetometerManager;
+                break;
+            case Sensor.TYPE_STEP_COUNTER:
+                sm = podometerManager;
+                break;
+            case Sensor.TYPE_GYROSCOPE:
+                sm = gyroscopeManager;
                 break;
         }
-        s.unregisterListener(listener);
+        sm.unregisterListener(listener);
     }
 
     public void registerListener(int sensor, SensorEventListener listener) {
@@ -163,6 +266,46 @@ public class SensorDelegate {
             case Sensor.TYPE_ACCELEROMETER:
                 sm = accelerometerManager;
                 s = accelerometer;
+                break;
+            case Sensor.TYPE_LINEAR_ACCELERATION:
+                sm = linearAccelerometerManager;
+                s = linearAccelerometer;
+                break;
+            case Sensor.TYPE_PRESSURE:
+                sm = barometerManager;
+                s = barometer;
+                break;
+            case Sensor.TYPE_LIGHT:
+                sm = photometerManager;
+                s = photometer;
+                break;
+            case Sensor.TYPE_TEMPERATURE:
+                sm = thermometerManager;
+                s = thermometer;
+                break;
+            case Sensor.TYPE_AMBIENT_TEMPERATURE:
+                sm = ambientThermometerManager;
+                s = ambientThermometer;
+                break;
+            case Sensor.TYPE_PROXIMITY:
+                sm = proximitySensorManager;
+                s = proximitySensor;
+                break;
+            case Sensor.TYPE_GRAVITY:
+                sm = gravitometerManager;
+                s = gravitometer;
+                break;
+            case Sensor.TYPE_MAGNETIC_FIELD:
+                sm = magnetometerManager;
+                s = magnetometer;
+                break;
+            case Sensor.TYPE_STEP_COUNTER:
+                sm = podometerManager;
+                s = podometer;
+                break;
+            case Sensor.TYPE_GYROSCOPE:
+                sm = gyroscopeManager;
+                s = gyroscope;
                 break;
         }
         sm.registerListener(listener,s,SensorManager.SENSOR_DELAY_UI);

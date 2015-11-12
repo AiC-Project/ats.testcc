@@ -5,10 +5,21 @@
     <string name="drawer_close">Close navigation drawer</string>
     <string name="home">Home</string>
     <string name="battery">Battery</string>
-    <string name="accelerometer">Accelerometer</string>
     <string name="map">Map</string>
     <string name="picture">Picture</string>
     <string name="video">Video</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="barometer">Barometer</string>
+    <string name="magnetometer">Magnetometer</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="photometer">Photometer</string>
+    <string name="thermometer">Thermometer</string>
+    <string name="ambient_thermometer">Ambient Thermometer</string>
+    <string name="proximity_sensor">Proximity Sensor</string>
+    <string name="gravitometer">Gravitometer</string>
+    <string name="linear_accelerometer">Linear Accelerometer</string>
+    <string name="podometer">Podometer</string>
+    <string name="rot_vector_sensor">Rotation Vector Sensor</string>
 
     <!--Battery fragment-->
     <string name="battery_level_label">Battery level</string>

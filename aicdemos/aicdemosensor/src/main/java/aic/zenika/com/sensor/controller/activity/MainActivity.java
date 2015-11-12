@@ -16,11 +16,22 @@ import aic.zenika.com.sensor.controller.delegate.BatteryDelegate;
 import aic.zenika.com.sensor.controller.delegate.MainDelegate;
 import aic.zenika.com.sensor.controller.delegate.SensorDelegate;
 import aic.zenika.com.sensor.controller.fragment.AccelerometerFragment;
+import aic.zenika.com.sensor.controller.fragment.AmbientThermometerFragment;
+import aic.zenika.com.sensor.controller.fragment.BarometerFragment;
 import aic.zenika.com.sensor.controller.fragment.BatteryFragment;
+import aic.zenika.com.sensor.controller.fragment.GravitometerFragment;
+import aic.zenika.com.sensor.controller.fragment.GyroscopeFragment;
 import aic.zenika.com.sensor.controller.fragment.HomeFragment;
 //import aic.zenika.fr.sensor.controller.fragment.CustomMapFragment;
+import aic.zenika.com.sensor.controller.fragment.LinearAccelerometerFragment;
+import aic.zenika.com.sensor.controller.fragment.MagnetometerFragment;
 import aic.zenika.com.sensor.controller.fragment.MapFragment;
+import aic.zenika.com.sensor.controller.fragment.PhotometerFragment;
 import aic.zenika.com.sensor.controller.fragment.PictureFragment;
+import aic.zenika.com.sensor.controller.fragment.PodometerFragment;
+import aic.zenika.com.sensor.controller.fragment.ProximitySensorFragment;
+import aic.zenika.com.sensor.controller.fragment.RotVectorSensorFragment;
+import aic.zenika.com.sensor.controller.fragment.ThermometerFragment;
 import aic.zenika.com.sensor.controller.fragment.VideoFragment;
 import aic.zenika.com.sensor.controller.listener.DrawerItemClickListener;
 import aic.zenika.com.sensor.view.adapter.DrawerAdapter;
@@ -38,12 +49,24 @@ public class MainActivity extends BaseActivity {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
+        mNavigationArray.add(new DrawerItem(R.string.home, R.drawable.ic_action_home_red));
         mNavigationArray.add(new DrawerItem(R.string.battery, R.drawable.ic_action_battery_red));
-        mNavigationArray.add(new DrawerItem(R.string.accelerometer, R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.map, R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.picture, R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.video, R.drawable.ic_action_battery_red));
-        mNavigationArray.add(new DrawerItem(R.string.home, R.drawable.ic_action_home_red));
+        mNavigationArray.add(new DrawerItem(R.string.accelerometer, R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.linear_accelerometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.barometer, R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.photometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.thermometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.ambient_thermometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.proximity_sensor,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.gravitometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.magnetometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.podometer,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.gyroscope,R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.rot_vector_sensor, R.drawable.ic_action_battery_red));
+
 
         mDrawerList.setAdapter(new DrawerAdapter(this,R.layout.drawer_item, mNavigationArray));
 
@@ -89,11 +112,8 @@ public class MainActivity extends BaseActivity {
         Fragment fragment = null;
 
         switch(position) {
-            case 0:
-                fragment = new BatteryFragment();
-                break;
             case 1:
-                fragment = new AccelerometerFragment();
+                fragment = new BatteryFragment();
                 break;
             case 2:
                 fragment = new MapFragment();
@@ -103,6 +123,42 @@ public class MainActivity extends BaseActivity {
                 break;
             case 4:
                 fragment = new VideoFragment();
+                break;
+            case 5:
+                fragment = new AccelerometerFragment();
+                break;
+            case 6:
+                fragment = new LinearAccelerometerFragment();
+                break;
+            case 7:
+                fragment = new BarometerFragment();
+                break;
+            case 8:
+                fragment = new PhotometerFragment();
+                break;
+            case 9:
+                fragment = new ThermometerFragment();
+                break;
+            case 10:
+                fragment = new AmbientThermometerFragment();
+                break;
+            case 11:
+                fragment = new ProximitySensorFragment();
+                break;
+            case 12:
+                fragment = new GravitometerFragment();
+                break;
+            case 13:
+                fragment = new MagnetometerFragment();
+                break;
+            case 14:
+                fragment = new PodometerFragment();
+                break;
+            case 15:
+                fragment = new GyroscopeFragment();
+                break;
+            case 16:
+                fragment = new RotVectorSensorFragment();
                 break;
             default:
                 fragment = new HomeFragment();

@@ -47,19 +47,14 @@ public class Battery implements BatteryInterface {
 
     @Override
     public BatteryInterface setLevel(int level) {
-        ByteBuffer buffer = ByteBuffer.allocate(20);
-        try {
-            buffer.put(byteUtils.intToBytes(18,2));
-            buffer.put(byteUtils.longToBytes(level*BATTERY_FULL/100));
-            buffer.put(byteUtils.longToBytes(BATTERY_FULL));
-            buffer.put(byteUtils.intToBytes(3,1));
-            buffer.put(byteUtils.intToBytes(0,1));
 
-            System.out.println(Arrays.toString(buffer.array()));
-            new TCPClient(BATTERY_HOST,BATTERY_PORT,buffer.array());
-        } catch(UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+
+        //TO DO: FIX ME
+
+        packet = builder.build();
+        new TCPClient(BATTERY_PORT, packet);
         return this;
     }
 

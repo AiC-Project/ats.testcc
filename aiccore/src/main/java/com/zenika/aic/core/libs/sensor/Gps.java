@@ -33,19 +33,16 @@ public class Gps implements GpsInterface {
 
     @Override
     public void setPosition(float latitude, float longitude) {
-        ByteBuffer buffer = ByteBuffer.allocate(19);
-        try {
-            buffer.put(byteUtils.intToBytes(17,2));
-            buffer.put(byteUtils.intToBytes(1, 1));
-            buffer.put(byteUtils.floatToBytes(latitude));
-            buffer.put(byteUtils.floatToBytes(longitude));
-            buffer.put(byteUtils.floatToBytes(10f));
-            buffer.put(byteUtils.floatToBytes(3f));
 
-            new TCPClient(LOCATION_HOST,LOCATION_PORT,buffer.array());
-        } catch(UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+
+        //TO DO: FIX ME
+
+        packet = builder.build();
+        new TCPClient(LOCATION_PORT, packet);
+
+        ByteBuffer buffer = ByteBuffer.allocate(19);
     }
 
     @Override
