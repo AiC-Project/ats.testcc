@@ -20,6 +20,7 @@
     <string name="linear_accelerometer">Linear Accelerometer</string>
     <string name="podometer">Podometer</string>
     <string name="rot_vector_sensor">Rotation Vector Sensor</string>
+    <string name="cos_rot">Cos</string>
 
     <!--Battery fragment-->
     <string name="battery_level_label">Battery level</string>

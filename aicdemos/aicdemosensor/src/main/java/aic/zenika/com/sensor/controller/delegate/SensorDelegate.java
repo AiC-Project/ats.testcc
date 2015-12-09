@@ -59,6 +59,9 @@ public class SensorDelegate {
     private SensorManager gyroscopeManager = null;
     private Sensor gyroscope = null;
 
+    private SensorManager rotVectorManager = null;
+    private Sensor rotVector = null;
+
     private XYPlot accelerometerHistory = null;
     private SimpleXYSeries xSeries = null;
     private SimpleXYSeries ySeries = null;
@@ -134,6 +137,10 @@ public class SensorDelegate {
             case Sensor.TYPE_GYROSCOPE:
                 gyroscopeManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
                 gyroscope = gyroscopeManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+                break;
+            case Sensor.TYPE_ROTATION_VECTOR:
+                rotVectorManager = (SensorManager) mainActivity.getSystemService(Context.SENSOR_SERVICE);
+                rotVector = rotVectorManager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR);
                 break;
         }
     }
@@ -255,6 +262,8 @@ public class SensorDelegate {
             case Sensor.TYPE_GYROSCOPE:
                 sm = gyroscopeManager;
                 break;
+            case Sensor.TYPE_ROTATION_VECTOR:
+                sm = rotVectorManager;
         }
         sm.unregisterListener(listener);
     }
@@ -306,6 +315,10 @@ public class SensorDelegate {
             case Sensor.TYPE_GYROSCOPE:
                 sm = gyroscopeManager;
                 s = gyroscope;
+                break;
+            case Sensor.TYPE_ROTATION_VECTOR:
+                sm = rotVectorManager;
+                s = rotVector;
                 break;
         }
         sm.registerListener(listener,s,SensorManager.SENSOR_DELAY_UI);

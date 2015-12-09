@@ -36,4 +36,13 @@ dependencies {
     compile 'org.apache.httpcomponents:httpclient:4.4'
     compile 'com.google.code.gson:gson:2.3.1'
     compile files('libs/protobuf-java-2.3.0.jar')
+    androidTestCompile 'com.android.support.test:runner:0.4'
+    // Set this dependency to use JUnit 4 rules
+    androidTestCompile 'com.android.support.test:rules:0.4'
+    // Set this dependency to build and run Espresso tests
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    // Set this dependency to build and run UI Automator tests
+    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    compile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
+    compile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
 }

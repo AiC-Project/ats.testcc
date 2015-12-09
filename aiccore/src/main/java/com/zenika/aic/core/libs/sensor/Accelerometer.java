@@ -11,10 +11,6 @@ public class Accelerometer implements AccelerometerInterface {
 
     private static Accelerometer instance = null;
 
-    private Accelerometer() {
-        //Empty for the moment
-    }
-
     public static Accelerometer getInstance() {
         if(Accelerometer.instance == null)
             Accelerometer.instance = new Accelerometer();

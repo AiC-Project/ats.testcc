@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="@dimen/default_margin"
     android:orientation="vertical"
-    tools:context="aic.zenika.com.sensor.controller.fragment.BarometerFragment">
+    tools:context="aic.zenika.com.sensor.controller.fragment.PhotometerFragment">
 
     <TextView
         android:id="@+id/light_level"
