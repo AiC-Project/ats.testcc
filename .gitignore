@@ -1,3 +1,4 @@
+
 .tmp
 .sass-cache
 node_modules
@@ -62,9 +63,12 @@ nbproject
 composer.lock
 *#
 **/*~
-
+*gradle
 *.bak
 *.swp
 *.ai
 *.eps
 *.psd
+gradle*
+aiccore/build.gradle
+local.*
