@@ -33,7 +33,7 @@ public class BatteryTestCase extends InstrumentationTestCase {
             e.printStackTrace();
         }
         device.deviceSensor = new Photometer().getInstance();
-        device.deviceSensor.setValue(5f);
+        device.deviceSensor.setValue(10f);
         device.waitForUpdate();
     }
 
