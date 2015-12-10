@@ -6,7 +6,7 @@ import com.zenika.aic.core.libs.network.TCPClient;
 /**
  * Created by thomas on 09/06/15.
  */
-public class Accelerometer implements AccelerometerInterface {
+public class Accelerometer{
     private final int ACCELEROMETER_PORT = 22471;
 
     private static Accelerometer instance = null;
@@ -17,7 +17,6 @@ public class Accelerometer implements AccelerometerInterface {
         return Accelerometer.instance;
     }
 
-    @Override
     public void setValue(float x, float y, float z) {
 
         SensorsPacket.sensors_packet packet;

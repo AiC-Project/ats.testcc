@@ -5,7 +5,7 @@ import com.zenika.aic.core.libs.network.TCPClient;
 /**
  * Created by pierre on 10/11/15.
  */
-public class Barometer implements  BarometerInterface{
+public class Barometer{
     private final int BAROMETER_PORT = 22471;
 
     private static Barometer instance = null;
@@ -16,7 +16,6 @@ public class Barometer implements  BarometerInterface{
         return Barometer.instance;
     }
 
-    @Override
     public void setValue(float pressure) {
 
         SensorsPacket.sensors_packet packet;

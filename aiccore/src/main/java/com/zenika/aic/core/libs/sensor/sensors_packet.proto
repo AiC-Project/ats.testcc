@@ -1,76 +1,112 @@
 message sensors_packet {
 
-     optional SensorAcceleroPayload              accelero     =  1 ;
-     optional SensorMagnetoPayload               magneto      =  2 ;
-     optional SensorOrientationPayload           orientation  =  3 ;
-     optional SensorGyroPayload                  gyroscope    =  4 ;
-     optional SensorGravityPayload               gravity      =  5 ;
-     optional SensorLinearAccPayload             linear_acc   =  6 ;
-     optional SensorRotVectorPayload             rotvector    =  7 ;
-     optional SensorTemperaturePayload           thermometer  =  8 ;
-     optional SensorProximityPayload             proximity    =  9 ;
-     optional SensorLightPayload                 luxmeter     = 10 ;
-     optional SensorPressurePayload              barometer    = 11 ;
-     optional SensorRelativeHumidityPayload      hygrometer   = 12 ;
+    optional SensorAcceleroPayload              accelero     =  1 ;
+    optional SensorMagnetoPayload               magneto      =  2 ;
+    optional SensorOrientationPayload           orientation  =  3 ;
+    optional SensorGyroPayload                  gyroscope    =  4 ;
+    optional SensorGravityPayload               gravity      =  5 ;
+    optional SensorLinearAccPayload             linear_acc   =  6 ;
+    optional SensorRotVectorPayload             rotvector    =  7 ;
+    optional SensorTemperaturePayload           thermometer  =  8 ;
+    optional SensorProximityPayload             proximity    =  9 ;
+    optional SensorLightPayload                 luxmeter     = 10 ;
+    optional SensorPressurePayload              barometer    = 11 ;
+    optional SensorRelativeHumidityPayload      hygrometer   = 12 ;
 
-     message SensorAcceleroPayload {
-         optional double x=1;
-         optional double y=2;
-         optional double z=3;
-     }
+    optional BatteryPayload                     Battery      = 100;
 
-     message SensorMagnetoPayload {
-         optional double x=1;
-         optional double y=2;
-         optional double z=3;
-     }
+    optional LocationPayload                    GPS          = 200;
 
-     message SensorOrientationPayload {
-         optional double azimuth=1;
-         optional double pitch=2;
-         optional double roll=3;
-     }
+    message SensorAcceleroPayload {
+        optional double x=1;
+        optional double y=2;
+        optional double z=3;
+    }
 
-     message SensorGyroPayload {
-         optional double azimuth=1;
-         optional double pitch=2;
-         optional double roll=3;
-     }
+    message SensorMagnetoPayload {
+        optional double x=1;
+        optional double y=2;
+        optional double z=3;
+    }
 
-     message SensorGravityPayload {
-         optional double x=1;
-         optional double y=2;
-         optional double z=3;
-     }
+    message SensorOrientationPayload {
+        optional double azimuth=1;
+        optional double pitch=2;
+        optional double roll=3;
+    }
 
-     message SensorLinearAccPayload {
-         optional double x=1;
-         optional double y=2;
-         optional double z=3;
-     }
+    message SensorGyroPayload {
+        optional double azimuth=1;
+        optional double pitch=2;
+        optional double roll=3;
+    }
 
-     message SensorRotVectorPayload {
-         optional uint32 size = 1;
-         repeated double data = 2 [packed=true];
-     }
+    message SensorGravityPayload {
+        optional double x=1;
+        optional double y=2;
+        optional double z=3;
+    }
 
-     message SensorTemperaturePayload {
-         optional double temperature = 1;
-     }
+    message SensorLinearAccPayload {
+        optional double x=1;
+        optional double y=2;
+        optional double z=3;
+    }
 
-     message SensorProximityPayload {
-         optional double distance = 1;
-     }
+    message SensorRotVectorPayload {
+        optional uint32 size = 1;
+        repeated double data = 2 [packed=true];
+    }
 
-     message SensorLightPayload {
-         optional double light = 1;
-     }
+    message SensorTemperaturePayload {
+        optional double temperature = 1;
+    }
 
-     message SensorPressurePayload {
-         optional double pressure = 1;
-     }
+    message SensorProximityPayload {
+        optional double distance = 1;
+    }
 
-     message SensorRelativeHumidityPayload {
-         optional double relative_humidity = 1;
-     }
- }
+    message SensorLightPayload {
+        optional double light = 1;
+    }
+
+    message SensorPressurePayload {
+        optional double pressure = 1;
+    }
+
+    message SensorRelativeHumidityPayload {
+        optional double relative_humidity = 1;
+    }
+
+    message BatteryPayload {
+
+        enum BattStatusType {
+            CHARGING = 0 ;
+            DISCHARGING = 2 ;
+            NOTCHARGING= 3 ;
+            FULL = 4 ;
+            UNKNOWN= 5 ;
+        }
+
+        optional uint64 BatteryLevel            = 1;
+        optional uint64 BatteryFull             = 2;
+        optional BattStatusType BatteryStatus   = 3 [default = CHARGING];
+        optional uint32 AC_Online               = 4;
+    }
+
+
+    message LocationPayload {
+
+        enum GPSStatusType {
+            DISABLED 	= 0 ;
+            ENABLED 	= 1 ;
+        }
+
+	optional GPSStatusType	status		= 1 [default = ENABLED];
+        optional double		latitude	= 2;
+        optional double 	longitude	= 3;
+        optional double 	altitude	= 4;
+        optional double 	bearing 	= 5;
+    }
+
+}

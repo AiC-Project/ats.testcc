@@ -1,12 +1,9 @@
 package com.zenika.aic.core.libs.network;
 
-import com.google.protobuf.CodedOutputStream;
 import com.zenika.aic.core.libs.sensor.SensorsPacket;
 
 import java.io.ByteArrayOutputStream;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.ByteBuffer;

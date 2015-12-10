@@ -1,26 +1,12 @@
 package com.zenika.aic.core.libs.sensor;
 
-import com.zenika.aic.core.libs.network.ByteUtils;
 import com.zenika.aic.core.libs.network.TCPClient;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.ByteBuffer;
-
-public class Gps implements GpsInterface {
+public class Gps {
 	private static Gps instance = null;
 
     private final int LOCATION_PORT = 22475;
     private final String LOCATION_HOST = "127.0.0.1";
-    
-    private ByteUtils byteUtils = ByteUtils.getInstance();
-
-    /**
-     * Default private constructor
-     */
-    private Gps() {
-        super();
-    }
-
     /**
      * Get main controller unique instance
      * @return Main controller instance
@@ -31,27 +17,48 @@ public class Gps implements GpsInterface {
         return Gps.instance;
     }
 
-    @Override
-    public void setPosition(float latitude, float longitude) {
+    public void setPosition(double latitude, double longitude, double altitude) {
 
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-
-        //TO DO: FIX ME
-
+        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        locationBuilder.setLatitude(latitude);
+        locationBuilder.setLongitude(longitude);
+        locationBuilder.setAltitude(altitude);
+        builder.setGPS(locationBuilder);
         packet = builder.build();
+
         new TCPClient(LOCATION_PORT, packet);
-
-        ByteBuffer buffer = ByteBuffer.allocate(19);
     }
 
-    @Override
-    public GpsInterface setLatitude(float latitude) {
-        throw new UnsupportedOperationException("Set latitude method is not implemented yet.");
-    }
+    public void setLatitude(double latitude) {
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        locationBuilder.setLatitude(latitude);
+        builder.setGPS(locationBuilder);
+        packet = builder.build();
 
-    @Override
-    public GpsInterface setLongitude(float longitude) {
-        throw new UnsupportedOperationException("Set longitude method is not implemented yet.");
+        new TCPClient(LOCATION_PORT, packet);    }
+
+    public void setLongitude(double longitude) {
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        locationBuilder.setLongitude(longitude);
+        builder.setGPS(locationBuilder);
+        packet = builder.build();
+
+        new TCPClient(LOCATION_PORT, packet);    }
+
+    public void setAltitude(double altitude) {
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        locationBuilder.setAltitude(altitude);
+        builder.setGPS(locationBuilder);
+        packet = builder.build();
+
+        new TCPClient(LOCATION_PORT, packet);
     }
 }

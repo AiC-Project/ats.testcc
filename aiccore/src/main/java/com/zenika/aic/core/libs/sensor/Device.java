@@ -10,28 +10,18 @@ import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
-import android.support.test.uiautomator.UiWatcher;
 import android.test.InstrumentationTestCase;
-import android.widget.Button;
 import android.widget.TextView;
 
 /**
- * Created by thomas on 09/06/15.
+ * Created by pierre on 09/12/15.
  */
-public class Device extends InstrumentationTestCase implements DeviceInterface  {
+public class Device extends InstrumentationTestCase {
+
     private static final String PREFIX = "aicd.";
-
     private static final String GET_PROP = "getprop ";
-
     private static final String BATTERY = PREFIX + "battery.";
-    private static final String ACCELEROMETER = PREFIX + "accelerometer.";
-    private static final String GPS = PREFIX + "gps.";
-    private static final String CAMERA = PREFIX + "camera.";
-
     public static final String GET_PROP_BATTERY = GET_PROP + BATTERY;
-    public static final String GET_PROP_ACCELEROMETER = GET_PROP + BATTERY;
-    public static final String GET_PROP_GPS = GET_PROP + BATTERY;
-    public static final String GET_PROP_CAMERA = GET_PROP + BATTERY;
 
     protected long startTime;
     public UiDevice device;
@@ -42,8 +32,11 @@ public class Device extends InstrumentationTestCase implements DeviceInterface  
 
     private static Device instance = null;
 
+    /**
+     * INITCORE
+     */
     private Device() {
-        //Empty for the moment
+
     }
 
     public Device(String appName, String packageName, Instrumentation newInstru) {
@@ -67,22 +60,62 @@ public class Device extends InstrumentationTestCase implements DeviceInterface  
         return Device.instance;
     }
 
-    @Override
-    public GpsInterface gps() {
-        return Gps.getInstance();
+    public void waitForUpdate() {
+        device.waitForWindowUpdate("", 10000);
     }
 
-    @Override
-    public AccelerometerInterface accelerometer() {
-        return Accelerometer.getInstance();
+    public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
+        device = UiDevice.getInstance(instru);
+        device.pressHome();
+        device.waitForWindowUpdate("", 2000);
+
+        UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
+        allAppsButton.click();
+        device.waitForWindowUpdate("", 2000);
+
+        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
+        appViews.setAsHorizontalList();
+
+        UiObject settingsApp = appViews.getChildByText(new UiSelector().className(TextView.class.getName()), appName);
+        settingsApp.clickAndWaitForNewWindow();
+
+        assertTrue("Unable to detect Sensor app", settingsApp != null);
     }
 
-    @Override
-    public BatteryInterface battery() {
-        return Battery.getInstance();
+    /**
+     * SET LOCATION
+     * @param latitude
+     * @param longitude
+     * @param altitude
+     */
+    public void setLocation(double latitude, double longitude, double altitude) {
+        new Gps().getInstance().setPosition(latitude, longitude, altitude);
     }
 
-    public void setValues(float[] values, int sensor) {
+    /**
+     * SET BATTERY
+     * @param level
+     * @param levelMax
+     * @param status
+     */
+    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType status) {
+        new Battery().getInstance().setLevel(level,levelMax, status);
+    }
+
+    public void setBatteryLevel(long level, long levelMax) {
+        new Battery().getInstance().setLevel(level, levelMax);
+    }
+
+    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType status, int ACStatus) {
+        new Battery().getInstance().setLevel(level, levelMax, status, ACStatus);
+    }
+
+    /**
+     * SET SENSORS VALUES
+     * @param values
+     * @param sensor
+     */
+    public void setValuesForSensor(float[] values, int sensor) {
         switch(sensor) {
             case Sensor.TYPE_ACCELEROMETER:
                 new Accelerometer().getInstance().setValue(values[0],values[1],values[2]);
@@ -119,72 +152,5 @@ public class Device extends InstrumentationTestCase implements DeviceInterface  
                 new RotVectorSensor().getInstance().setValue((int)values[0], data);
                 break;
         }
-    }
-
-    public UiDevice getDevice() {
-        return device;
-    }
-
-    public boolean setLevel(int oldL, int newL) throws UiObjectNotFoundException {
-        UiWatcher okBatteryDialogWatcher = new UiWatcher() {
-            @Override
-            public boolean checkForCondition() {
-                UiObject2 okCancelDialog = device.findObject(By.textContains("Connect charger"));
-                if(okCancelDialog != null){
-                    UiObject2 okButton = device.findObject(By.clazz(Button.class.getName()).text("OK"));
-                    okButton.click();
-                    return device.waitForWindowUpdate("",5000);
-                }
-                return false;
-            }
-        };
-
-        device.registerWatcher("Battery dialog watcher", okBatteryDialogWatcher);
-        device.runWatchers();
-
-        device.waitForWindowUpdate("aic.zenika.com.sensor", 2000);
-
-        com.zenika.aic.core.libs.sensor.Device.getInstance().battery().setLevel(newL);
-
-        device.waitForWindowUpdate("aic.zenika.com.sensor", 10000);
-
-        UiObject2 batteryLevel = device.findObject(By.res("aic.zenika.com.sensor", "battery_level"));
-
-        return batteryLevel.getText().contains(newL+"");
-    }
-
-    public void waitForUpdate() {
-        device.waitForWindowUpdate("", 10000);
-    }
-
-
-    public void selectSensor(String sensor) throws UiObjectNotFoundException, RemoteException {
-        UiObject2 navigationDrawerButton = device.findObject(By.text("Sensor"));
-        assertTrue("Navigation drawer button not found", navigationDrawerButton != null);
-        navigationDrawerButton.click();
-
-        device.waitForWindowUpdate("", 1000);
-
-        UiObject2 item = device.findObject(By.text(sensor));
-        assertTrue(sensor + " item not found", navigationDrawerButton != null);
-        item.click();
-    }
-
-    public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
-        device = UiDevice.getInstance(instru);
-        device.pressHome();
-        device.waitForWindowUpdate("", 2000);
-
-        UiObject2 allAppsButton = device.findObject(By.desc("Apps"));
-        allAppsButton.click();
-        device.waitForWindowUpdate("", 2000);
-
-        UiScrollable appViews = new UiScrollable(new UiSelector().scrollable(true));
-        appViews.setAsHorizontalList();
-
-        UiObject settingsApp = appViews.getChildByText(new UiSelector().className(TextView.class.getName()), appName);
-        settingsApp.clickAndWaitForNewWindow();
-
-        assertTrue("Unable to detect Sensor app", settingsApp != null);
     }
 }

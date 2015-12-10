@@ -3,7 +3,7 @@ package com.zenika.aic.core.libs.sensor;
 /**
  * Created by thomas on 30/04/15.
  */
-public final class Camera implements CameraInterface {
+public final class Camera {
     private static Camera instance = null;
 
     private Camera() {
