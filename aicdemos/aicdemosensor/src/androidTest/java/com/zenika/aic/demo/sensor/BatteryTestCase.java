@@ -1,15 +1,15 @@
 package com.zenika.aic.demo.sensor;
 
 import android.app.Instrumentation;
+import android.hardware.Sensor;
 import android.os.RemoteException;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.test.InstrumentationTestCase;
-import com.zenika.aic.core.libs.device.Devices;
-import com.zenika.aic.core.libs.sensor.Photometer;
+import com.zenika.aic.core.libs.sensor.Device;
 
 public class BatteryTestCase extends InstrumentationTestCase {
 
-	private Devices device;
+	private Device device;
 	private String appName;
 	private String packageName;
 
@@ -21,19 +21,18 @@ public class BatteryTestCase extends InstrumentationTestCase {
     @Override
     protected void setUp() {
         Instrumentation instru = getInstrumentation();
-        device = new Devices(appName, packageName, instru);
+        device = new Device(appName, packageName, instru);
     }
 
     public void testUS1() throws UiObjectNotFoundException, RemoteException {
         try {
-            device.selectSensor("Photometer");
+            device.selectSensor("Barometer");
         } catch (UiObjectNotFoundException e) {
             e.printStackTrace();
         } catch (RemoteException e) {
             e.printStackTrace();
         }
-        device.deviceSensor = new Photometer().getInstance();
-        device.deviceSensor.setValue(10f);
+		device.setValues(new float[]{666f},Sensor.TYPE_PRESSURE);
         device.waitForUpdate();
     }
 
