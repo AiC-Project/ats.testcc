@@ -61,4 +61,16 @@ public class Gps {
 
         new TCPClient(LOCATION_PORT, packet);
     }
+
+    public void setGPSActivation(boolean isActive) {
+        SensorsPacket.sensors_packet packet;
+        SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
+        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        if(isActive)
+            locationBuilder.setStatus(SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.ENABLED);
+        else
+            locationBuilder.setStatus(SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.DISABLED);
+        builder.setGPS(locationBuilder);
+        packet = builder.build();
+    }
 }

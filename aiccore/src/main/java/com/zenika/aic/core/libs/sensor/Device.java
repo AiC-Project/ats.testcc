@@ -79,7 +79,7 @@ public class Device extends InstrumentationTestCase {
         UiObject settingsApp = appViews.getChildByText(new UiSelector().className(TextView.class.getName()), appName);
         settingsApp.clickAndWaitForNewWindow();
 
-        assertTrue("Unable to detect Sensor app", settingsApp != null);
+        assertTrue("Unable to detect your app", settingsApp != null);
     }
 
     /**
@@ -90,6 +90,10 @@ public class Device extends InstrumentationTestCase {
      */
     public void setLocation(double latitude, double longitude, double altitude) {
         new Gps().getInstance().setPosition(latitude, longitude, altitude);
+    }
+
+    public void setGPSActivation(boolean isActive) {
+        new Gps().getInstance().setGPSActivation(isActive);
     }
 
     /**

@@ -7,6 +7,7 @@ import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.test.InstrumentationTestCase;
+
 import com.zenika.aic.core.libs.sensor.Device;
 import com.zenika.aic.core.libs.sensor.SensorsPacket;
 
@@ -27,10 +28,10 @@ public class BatteryTestCase extends InstrumentationTestCase {
         device = new Device(appName, packageName, instru);
     }
 
-    public void testUS1() throws UiObjectNotFoundException, RemoteException {
+    public void testUS1() {
 		device.setValuesForSensor(new float[]{666f},Sensor.TYPE_LIGHT);
-        device.setBatteryLevel(420000000, 500000000, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.FULL, 1);
-		device.setLocation(42, 24, 8450);
+        device.setBatteryLevel(4, 100, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.FULL, 0);
+		device.setLocation(48.879119, 2.328443, 8848);
 		device.waitForUpdate();
     }
 
