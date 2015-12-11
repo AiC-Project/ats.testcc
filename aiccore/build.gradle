@@ -1,5 +1,15 @@
 apply plugin: 'com.android.library'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'org.aspectj:aspectjtools:1.8.1'
+    }
+}
+
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.0"
@@ -22,11 +32,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    defaultConfig {
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+}
+
+repositories {
+    maven {
+        url 'http://repo.spring.io/milestone'
+    }
+    mavenCentral()
 }
 
 dependencies {
     //compile 'com.android.support:appcompat-v7:22.0.0'
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'org.aspectj:aspectjrt:1.8.1'
     compile 'com.android.tools.ddms:ddmlib:22.0'
     compile('org.simpleframework:simple-xml:2.7.1') {
         exclude module: 'stax'
@@ -45,4 +66,8 @@ dependencies {
     androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
     compile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.1'
     compile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    compile 'com.android.support:support-annotations:22.2.0'
+    androidTestCompile 'com.android.support.test:runner:0.4.1'
+    compile 'org.springframework.android:spring-android-rest-template:2.0.0.M3'
+
 }

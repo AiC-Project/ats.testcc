@@ -1,8 +1,9 @@
 package com.zenika.aic.demo.sensor;
 
-import android.app.Instrumentation;
 import android.hardware.Sensor;
 import android.os.RemoteException;
+import android.support.test.InstrumentationRegistry;
+import android.support.test.runner.AndroidJUnit4;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
@@ -11,28 +12,37 @@ import android.test.InstrumentationTestCase;
 import com.zenika.aic.core.libs.sensor.Device;
 import com.zenika.aic.core.libs.sensor.SensorsPacket;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+
+@RunWith(AndroidJUnit4.class)
+//@ContextConfiguration
 public class BatteryTestCase extends InstrumentationTestCase {
 
 	private Device device;
-	private String appName;
-	private String packageName;
+	private String appName = "Sensor";
+	private String packageName = "aic.zenika.com.sensor";
 
-    public BatteryTestCase() throws RemoteException, UiObjectNotFoundException {
-        this.appName = "Sensor";
-        this.packageName = "aic.zenika.com.sensor";
+    @Before
+    public void init() {
+        injectInstrumentation(InstrumentationRegistry.getInstrumentation());
+        device = new Device(appName, packageName, InstrumentationRegistry.getInstrumentation());
     }
 
-    @Override
-    protected void setUp() {
-        Instrumentation instru = getInstrumentation();
-        device = new Device(appName, packageName, instru);
+    @Test
+    public void batteryTest() {
+        device.battery.setLevel(99, 100, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.FULL, 1);
     }
 
-    public void testUS1() {
-		device.setValuesForSensor(new float[]{666f},Sensor.TYPE_LIGHT);
-        device.setBatteryLevel(4, 100, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.FULL, 0);
-		device.setLocation(48.879119, 2.328443, 8848);
-		device.waitForUpdate();
+    @Test
+    public void gpsTest() {
+        device.gps.setPosition(42.42, 42.42, 42);
+    }
+
+    @Test
+    public void lightTest() {
+        device.setValuesForSensor(new float[]{42f},Sensor.TYPE_LIGHT);
     }
 
     public void selectSensor(String sensor) throws UiObjectNotFoundException, RemoteException {

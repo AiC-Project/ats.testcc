@@ -26,6 +26,8 @@ public class Device extends InstrumentationTestCase {
     protected long startTime;
     public UiDevice device;
     private Instrumentation instru;
+    public Gps gps;
+    public Battery battery;
 
     String appName;
     String packageName;
@@ -46,6 +48,8 @@ public class Device extends InstrumentationTestCase {
         try {
             startTime = System.currentTimeMillis();
             instru = newInstru;
+            gps = new Gps().getInstance();
+            battery = new Battery().getInstance();
             this.runApp(appName, packageName);
         } catch (UiObjectNotFoundException e) {
             e.printStackTrace();
