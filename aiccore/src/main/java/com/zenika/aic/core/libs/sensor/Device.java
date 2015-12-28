@@ -24,10 +24,10 @@ public class Device extends InstrumentationTestCase {
     public static final String GET_PROP_BATTERY = GET_PROP + BATTERY;
 
     protected long startTime;
-    public UiDevice device;
+    private UiDevice device;
     private Instrumentation instru;
-    public Gps gps;
-    public Battery battery;
+    private Gps gps;
+    private Battery battery;
 
     String appName;
     String packageName;
@@ -84,6 +84,22 @@ public class Device extends InstrumentationTestCase {
         settingsApp.clickAndWaitForNewWindow();
 
         assertTrue("Unable to detect your app", settingsApp != null);
+    }
+
+    public Device getDeviceInstance() {
+        return this.getInstance();
+    }
+
+    public UiDevice getUiDevice() {
+        return device;
+    }
+
+    public Battery getBatteryInstance() {
+        return battery.getInstance();
+    }
+
+    public Gps getGPSInstance() {
+        return Gps.getInstance();
     }
 
     /**
