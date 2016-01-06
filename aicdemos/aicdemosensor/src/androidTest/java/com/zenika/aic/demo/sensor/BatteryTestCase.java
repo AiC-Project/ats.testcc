@@ -17,8 +17,8 @@ import org.junit.runner.RunWith;
 public class BatteryTestCase extends InstrumentationTestCase {
 
 	private Device device;
-	private String appName = "Sensor";
-	private String packageName = "aic.zenika.com.sensor";
+	String appName = "Sensor";
+	String packageName = "aic.zenika.com.sensor";
 
 
     @Before

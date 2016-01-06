@@ -1,0 +1,15 @@
+grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
+
+generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
+ 
+Model: 
+    (includes+=Includes)*(tests+=Test)*; 
+ 
+Includes: 
+    '%include''<'importURI=INCLUDE'>;'; 
+ 
+Test: 
+    'Sensor' name=ID ':' 
+    'Value'':'value=INT ';'; 
+ 
+terminal INCLUDE: ID('.air'); 

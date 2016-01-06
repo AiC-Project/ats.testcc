@@ -1,0 +1,12 @@
+#!/bin/bash
+
+echo "Launching in process....."
+echo "Import tests from DSL...."
+cp $HOME/runtime-EclipseApplication/AiCtest/src-gen/Testing.java ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
+echo "Import finished.........."
+echo "Launch adb command......."
+gradle generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest
+
+cd aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
+ls
+adb shell am instrument -w aic.zenika.com.sensor.test/android.support.test.runner.AndroidJUnitRunner

@@ -1,0 +1,19 @@
+grammar org.xtext.aic.dsl.AiC_DSL with org.eclipse.xtext.common.Terminals
+
+generate aiC_DSL "http://www.xtext.org/aic/dsl/AiC_DSL"
+
+Model:
+	sensors+=Sensor*
+	clicks+=Click*;
+	
+Sensor:
+	'Set' sensorName=ID 'at' value=INT;
+	
+Click:
+	'Click on' buttonName=ID 'button';
+
+Stop:
+	'Kill application';
+
+Run:
+	'Run' appName=ID;
