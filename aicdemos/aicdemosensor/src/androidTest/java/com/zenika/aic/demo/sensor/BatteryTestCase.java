@@ -4,10 +4,8 @@ import android.hardware.Sensor;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.InstrumentationTestCase;
-import android.util.Log;
 
 import com.zenika.aic.core.libs.sensor.Device;
-import com.zenika.aic.core.libs.sensor.SensorsPacket;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,20 +15,13 @@ import org.junit.runner.RunWith;
 public class BatteryTestCase extends InstrumentationTestCase {
 
 	private Device device;
-	String appName = "Sensor";
-	String packageName = "aic.zenika.com.sensor";
+	private String appName = "Sensor";
+	private String packageName = "aic.zenika.com.sensor";
 
 
     @Before
     public void init() {
         device = new Device(appName, packageName, InstrumentationRegistry.getInstrumentation());
-    }
-
-
-    @Test
-    public void batteryTest() {
-        Log.v("coucou", "batteryTest");
-        device.getBatteryInstance().setLevel(6, 100, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.FULL, 1);
     }
 
     @Test

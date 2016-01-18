@@ -40,13 +40,13 @@ public class SetUpAspect extends Activity {
         Object target = joinPoint.getTarget();
         Log.v("coucou","intoAspect");
         if(target instanceof Device) {
-            Device device = ((Device) target).getDeviceInstance();
+            //Device device = ((Device) target).getDeviceInstance();
             PackageManager packageManager= getApplicationContext().getPackageManager();
             String packageName = getApplicationContext().getPackageName();
             String appName = (String) packageManager.getApplicationLabel(
                     packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA));
             Instrumentation instrument = InstrumentationRegistry.getInstrumentation();
-            device = new Device(appName, packageName, instrument);
+            //device = new Device(appName, packageName, instrument);
             joinPoint.proceed();
         }
     }
