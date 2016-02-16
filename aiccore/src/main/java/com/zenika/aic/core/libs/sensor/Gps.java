@@ -21,11 +21,11 @@ public class Gps {
 
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        SensorsPacket.sensors_packet.GPSPayload.Builder locationBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
         locationBuilder.setLatitude(latitude);
         locationBuilder.setLongitude(longitude);
         locationBuilder.setAltitude(altitude);
-        builder.setGPS(locationBuilder);
+        builder.setGps(locationBuilder);
         packet = builder.build();
 
         new TCPClient(LOCATION_PORT, packet);
@@ -34,9 +34,9 @@ public class Gps {
     public void setLatitude(double latitude) {
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        SensorsPacket.sensors_packet.GPSPayload.Builder locationBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
         locationBuilder.setLatitude(latitude);
-        builder.setGPS(locationBuilder);
+        builder.setGps(locationBuilder);
         packet = builder.build();
 
         new TCPClient(LOCATION_PORT, packet);    }
@@ -44,9 +44,9 @@ public class Gps {
     public void setLongitude(double longitude) {
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        SensorsPacket.sensors_packet.GPSPayload.Builder locationBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
         locationBuilder.setLongitude(longitude);
-        builder.setGPS(locationBuilder);
+        builder.setGps(locationBuilder);
         packet = builder.build();
 
         new TCPClient(LOCATION_PORT, packet);    }
@@ -54,9 +54,9 @@ public class Gps {
     public void setAltitude(double altitude) {
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        SensorsPacket.sensors_packet.GPSPayload.Builder locationBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
         locationBuilder.setAltitude(altitude);
-        builder.setGPS(locationBuilder);
+        builder.setGps(locationBuilder);
         packet = builder.build();
 
         new TCPClient(LOCATION_PORT, packet);
@@ -65,12 +65,12 @@ public class Gps {
     public void setGPSActivation(boolean isActive) {
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.LocationPayload.Builder locationBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
+        SensorsPacket.sensors_packet.GPSPayload.Builder locationBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
         if(isActive)
-            locationBuilder.setStatus(SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.ENABLED);
+            locationBuilder.setStatus(SensorsPacket.sensors_packet.GPSPayload.GPSStatusType.ENABLED);
         else
-            locationBuilder.setStatus(SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.DISABLED);
-        builder.setGPS(locationBuilder);
+            locationBuilder.setStatus(SensorsPacket.sensors_packet.GPSPayload.GPSStatusType.DISABLED);
+        builder.setGps(locationBuilder);
         packet = builder.build();
     }
 }

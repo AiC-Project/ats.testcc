@@ -22,7 +22,7 @@ public class Barometer{
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
         SensorsPacket.sensors_packet.SensorPressurePayload.Builder baroBuilder = SensorsPacket.sensors_packet.SensorPressurePayload.newBuilder();
         baroBuilder.setPressure(pressure);
-        builder.setBarometer(baroBuilder);
+        builder.setSensorPressure(baroBuilder);
         packet = builder.build();
 
         new TCPClient(BAROMETER_PORT, packet);

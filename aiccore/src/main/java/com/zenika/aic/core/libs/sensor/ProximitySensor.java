@@ -22,7 +22,7 @@ public class ProximitySensor {
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
         SensorsPacket.sensors_packet.SensorProximityPayload.Builder proximitySensorBuilder = SensorsPacket.sensors_packet.SensorProximityPayload.newBuilder();
         proximitySensorBuilder.setDistance(proximity);
-        builder.setProximity(proximitySensorBuilder);
+        builder.setSensorProximity(proximitySensorBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

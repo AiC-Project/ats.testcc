@@ -22,7 +22,7 @@ public class Thermometer {
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
         SensorsPacket.sensors_packet.SensorTemperaturePayload.Builder thermometerBuilder = SensorsPacket.sensors_packet.SensorTemperaturePayload.newBuilder();
         thermometerBuilder.setTemperature(temp);
-        builder.setThermometer(thermometerBuilder);
+        builder.setSensorTemperature(thermometerBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

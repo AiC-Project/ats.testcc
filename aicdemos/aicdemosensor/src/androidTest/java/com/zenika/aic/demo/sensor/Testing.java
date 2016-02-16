@@ -18,21 +18,20 @@ public class Testing extends InstrumentationTestCase {
 
 	private Device device;
 	private String appName = "Sensor";
-	private String packageName = "aic.zenika.com.sensor";
 
 
     @Before
     public void init() {
-        device = new Device(appName, packageName, InstrumentationRegistry.getInstrumentation());
+        device = new Device(appName, InstrumentationRegistry.getInstrumentation());
 	}
 
 	@Test
-    public void test() {
+	public void testToto() {
+		device.takeScreenshot();
+	}
 
-		device.setValuesForSensor(new float[]{102f},Sensor.TYPE_LIGHT);
-
-		device.setValuesForSensor(new float[]{18f},Sensor.TYPE_PRESSURE);
-
-}
-
+	@Test
+	public void superTest() {
+		device.getBatteryInstance().setLevel(5, 100);
+	}
 }

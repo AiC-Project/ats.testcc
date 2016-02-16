@@ -1,8 +1,11 @@
 package com.zenika.aic.demo.sensor;
-
 import android.hardware.Sensor;
+import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.test.uiautomator.By;
+import android.support.test.uiautomator.UiObject2;
+import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.test.InstrumentationTestCase;
 
 import com.zenika.aic.core.libs.sensor.Device;
@@ -15,26 +18,20 @@ import org.junit.runner.RunWith;
 public class BatteryTestCase extends InstrumentationTestCase {
 
 	private Device device;
-	private String appName = "Sensor";
-	private String packageName = "aic.zenika.com.sensor";
+	String appName = "Sensor";
 
 
     @Before
     public void init() {
-        device = new Device(appName, packageName, InstrumentationRegistry.getInstrumentation());
+        device = new Device(appName, InstrumentationRegistry.getInstrumentation());
     }
 
     @Test
     public void gpsTest() {
-        device.getGPSInstance().setPosition(11.42, 11.42, 8848);
+        device.getBatteryInstance().setLevel(5, 100);
+        device.getGPSInstance().setPosition(42, 42, 500);
     }
 
-    @Test
-    public void lightTest() {
-        device.setValuesForSensor(new float[]{99f},Sensor.TYPE_LIGHT);
-    }
-
-    /*
     public void selectSensor(String sensor) throws UiObjectNotFoundException, RemoteException {
         UiObject2 navigationDrawerButton = device.getUiDevice().findObject(By.text("Sensor"));
         assertTrue("Navigation drawer button not found", navigationDrawerButton != null);
@@ -46,5 +43,4 @@ public class BatteryTestCase extends InstrumentationTestCase {
         assertTrue(sensor + " item not found", navigationDrawerButton != null);
         item.click();
     }
-    */
 }

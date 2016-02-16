@@ -2,6 +2,9 @@ package com.zenika.aic.core.libs.sensor;
 
 import android.app.Instrumentation;
 import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.RemoteException;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
@@ -13,44 +16,30 @@ import android.support.test.uiautomator.UiSelector;
 import android.test.InstrumentationTestCase;
 import android.widget.TextView;
 
+import com.zenika.aic.core.libs.network.ByteUtils;
+
+
 /**
  * Created by pierre on 09/12/15.
  */
 public class Device extends InstrumentationTestCase {
 
-    private static final String PREFIX = "aicd.";
-    private static final String GET_PROP = "getprop ";
-    private static final String BATTERY = PREFIX + "battery.";
-    public static final String GET_PROP_BATTERY = GET_PROP + BATTERY;
-
-    protected long startTime;
-    public UiDevice device;
+    private UiDevice device;
     private Instrumentation instru;
-    public Gps gps;
-    public Battery battery;
+    private Gps gps;
+    private Battery battery;
 
     String appName;
-    String packageName;
 
-    private static Device instance = null;
 
-    /**
-     * INITCORE
-     */
-    private Device() {
-
-    }
-
-    public Device(String appName, String packageName, Instrumentation newInstru) {
+    public Device(String appName, Instrumentation newInstru) {
         this.appName = appName;
-        this.packageName = packageName;
 
         try {
-            startTime = System.currentTimeMillis();
             instru = newInstru;
             gps = new Gps().getInstance();
             battery = new Battery().getInstance();
-            this.runApp(appName, packageName);
+            this.runApp(appName);
         } catch (UiObjectNotFoundException e) {
             e.printStackTrace();
         } catch (RemoteException e) {
@@ -58,17 +47,11 @@ public class Device extends InstrumentationTestCase {
         }
     }
 
-    public static Device getInstance(String appName, String packageName, Instrumentation newInstru) {
-        if(Device.instance == null)
-            Device.instance = new Device(appName, packageName, newInstru);
-        return Device.instance;
-    }
-
     public void waitForUpdate() {
         device.waitForWindowUpdate("", 10000);
     }
 
-    public void runApp(String appName, String packageName) throws UiObjectNotFoundException, RemoteException {
+    public void runApp(String appName) throws UiObjectNotFoundException, RemoteException {
         device = UiDevice.getInstance(instru);
         device.pressHome();
         device.waitForWindowUpdate("", 2000);
@@ -86,10 +69,6 @@ public class Device extends InstrumentationTestCase {
         assertTrue("Unable to detect your app", settingsApp != null);
     }
 
-    public Device getDeviceInstance(String appName, String packageName, Instrumentation newInstru) {
-        return this.getInstance(appName, packageName, newInstru);
-    }
-
     public UiDevice getUiDevice() {
         return device;
     }
@@ -99,46 +78,43 @@ public class Device extends InstrumentationTestCase {
     }
 
     public Gps getGPSInstance() {
-        return Gps.getInstance();
+        return gps.getInstance();
     }
 
-    /**
-     * SET LOCATION
-     * @param latitude
-     * @param longitude
-     * @param altitude
-     */
     public void setLocation(double latitude, double longitude, double altitude) {
-        new Gps().getInstance().setPosition(latitude, longitude, altitude);
+        gps.getInstance().setPosition(latitude, longitude, altitude);
     }
 
     public void setGPSActivation(boolean isActive) {
-        new Gps().getInstance().setGPSActivation(isActive);
+        gps.getInstance().setGPSActivation(isActive);
     }
 
-    /**
-     * SET BATTERY
-     * @param level
-     * @param levelMax
-     * @param status
-     */
-    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType status) {
-        new Battery().getInstance().setLevel(level,levelMax, status);
+    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType status) {
+        battery.setLevel(level, levelMax, status);
     }
 
     public void setBatteryLevel(long level, long levelMax) {
-        new Battery().getInstance().setLevel(level, levelMax);
+        battery.setLevel(level, levelMax);
     }
 
-    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BattStatusType status, int ACStatus) {
-        new Battery().getInstance().setLevel(level, levelMax, status, ACStatus);
+    public void setBatteryLevel(long level, long levelMax, SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType status, int ACStatus) {
+        battery.setLevel(level, levelMax, status, ACStatus);
     }
 
-    /**
-     * SET SENSORS VALUES
-     * @param values
-     * @param sensor
-     */
+    public void takeScreenshot(){
+        SDLRecord.sendProtoRequestToTakeScreenshot();
+    }
+
+    public void startRecording(){
+        SDLRecord.sendProtoRequestToStartRecording();
+    }
+
+
+    public void stopRecording(){
+        SDLRecord.sendProtoRequestToStopRecording();
+    }
+
+
     public void setValuesForSensor(float[] values, int sensor) {
         switch(sensor) {
             case Sensor.TYPE_ACCELEROMETER:

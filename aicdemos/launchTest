@@ -4,4 +4,6 @@ cp $HOME/AiC/runtime-EclipseXtext/Tests/src-gen/Testing.java ./aicdemosensor/src
 gradle generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest
 
 cd aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
-adb shell am instrument -w aic.zenika.com.sensor.test/android.support.test.runner.AndroidJUnitRunner
+adb shell am instrument -w \
+-e class com.zenika.aic.demo.sensor.Testing \
+aic.zenika.com.sensor.test/android.support.test.runner.AndroidJUnitRunner

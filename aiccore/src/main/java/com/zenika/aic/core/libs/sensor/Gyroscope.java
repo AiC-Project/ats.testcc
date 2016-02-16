@@ -20,11 +20,11 @@ public class Gyroscope {
 
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.SensorGyroPayload.Builder gyroscopeBuilder = SensorsPacket.sensors_packet.SensorGyroPayload.newBuilder();
+        SensorsPacket.sensors_packet.SensorGyroscopePayload.Builder gyroscopeBuilder = SensorsPacket.sensors_packet.SensorGyroscopePayload.newBuilder();
         gyroscopeBuilder.setAzimuth(azimuth);
         gyroscopeBuilder.setPitch(pitch);
         gyroscopeBuilder.setRoll(roll);
-        builder.setGyroscope(gyroscopeBuilder);
+        builder.setSensorGyroscope(gyroscopeBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

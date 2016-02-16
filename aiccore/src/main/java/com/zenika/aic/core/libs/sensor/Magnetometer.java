@@ -20,11 +20,11 @@ public class Magnetometer {
 
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.SensorMagnetoPayload.Builder magnetometerBuilder = SensorsPacket.sensors_packet.SensorMagnetoPayload.newBuilder();
+        SensorsPacket.sensors_packet.SensorMagnetometerPayload.Builder magnetometerBuilder = SensorsPacket.sensors_packet.SensorMagnetometerPayload.newBuilder();
         magnetometerBuilder.setX(x);
         magnetometerBuilder.setY(y);
         magnetometerBuilder.setZ(z);
-        builder.setMagneto(magnetometerBuilder);
+        builder.setSensorMagnetometer(magnetometerBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

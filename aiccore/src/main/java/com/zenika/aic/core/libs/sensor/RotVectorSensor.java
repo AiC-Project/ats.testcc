@@ -25,7 +25,7 @@ public class RotVectorSensor {
         rotVectorSensorBuilder.setData(1,data[1]);
         rotVectorSensorBuilder.setData(2,data[2]);
         rotVectorSensorBuilder.setData(3,data[3]);
-        builder.setRotvector(rotVectorSensorBuilder);
+        builder.setSensorRotVector(rotVectorSensorBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./launchTest | grep -v ':aicdemos:' | grep -v ':aiccore:'

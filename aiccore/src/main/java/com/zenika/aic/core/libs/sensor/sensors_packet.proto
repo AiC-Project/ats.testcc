@@ -1,56 +1,59 @@
 message sensors_packet {
 
-    optional SensorAcceleroPayload              accelero     =  1 ;
-    optional SensorMagnetoPayload               magneto      =  2 ;
-    optional SensorOrientationPayload           orientation  =  3 ;
-    optional SensorGyroPayload                  gyroscope    =  4 ;
-    optional SensorGravityPayload               gravity      =  5 ;
-    optional SensorLinearAccPayload             linear_acc   =  6 ;
-    optional SensorRotVectorPayload             rotvector    =  7 ;
-    optional SensorTemperaturePayload           thermometer  =  8 ;
-    optional SensorProximityPayload             proximity    =  9 ;
-    optional SensorLightPayload                 luxmeter     = 10 ;
-    optional SensorPressurePayload              barometer    = 11 ;
-    optional SensorRelativeHumidityPayload      hygrometer   = 12 ;
+    //on the same port
+    optional SensorAccelerometerPayload     sensor_accelerometer     =  1;
+    optional SensorMagnetometerPayload      sensor_magnetometer      =  2;
+    optional SensorOrientationPayload       sensor_orientation       =  3;
+    optional SensorGyroscopePayload         sensor_gyroscope         =  4;
+    optional SensorGravityPayload           sensor_gravity           =  5;
+    optional SensorLinearAccPayload         sensor_linear_acc        =  6;
+    optional SensorRotVectorPayload         sensor_rot_vector        =  7;
+    optional SensorTemperaturePayload       sensor_temperature       =  8; // XXX ambient_temperature vs device_temperature
+    optional SensorProximityPayload         sensor_proximity         =  9;
+    optional SensorLightPayload             sensor_light             = 10;
+    optional SensorPressurePayload          sensor_pressure          = 11;
+    optional SensorRelativeHumidityPayload  sensor_relative_humidity = 12;
 
-    optional BatteryPayload                     Battery      = 100;
+    // on another port
+    optional BatteryPayload                 battery = 100;
 
-    optional LocationPayload                    GPS          = 200;
+   // on another port
+    optional GPSPayload                     gps = 200;
 
-    message SensorAcceleroPayload {
-        optional double x=1;
-        optional double y=2;
-        optional double z=3;
+    message SensorAccelerometerPayload {
+        optional double x = 1;
+        optional double y = 2;
+        optional double z = 3;
     }
 
-    message SensorMagnetoPayload {
-        optional double x=1;
-        optional double y=2;
-        optional double z=3;
+    message SensorMagnetometerPayload {
+        optional double x = 1;
+        optional double y = 2;
+        optional double z = 3;
     }
 
     message SensorOrientationPayload {
-        optional double azimuth=1;
-        optional double pitch=2;
-        optional double roll=3;
+        optional double azimuth = 1;
+        optional double pitch   = 2;
+        optional double roll    = 3;
     }
 
-    message SensorGyroPayload {
-        optional double azimuth=1;
-        optional double pitch=2;
-        optional double roll=3;
+    message SensorGyroscopePayload {
+        optional double azimuth = 1;
+        optional double pitch   = 2;
+        optional double roll    = 3;
     }
 
     message SensorGravityPayload {
-        optional double x=1;
-        optional double y=2;
-        optional double z=3;
+        optional double x = 1;
+        optional double y = 2;
+        optional double z = 3;
     }
 
     message SensorLinearAccPayload {
-        optional double x=1;
-        optional double y=2;
-        optional double z=3;
+        optional double x = 1;
+        optional double y = 2;
+        optional double z = 3;
     }
 
     message SensorRotVectorPayload {
@@ -80,33 +83,32 @@ message sensors_packet {
 
     message BatteryPayload {
 
-        enum BattStatusType {
-            CHARGING = 0 ;
+        enum BatteryStatusType {
+            CHARGING    = 0 ;
             DISCHARGING = 2 ;
-            NOTCHARGING= 3 ;
-            FULL = 4 ;
-            UNKNOWN= 5 ;
+            NOTCHARGING = 3 ;
+            FULL        = 4 ;
+            UNKNOWN     = 5 ;
         }
 
-        optional uint64 BatteryLevel            = 1;
-        optional uint64 BatteryFull             = 2;
-        optional BattStatusType BatteryStatus   = 3 [default = CHARGING];
-        optional uint32 AC_Online               = 4;
+        optional uint64             battery_level   = 1;
+        optional uint64             battery_full    = 2;
+        optional BatteryStatusType  battery_status  = 3 [default = CHARGING];
+        optional uint32             ac_online       = 4;
     }
 
-
-    message LocationPayload {
+    message GPSPayload {
 
         enum GPSStatusType {
-            DISABLED 	= 0 ;
-            ENABLED 	= 1 ;
+            DISABLED = 0;
+            ENABLED  = 1;
         }
 
-	optional GPSStatusType	status		= 1 [default = ENABLED];
-        optional double		latitude	= 2;
-        optional double 	longitude	= 3;
-        optional double 	altitude	= 4;
-        optional double 	bearing 	= 5;
+        optional GPSStatusType  status    = 1 [default = ENABLED];
+        optional double         latitude  = 2;
+        optional double         longitude = 3;
+        optional double         altitude  = 4;
+        optional double         bearing   = 5;
     }
 
 }

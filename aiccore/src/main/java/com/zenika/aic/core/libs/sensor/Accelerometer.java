@@ -21,11 +21,11 @@ public class Accelerometer{
 
         SensorsPacket.sensors_packet packet;
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
-        SensorsPacket.sensors_packet.SensorAcceleroPayload.Builder acceleroBuilder = SensorsPacket.sensors_packet.SensorAcceleroPayload.newBuilder();
+        SensorsPacket.sensors_packet.SensorAccelerometerPayload.Builder acceleroBuilder = SensorsPacket.sensors_packet.SensorAccelerometerPayload.newBuilder();
         acceleroBuilder.setX(x);
         acceleroBuilder.setY(y);
         acceleroBuilder.setZ(z);
-        builder.setAccelero(acceleroBuilder);
+        builder.setSensorAccelerometer(acceleroBuilder);
         packet = builder.build();
 
         new TCPClient(ACCELEROMETER_PORT, packet);

@@ -24,7 +24,7 @@ public class Gravitometer {
         gravitometerBuilder.setX(x);
         gravitometerBuilder.setY(y);
         gravitometerBuilder.setZ(z);
-        builder.setGravity(gravitometerBuilder);
+        builder.setSensorGravity(gravitometerBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

@@ -22,7 +22,7 @@ public class Photometer {
         SensorsPacket.sensors_packet.Builder builder = SensorsPacket.sensors_packet.newBuilder();
         SensorsPacket.sensors_packet.SensorLightPayload.Builder photometerBuilder = SensorsPacket.sensors_packet.SensorLightPayload.newBuilder();
         photometerBuilder.setLight(light);
-        builder.setLuxmeter(photometerBuilder);
+        builder.setSensorLight(photometerBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

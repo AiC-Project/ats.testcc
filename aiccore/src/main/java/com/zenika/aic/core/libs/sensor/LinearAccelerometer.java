@@ -24,7 +24,7 @@ public class LinearAccelerometer {
         linearAccBuilder.setX(x);
         linearAccBuilder.setY(y);
         linearAccBuilder.setZ(z);
-        builder.setLinearAcc(linearAccBuilder);
+        builder.setSensorLinearAcc(linearAccBuilder);
         packet = builder.build();
 
         new TCPClient(SENSOR_PORT, packet);

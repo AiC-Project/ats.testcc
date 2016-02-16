@@ -35,31 +35,31 @@ public final class SensorsPacket {
       return SensorsPacket.internal_static_sensors_packet_fieldAccessorTable;
     }
     
-    public static final class SensorAcceleroPayload extends
+    public static final class SensorAccelerometerPayload extends
         com.google.protobuf.GeneratedMessage {
-      // Use SensorAcceleroPayload.newBuilder() to construct.
-      private SensorAcceleroPayload() {
+      // Use SensorAccelerometerPayload.newBuilder() to construct.
+      private SensorAccelerometerPayload() {
         initFields();
       }
-      private SensorAcceleroPayload(boolean noInit) {}
+      private SensorAccelerometerPayload(boolean noInit) {}
       
-      private static final SensorAcceleroPayload defaultInstance;
-      public static SensorAcceleroPayload getDefaultInstance() {
+      private static final SensorAccelerometerPayload defaultInstance;
+      public static SensorAccelerometerPayload getDefaultInstance() {
         return defaultInstance;
       }
       
-      public SensorAcceleroPayload getDefaultInstanceForType() {
+      public SensorAccelerometerPayload getDefaultInstanceForType() {
         return defaultInstance;
       }
       
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SensorsPacket.internal_static_sensors_packet_SensorAcceleroPayload_descriptor;
+        return SensorsPacket.internal_static_sensors_packet_SensorAccelerometerPayload_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SensorsPacket.internal_static_sensors_packet_SensorAcceleroPayload_fieldAccessorTable;
+        return SensorsPacket.internal_static_sensors_packet_SensorAccelerometerPayload_fieldAccessorTable;
       }
       
       // optional double x = 1;
@@ -127,41 +127,41 @@ public final class SensorsPacket {
         return size;
       }
       
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(byte[] data)
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseDelimitedFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         Builder builder = newBuilder();
         if (builder.mergeDelimitedFrom(input)) {
@@ -170,7 +170,7 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseDelimitedFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -181,12 +181,12 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorAcceleroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorAccelerometerPayload parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -196,25 +196,25 @@ public final class SensorsPacket {
       
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorAcceleroPayload prototype) {
+      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorAccelerometerPayload prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
       
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> {
-        private SensorsPacket.sensors_packet.SensorAcceleroPayload result;
+        private SensorsPacket.sensors_packet.SensorAccelerometerPayload result;
         
-        // Construct using SensorsPacket.sensors_packet.SensorAcceleroPayload.newBuilder()
+        // Construct using SensorsPacket.sensors_packet.SensorAccelerometerPayload.newBuilder()
         private Builder() {}
         
         private static Builder create() {
           Builder builder = new Builder();
-          builder.result = new SensorsPacket.sensors_packet.SensorAcceleroPayload();
+          builder.result = new SensorsPacket.sensors_packet.SensorAccelerometerPayload();
           return builder;
         }
         
-        protected SensorsPacket.sensors_packet.SensorAcceleroPayload internalGetResult() {
+        protected SensorsPacket.sensors_packet.SensorAccelerometerPayload internalGetResult() {
           return result;
         }
         
@@ -223,7 +223,7 @@ public final class SensorsPacket {
             throw new IllegalStateException(
               "Cannot call clear() after build().");
           }
-          result = new SensorsPacket.sensors_packet.SensorAcceleroPayload();
+          result = new SensorsPacket.sensors_packet.SensorAccelerometerPayload();
           return this;
         }
         
@@ -233,24 +233,24 @@ public final class SensorsPacket {
         
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SensorsPacket.sensors_packet.SensorAcceleroPayload.getDescriptor();
+          return SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDescriptor();
         }
         
-        public SensorsPacket.sensors_packet.SensorAcceleroPayload getDefaultInstanceForType() {
-          return SensorsPacket.sensors_packet.SensorAcceleroPayload.getDefaultInstance();
+        public SensorsPacket.sensors_packet.SensorAccelerometerPayload getDefaultInstanceForType() {
+          return SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDefaultInstance();
         }
         
         public boolean isInitialized() {
           return result.isInitialized();
         }
-        public SensorsPacket.sensors_packet.SensorAcceleroPayload build() {
+        public SensorsPacket.sensors_packet.SensorAccelerometerPayload build() {
           if (result != null && !isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return buildPartial();
         }
         
-        private SensorsPacket.sensors_packet.SensorAcceleroPayload buildParsed()
+        private SensorsPacket.sensors_packet.SensorAccelerometerPayload buildParsed()
             throws com.google.protobuf.InvalidProtocolBufferException {
           if (!isInitialized()) {
             throw newUninitializedMessageException(
@@ -259,27 +259,27 @@ public final class SensorsPacket {
           return buildPartial();
         }
         
-        public SensorsPacket.sensors_packet.SensorAcceleroPayload buildPartial() {
+        public SensorsPacket.sensors_packet.SensorAccelerometerPayload buildPartial() {
           if (result == null) {
             throw new IllegalStateException(
               "build() has already been called on this Builder.");
           }
-          SensorsPacket.sensors_packet.SensorAcceleroPayload returnMe = result;
+          SensorsPacket.sensors_packet.SensorAccelerometerPayload returnMe = result;
           result = null;
           return returnMe;
         }
         
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof SensorsPacket.sensors_packet.SensorAcceleroPayload) {
-            return mergeFrom((SensorsPacket.sensors_packet.SensorAcceleroPayload)other);
+          if (other instanceof SensorsPacket.sensors_packet.SensorAccelerometerPayload) {
+            return mergeFrom((SensorsPacket.sensors_packet.SensorAccelerometerPayload)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
         
-        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorAcceleroPayload other) {
-          if (other == SensorsPacket.sensors_packet.SensorAcceleroPayload.getDefaultInstance()) return this;
+        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorAccelerometerPayload other) {
+          if (other == SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDefaultInstance()) return this;
           if (other.hasX()) {
             setX(other.getX());
           }
@@ -385,43 +385,43 @@ public final class SensorsPacket {
           return this;
         }
         
-        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorAcceleroPayload)
+        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorAccelerometerPayload)
       }
       
       static {
-        defaultInstance = new SensorAcceleroPayload(true);
+        defaultInstance = new SensorAccelerometerPayload(true);
         SensorsPacket.internalForceInit();
         defaultInstance.initFields();
       }
       
-      // @@protoc_insertion_point(class_scope:sensors_packet.SensorAcceleroPayload)
+      // @@protoc_insertion_point(class_scope:sensors_packet.SensorAccelerometerPayload)
     }
     
-    public static final class SensorMagnetoPayload extends
+    public static final class SensorMagnetometerPayload extends
         com.google.protobuf.GeneratedMessage {
-      // Use SensorMagnetoPayload.newBuilder() to construct.
-      private SensorMagnetoPayload() {
+      // Use SensorMagnetometerPayload.newBuilder() to construct.
+      private SensorMagnetometerPayload() {
         initFields();
       }
-      private SensorMagnetoPayload(boolean noInit) {}
+      private SensorMagnetometerPayload(boolean noInit) {}
       
-      private static final SensorMagnetoPayload defaultInstance;
-      public static SensorMagnetoPayload getDefaultInstance() {
+      private static final SensorMagnetometerPayload defaultInstance;
+      public static SensorMagnetometerPayload getDefaultInstance() {
         return defaultInstance;
       }
       
-      public SensorMagnetoPayload getDefaultInstanceForType() {
+      public SensorMagnetometerPayload getDefaultInstanceForType() {
         return defaultInstance;
       }
       
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SensorsPacket.internal_static_sensors_packet_SensorMagnetoPayload_descriptor;
+        return SensorsPacket.internal_static_sensors_packet_SensorMagnetometerPayload_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SensorsPacket.internal_static_sensors_packet_SensorMagnetoPayload_fieldAccessorTable;
+        return SensorsPacket.internal_static_sensors_packet_SensorMagnetometerPayload_fieldAccessorTable;
       }
       
       // optional double x = 1;
@@ -489,41 +489,41 @@ public final class SensorsPacket {
         return size;
       }
       
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(byte[] data)
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseDelimitedFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         Builder builder = newBuilder();
         if (builder.mergeDelimitedFrom(input)) {
@@ -532,7 +532,7 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseDelimitedFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -543,12 +543,12 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorMagnetoPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorMagnetometerPayload parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -558,25 +558,25 @@ public final class SensorsPacket {
       
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorMagnetoPayload prototype) {
+      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorMagnetometerPayload prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
       
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> {
-        private SensorsPacket.sensors_packet.SensorMagnetoPayload result;
+        private SensorsPacket.sensors_packet.SensorMagnetometerPayload result;
         
-        // Construct using SensorsPacket.sensors_packet.SensorMagnetoPayload.newBuilder()
+        // Construct using SensorsPacket.sensors_packet.SensorMagnetometerPayload.newBuilder()
         private Builder() {}
         
         private static Builder create() {
           Builder builder = new Builder();
-          builder.result = new SensorsPacket.sensors_packet.SensorMagnetoPayload();
+          builder.result = new SensorsPacket.sensors_packet.SensorMagnetometerPayload();
           return builder;
         }
         
-        protected SensorsPacket.sensors_packet.SensorMagnetoPayload internalGetResult() {
+        protected SensorsPacket.sensors_packet.SensorMagnetometerPayload internalGetResult() {
           return result;
         }
         
@@ -585,7 +585,7 @@ public final class SensorsPacket {
             throw new IllegalStateException(
               "Cannot call clear() after build().");
           }
-          result = new SensorsPacket.sensors_packet.SensorMagnetoPayload();
+          result = new SensorsPacket.sensors_packet.SensorMagnetometerPayload();
           return this;
         }
         
@@ -595,24 +595,24 @@ public final class SensorsPacket {
         
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SensorsPacket.sensors_packet.SensorMagnetoPayload.getDescriptor();
+          return SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDescriptor();
         }
         
-        public SensorsPacket.sensors_packet.SensorMagnetoPayload getDefaultInstanceForType() {
-          return SensorsPacket.sensors_packet.SensorMagnetoPayload.getDefaultInstance();
+        public SensorsPacket.sensors_packet.SensorMagnetometerPayload getDefaultInstanceForType() {
+          return SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDefaultInstance();
         }
         
         public boolean isInitialized() {
           return result.isInitialized();
         }
-        public SensorsPacket.sensors_packet.SensorMagnetoPayload build() {
+        public SensorsPacket.sensors_packet.SensorMagnetometerPayload build() {
           if (result != null && !isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return buildPartial();
         }
         
-        private SensorsPacket.sensors_packet.SensorMagnetoPayload buildParsed()
+        private SensorsPacket.sensors_packet.SensorMagnetometerPayload buildParsed()
             throws com.google.protobuf.InvalidProtocolBufferException {
           if (!isInitialized()) {
             throw newUninitializedMessageException(
@@ -621,27 +621,27 @@ public final class SensorsPacket {
           return buildPartial();
         }
         
-        public SensorsPacket.sensors_packet.SensorMagnetoPayload buildPartial() {
+        public SensorsPacket.sensors_packet.SensorMagnetometerPayload buildPartial() {
           if (result == null) {
             throw new IllegalStateException(
               "build() has already been called on this Builder.");
           }
-          SensorsPacket.sensors_packet.SensorMagnetoPayload returnMe = result;
+          SensorsPacket.sensors_packet.SensorMagnetometerPayload returnMe = result;
           result = null;
           return returnMe;
         }
         
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof SensorsPacket.sensors_packet.SensorMagnetoPayload) {
-            return mergeFrom((SensorsPacket.sensors_packet.SensorMagnetoPayload)other);
+          if (other instanceof SensorsPacket.sensors_packet.SensorMagnetometerPayload) {
+            return mergeFrom((SensorsPacket.sensors_packet.SensorMagnetometerPayload)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
         
-        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorMagnetoPayload other) {
-          if (other == SensorsPacket.sensors_packet.SensorMagnetoPayload.getDefaultInstance()) return this;
+        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorMagnetometerPayload other) {
+          if (other == SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDefaultInstance()) return this;
           if (other.hasX()) {
             setX(other.getX());
           }
@@ -747,16 +747,16 @@ public final class SensorsPacket {
           return this;
         }
         
-        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorMagnetoPayload)
+        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorMagnetometerPayload)
       }
       
       static {
-        defaultInstance = new SensorMagnetoPayload(true);
+        defaultInstance = new SensorMagnetometerPayload(true);
         SensorsPacket.internalForceInit();
         defaultInstance.initFields();
       }
       
-      // @@protoc_insertion_point(class_scope:sensors_packet.SensorMagnetoPayload)
+      // @@protoc_insertion_point(class_scope:sensors_packet.SensorMagnetometerPayload)
     }
     
     public static final class SensorOrientationPayload extends
@@ -1121,31 +1121,31 @@ public final class SensorsPacket {
       // @@protoc_insertion_point(class_scope:sensors_packet.SensorOrientationPayload)
     }
     
-    public static final class SensorGyroPayload extends
+    public static final class SensorGyroscopePayload extends
         com.google.protobuf.GeneratedMessage {
-      // Use SensorGyroPayload.newBuilder() to construct.
-      private SensorGyroPayload() {
+      // Use SensorGyroscopePayload.newBuilder() to construct.
+      private SensorGyroscopePayload() {
         initFields();
       }
-      private SensorGyroPayload(boolean noInit) {}
+      private SensorGyroscopePayload(boolean noInit) {}
       
-      private static final SensorGyroPayload defaultInstance;
-      public static SensorGyroPayload getDefaultInstance() {
+      private static final SensorGyroscopePayload defaultInstance;
+      public static SensorGyroscopePayload getDefaultInstance() {
         return defaultInstance;
       }
       
-      public SensorGyroPayload getDefaultInstanceForType() {
+      public SensorGyroscopePayload getDefaultInstanceForType() {
         return defaultInstance;
       }
       
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SensorsPacket.internal_static_sensors_packet_SensorGyroPayload_descriptor;
+        return SensorsPacket.internal_static_sensors_packet_SensorGyroscopePayload_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SensorsPacket.internal_static_sensors_packet_SensorGyroPayload_fieldAccessorTable;
+        return SensorsPacket.internal_static_sensors_packet_SensorGyroscopePayload_fieldAccessorTable;
       }
       
       // optional double azimuth = 1;
@@ -1213,41 +1213,41 @@ public final class SensorsPacket {
         return size;
       }
       
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(byte[] data)
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseDelimitedFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         Builder builder = newBuilder();
         if (builder.mergeDelimitedFrom(input)) {
@@ -1256,7 +1256,7 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseDelimitedFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1267,12 +1267,12 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.SensorGyroPayload parseFrom(
+      public static SensorsPacket.sensors_packet.SensorGyroscopePayload parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -1282,25 +1282,25 @@ public final class SensorsPacket {
       
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorGyroPayload prototype) {
+      public static Builder newBuilder(SensorsPacket.sensors_packet.SensorGyroscopePayload prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
       
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> {
-        private SensorsPacket.sensors_packet.SensorGyroPayload result;
+        private SensorsPacket.sensors_packet.SensorGyroscopePayload result;
         
-        // Construct using SensorsPacket.sensors_packet.SensorGyroPayload.newBuilder()
+        // Construct using SensorsPacket.sensors_packet.SensorGyroscopePayload.newBuilder()
         private Builder() {}
         
         private static Builder create() {
           Builder builder = new Builder();
-          builder.result = new SensorsPacket.sensors_packet.SensorGyroPayload();
+          builder.result = new SensorsPacket.sensors_packet.SensorGyroscopePayload();
           return builder;
         }
         
-        protected SensorsPacket.sensors_packet.SensorGyroPayload internalGetResult() {
+        protected SensorsPacket.sensors_packet.SensorGyroscopePayload internalGetResult() {
           return result;
         }
         
@@ -1309,7 +1309,7 @@ public final class SensorsPacket {
             throw new IllegalStateException(
               "Cannot call clear() after build().");
           }
-          result = new SensorsPacket.sensors_packet.SensorGyroPayload();
+          result = new SensorsPacket.sensors_packet.SensorGyroscopePayload();
           return this;
         }
         
@@ -1319,24 +1319,24 @@ public final class SensorsPacket {
         
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SensorsPacket.sensors_packet.SensorGyroPayload.getDescriptor();
+          return SensorsPacket.sensors_packet.SensorGyroscopePayload.getDescriptor();
         }
         
-        public SensorsPacket.sensors_packet.SensorGyroPayload getDefaultInstanceForType() {
-          return SensorsPacket.sensors_packet.SensorGyroPayload.getDefaultInstance();
+        public SensorsPacket.sensors_packet.SensorGyroscopePayload getDefaultInstanceForType() {
+          return SensorsPacket.sensors_packet.SensorGyroscopePayload.getDefaultInstance();
         }
         
         public boolean isInitialized() {
           return result.isInitialized();
         }
-        public SensorsPacket.sensors_packet.SensorGyroPayload build() {
+        public SensorsPacket.sensors_packet.SensorGyroscopePayload build() {
           if (result != null && !isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return buildPartial();
         }
         
-        private SensorsPacket.sensors_packet.SensorGyroPayload buildParsed()
+        private SensorsPacket.sensors_packet.SensorGyroscopePayload buildParsed()
             throws com.google.protobuf.InvalidProtocolBufferException {
           if (!isInitialized()) {
             throw newUninitializedMessageException(
@@ -1345,27 +1345,27 @@ public final class SensorsPacket {
           return buildPartial();
         }
         
-        public SensorsPacket.sensors_packet.SensorGyroPayload buildPartial() {
+        public SensorsPacket.sensors_packet.SensorGyroscopePayload buildPartial() {
           if (result == null) {
             throw new IllegalStateException(
               "build() has already been called on this Builder.");
           }
-          SensorsPacket.sensors_packet.SensorGyroPayload returnMe = result;
+          SensorsPacket.sensors_packet.SensorGyroscopePayload returnMe = result;
           result = null;
           return returnMe;
         }
         
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof SensorsPacket.sensors_packet.SensorGyroPayload) {
-            return mergeFrom((SensorsPacket.sensors_packet.SensorGyroPayload)other);
+          if (other instanceof SensorsPacket.sensors_packet.SensorGyroscopePayload) {
+            return mergeFrom((SensorsPacket.sensors_packet.SensorGyroscopePayload)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
         
-        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorGyroPayload other) {
-          if (other == SensorsPacket.sensors_packet.SensorGyroPayload.getDefaultInstance()) return this;
+        public Builder mergeFrom(SensorsPacket.sensors_packet.SensorGyroscopePayload other) {
+          if (other == SensorsPacket.sensors_packet.SensorGyroscopePayload.getDefaultInstance()) return this;
           if (other.hasAzimuth()) {
             setAzimuth(other.getAzimuth());
           }
@@ -1471,16 +1471,16 @@ public final class SensorsPacket {
           return this;
         }
         
-        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorGyroPayload)
+        // @@protoc_insertion_point(builder_scope:sensors_packet.SensorGyroscopePayload)
       }
       
       static {
-        defaultInstance = new SensorGyroPayload(true);
+        defaultInstance = new SensorGyroscopePayload(true);
         SensorsPacket.internalForceInit();
         defaultInstance.initFields();
       }
       
-      // @@protoc_insertion_point(class_scope:sensors_packet.SensorGyroPayload)
+      // @@protoc_insertion_point(class_scope:sensors_packet.SensorGyroscopePayload)
     }
     
     public static final class SensorGravityPayload extends
@@ -4026,7 +4026,7 @@ public final class SensorsPacket {
         return SensorsPacket.internal_static_sensors_packet_BatteryPayload_fieldAccessorTable;
       }
       
-      public enum BattStatusType
+      public enum BatteryStatusType
           implements com.google.protobuf.ProtocolMessageEnum {
         CHARGING(0, 0),
         DISCHARGING(1, 2),
@@ -4038,7 +4038,7 @@ public final class SensorsPacket {
         
         public final int getNumber() { return value; }
         
-        public static BattStatusType valueOf(int value) {
+        public static BatteryStatusType valueOf(int value) {
           switch (value) {
             case 0: return CHARGING;
             case 2: return DISCHARGING;
@@ -4049,15 +4049,15 @@ public final class SensorsPacket {
           }
         }
         
-        public static com.google.protobuf.Internal.EnumLiteMap<BattStatusType>
+        public static com.google.protobuf.Internal.EnumLiteMap<BatteryStatusType>
             internalGetValueMap() {
           return internalValueMap;
         }
-        private static com.google.protobuf.Internal.EnumLiteMap<BattStatusType>
+        private static com.google.protobuf.Internal.EnumLiteMap<BatteryStatusType>
             internalValueMap =
-              new com.google.protobuf.Internal.EnumLiteMap<BattStatusType>() {
-                public BattStatusType findValueByNumber(int number) {
-                  return BattStatusType.valueOf(number)
+              new com.google.protobuf.Internal.EnumLiteMap<BatteryStatusType>() {
+                public BatteryStatusType findValueByNumber(int number) {
+                  return BatteryStatusType.valueOf(number)
         ;        }
               };
         
@@ -4074,10 +4074,10 @@ public final class SensorsPacket {
           return SensorsPacket.sensors_packet.BatteryPayload.getDescriptor().getEnumTypes().get(0);
         }
         
-        private static final BattStatusType[] VALUES = {
+        private static final BatteryStatusType[] VALUES = {
           CHARGING, DISCHARGING, NOTCHARGING, FULL, UNKNOWN, 
         };
-        public static BattStatusType valueOf(
+        public static BatteryStatusType valueOf(
             com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
           if (desc.getType() != getDescriptor()) {
             throw new java.lang.IllegalArgumentException(
@@ -4087,7 +4087,7 @@ public final class SensorsPacket {
         }
         private final int index;
         private final int value;
-        private BattStatusType(int index, int value) {
+        private BatteryStatusType(int index, int value) {
           this.index = index;
           this.value = value;
         }
@@ -4096,39 +4096,39 @@ public final class SensorsPacket {
           SensorsPacket.getDescriptor();
         }
         
-        // @@protoc_insertion_point(enum_scope:sensors_packet.BatteryPayload.BattStatusType)
+        // @@protoc_insertion_point(enum_scope:sensors_packet.BatteryPayload.BatteryStatusType)
       }
       
-      // optional uint64 BatteryLevel = 1;
-      public static final int BATTERYLEVEL_FIELD_NUMBER = 1;
+      // optional uint64 battery_level = 1;
+      public static final int BATTERY_LEVEL_FIELD_NUMBER = 1;
       private boolean hasBatteryLevel;
       private long batteryLevel_ = 0L;
       public boolean hasBatteryLevel() { return hasBatteryLevel; }
       public long getBatteryLevel() { return batteryLevel_; }
       
-      // optional uint64 BatteryFull = 2;
-      public static final int BATTERYFULL_FIELD_NUMBER = 2;
+      // optional uint64 battery_full = 2;
+      public static final int BATTERY_FULL_FIELD_NUMBER = 2;
       private boolean hasBatteryFull;
       private long batteryFull_ = 0L;
       public boolean hasBatteryFull() { return hasBatteryFull; }
       public long getBatteryFull() { return batteryFull_; }
       
-      // optional .sensors_packet.BatteryPayload.BattStatusType BatteryStatus = 3 [default = CHARGING];
-      public static final int BATTERYSTATUS_FIELD_NUMBER = 3;
+      // optional .sensors_packet.BatteryPayload.BatteryStatusType battery_status = 3 [default = CHARGING];
+      public static final int BATTERY_STATUS_FIELD_NUMBER = 3;
       private boolean hasBatteryStatus;
-      private SensorsPacket.sensors_packet.BatteryPayload.BattStatusType batteryStatus_;
+      private SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType batteryStatus_;
       public boolean hasBatteryStatus() { return hasBatteryStatus; }
-      public SensorsPacket.sensors_packet.BatteryPayload.BattStatusType getBatteryStatus() { return batteryStatus_; }
+      public SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType getBatteryStatus() { return batteryStatus_; }
       
-      // optional uint32 AC_Online = 4;
+      // optional uint32 ac_online = 4;
       public static final int AC_ONLINE_FIELD_NUMBER = 4;
-      private boolean hasACOnline;
-      private int aCOnline_ = 0;
-      public boolean hasACOnline() { return hasACOnline; }
-      public int getACOnline() { return aCOnline_; }
+      private boolean hasAcOnline;
+      private int acOnline_ = 0;
+      public boolean hasAcOnline() { return hasAcOnline; }
+      public int getAcOnline() { return acOnline_; }
       
       private void initFields() {
-        batteryStatus_ = SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.CHARGING;
+        batteryStatus_ = SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType.CHARGING;
       }
       public final boolean isInitialized() {
         return true;
@@ -4146,8 +4146,8 @@ public final class SensorsPacket {
         if (hasBatteryStatus()) {
           output.writeEnum(3, getBatteryStatus().getNumber());
         }
-        if (hasACOnline()) {
-          output.writeUInt32(4, getACOnline());
+        if (hasAcOnline()) {
+          output.writeUInt32(4, getAcOnline());
         }
         getUnknownFields().writeTo(output);
       }
@@ -4170,9 +4170,9 @@ public final class SensorsPacket {
           size += com.google.protobuf.CodedOutputStream
             .computeEnumSize(3, getBatteryStatus().getNumber());
         }
-        if (hasACOnline()) {
+        if (hasAcOnline()) {
           size += com.google.protobuf.CodedOutputStream
-            .computeUInt32Size(4, getACOnline());
+            .computeUInt32Size(4, getAcOnline());
         }
         size += getUnknownFields().getSerializedSize();
         memoizedSerializedSize = size;
@@ -4341,8 +4341,8 @@ public final class SensorsPacket {
           if (other.hasBatteryStatus()) {
             setBatteryStatus(other.getBatteryStatus());
           }
-          if (other.hasACOnline()) {
-            setACOnline(other.getACOnline());
+          if (other.hasAcOnline()) {
+            setAcOnline(other.getAcOnline());
           }
           this.mergeUnknownFields(other.getUnknownFields());
           return this;
@@ -4379,7 +4379,7 @@ public final class SensorsPacket {
               }
               case 24: {
                 int rawValue = input.readEnum();
-                SensorsPacket.sensors_packet.BatteryPayload.BattStatusType value = SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.valueOf(rawValue);
+                SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType value = SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(3, rawValue);
                 } else {
@@ -4388,7 +4388,7 @@ public final class SensorsPacket {
                 break;
               }
               case 32: {
-                setACOnline(input.readUInt32());
+                setAcOnline(input.readUInt32());
                 break;
               }
             }
@@ -4396,7 +4396,7 @@ public final class SensorsPacket {
         }
         
         
-        // optional uint64 BatteryLevel = 1;
+        // optional uint64 battery_level = 1;
         public boolean hasBatteryLevel() {
           return result.hasBatteryLevel();
         }
@@ -4414,7 +4414,7 @@ public final class SensorsPacket {
           return this;
         }
         
-        // optional uint64 BatteryFull = 2;
+        // optional uint64 battery_full = 2;
         public boolean hasBatteryFull() {
           return result.hasBatteryFull();
         }
@@ -4432,14 +4432,14 @@ public final class SensorsPacket {
           return this;
         }
         
-        // optional .sensors_packet.BatteryPayload.BattStatusType BatteryStatus = 3 [default = CHARGING];
+        // optional .sensors_packet.BatteryPayload.BatteryStatusType battery_status = 3 [default = CHARGING];
         public boolean hasBatteryStatus() {
           return result.hasBatteryStatus();
         }
-        public SensorsPacket.sensors_packet.BatteryPayload.BattStatusType getBatteryStatus() {
+        public SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType getBatteryStatus() {
           return result.getBatteryStatus();
         }
-        public Builder setBatteryStatus(SensorsPacket.sensors_packet.BatteryPayload.BattStatusType value) {
+        public Builder setBatteryStatus(SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -4449,25 +4449,25 @@ public final class SensorsPacket {
         }
         public Builder clearBatteryStatus() {
           result.hasBatteryStatus = false;
-          result.batteryStatus_ = SensorsPacket.sensors_packet.BatteryPayload.BattStatusType.CHARGING;
+          result.batteryStatus_ = SensorsPacket.sensors_packet.BatteryPayload.BatteryStatusType.CHARGING;
           return this;
         }
         
-        // optional uint32 AC_Online = 4;
-        public boolean hasACOnline() {
-          return result.hasACOnline();
+        // optional uint32 ac_online = 4;
+        public boolean hasAcOnline() {
+          return result.hasAcOnline();
         }
-        public int getACOnline() {
-          return result.getACOnline();
+        public int getAcOnline() {
+          return result.getAcOnline();
         }
-        public Builder setACOnline(int value) {
-          result.hasACOnline = true;
-          result.aCOnline_ = value;
+        public Builder setAcOnline(int value) {
+          result.hasAcOnline = true;
+          result.acOnline_ = value;
           return this;
         }
-        public Builder clearACOnline() {
-          result.hasACOnline = false;
-          result.aCOnline_ = 0;
+        public Builder clearAcOnline() {
+          result.hasAcOnline = false;
+          result.acOnline_ = 0;
           return this;
         }
         
@@ -4483,31 +4483,31 @@ public final class SensorsPacket {
       // @@protoc_insertion_point(class_scope:sensors_packet.BatteryPayload)
     }
     
-    public static final class LocationPayload extends
+    public static final class GPSPayload extends
         com.google.protobuf.GeneratedMessage {
-      // Use LocationPayload.newBuilder() to construct.
-      private LocationPayload() {
+      // Use GPSPayload.newBuilder() to construct.
+      private GPSPayload() {
         initFields();
       }
-      private LocationPayload(boolean noInit) {}
+      private GPSPayload(boolean noInit) {}
       
-      private static final LocationPayload defaultInstance;
-      public static LocationPayload getDefaultInstance() {
+      private static final GPSPayload defaultInstance;
+      public static GPSPayload getDefaultInstance() {
         return defaultInstance;
       }
       
-      public LocationPayload getDefaultInstanceForType() {
+      public GPSPayload getDefaultInstanceForType() {
         return defaultInstance;
       }
       
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return SensorsPacket.internal_static_sensors_packet_LocationPayload_descriptor;
+        return SensorsPacket.internal_static_sensors_packet_GPSPayload_descriptor;
       }
       
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return SensorsPacket.internal_static_sensors_packet_LocationPayload_fieldAccessorTable;
+        return SensorsPacket.internal_static_sensors_packet_GPSPayload_fieldAccessorTable;
       }
       
       public enum GPSStatusType
@@ -4549,7 +4549,7 @@ public final class SensorsPacket {
         }
         public static final com.google.protobuf.Descriptors.EnumDescriptor
             getDescriptor() {
-          return SensorsPacket.sensors_packet.LocationPayload.getDescriptor().getEnumTypes().get(0);
+          return SensorsPacket.sensors_packet.GPSPayload.getDescriptor().getEnumTypes().get(0);
         }
         
         private static final GPSStatusType[] VALUES = {
@@ -4574,15 +4574,15 @@ public final class SensorsPacket {
           SensorsPacket.getDescriptor();
         }
         
-        // @@protoc_insertion_point(enum_scope:sensors_packet.LocationPayload.GPSStatusType)
+        // @@protoc_insertion_point(enum_scope:sensors_packet.GPSPayload.GPSStatusType)
       }
       
-      // optional .sensors_packet.LocationPayload.GPSStatusType status = 1 [default = ENABLED];
+      // optional .sensors_packet.GPSPayload.GPSStatusType status = 1 [default = ENABLED];
       public static final int STATUS_FIELD_NUMBER = 1;
       private boolean hasStatus;
-      private SensorsPacket.sensors_packet.LocationPayload.GPSStatusType status_;
+      private SensorsPacket.sensors_packet.GPSPayload.GPSStatusType status_;
       public boolean hasStatus() { return hasStatus; }
-      public SensorsPacket.sensors_packet.LocationPayload.GPSStatusType getStatus() { return status_; }
+      public SensorsPacket.sensors_packet.GPSPayload.GPSStatusType getStatus() { return status_; }
       
       // optional double latitude = 2;
       public static final int LATITUDE_FIELD_NUMBER = 2;
@@ -4613,7 +4613,7 @@ public final class SensorsPacket {
       public double getBearing() { return bearing_; }
       
       private void initFields() {
-        status_ = SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.ENABLED;
+        status_ = SensorsPacket.sensors_packet.GPSPayload.GPSStatusType.ENABLED;
       }
       public final boolean isInitialized() {
         return true;
@@ -4671,41 +4671,41 @@ public final class SensorsPacket {
         return size;
       }
       
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           com.google.protobuf.ByteString data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(byte[] data)
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(byte[] data)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           byte[] data,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         return newBuilder().mergeFrom(data, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(java.io.InputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input, extensionRegistry)
                  .buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseDelimitedFrom(java.io.InputStream input)
+      public static SensorsPacket.sensors_packet.GPSPayload parseDelimitedFrom(java.io.InputStream input)
           throws java.io.IOException {
         Builder builder = newBuilder();
         if (builder.mergeDelimitedFrom(input)) {
@@ -4714,7 +4714,7 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseDelimitedFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseDelimitedFrom(
           java.io.InputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -4725,12 +4725,12 @@ public final class SensorsPacket {
           return null;
         }
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           com.google.protobuf.CodedInputStream input)
           throws java.io.IOException {
         return newBuilder().mergeFrom(input).buildParsed();
       }
-      public static SensorsPacket.sensors_packet.LocationPayload parseFrom(
+      public static SensorsPacket.sensors_packet.GPSPayload parseFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -4740,25 +4740,25 @@ public final class SensorsPacket {
       
       public static Builder newBuilder() { return Builder.create(); }
       public Builder newBuilderForType() { return newBuilder(); }
-      public static Builder newBuilder(SensorsPacket.sensors_packet.LocationPayload prototype) {
+      public static Builder newBuilder(SensorsPacket.sensors_packet.GPSPayload prototype) {
         return newBuilder().mergeFrom(prototype);
       }
       public Builder toBuilder() { return newBuilder(this); }
       
       public static final class Builder extends
           com.google.protobuf.GeneratedMessage.Builder<Builder> {
-        private SensorsPacket.sensors_packet.LocationPayload result;
+        private SensorsPacket.sensors_packet.GPSPayload result;
         
-        // Construct using SensorsPacket.sensors_packet.LocationPayload.newBuilder()
+        // Construct using SensorsPacket.sensors_packet.GPSPayload.newBuilder()
         private Builder() {}
         
         private static Builder create() {
           Builder builder = new Builder();
-          builder.result = new SensorsPacket.sensors_packet.LocationPayload();
+          builder.result = new SensorsPacket.sensors_packet.GPSPayload();
           return builder;
         }
         
-        protected SensorsPacket.sensors_packet.LocationPayload internalGetResult() {
+        protected SensorsPacket.sensors_packet.GPSPayload internalGetResult() {
           return result;
         }
         
@@ -4767,7 +4767,7 @@ public final class SensorsPacket {
             throw new IllegalStateException(
               "Cannot call clear() after build().");
           }
-          result = new SensorsPacket.sensors_packet.LocationPayload();
+          result = new SensorsPacket.sensors_packet.GPSPayload();
           return this;
         }
         
@@ -4777,24 +4777,24 @@ public final class SensorsPacket {
         
         public com.google.protobuf.Descriptors.Descriptor
             getDescriptorForType() {
-          return SensorsPacket.sensors_packet.LocationPayload.getDescriptor();
+          return SensorsPacket.sensors_packet.GPSPayload.getDescriptor();
         }
         
-        public SensorsPacket.sensors_packet.LocationPayload getDefaultInstanceForType() {
-          return SensorsPacket.sensors_packet.LocationPayload.getDefaultInstance();
+        public SensorsPacket.sensors_packet.GPSPayload getDefaultInstanceForType() {
+          return SensorsPacket.sensors_packet.GPSPayload.getDefaultInstance();
         }
         
         public boolean isInitialized() {
           return result.isInitialized();
         }
-        public SensorsPacket.sensors_packet.LocationPayload build() {
+        public SensorsPacket.sensors_packet.GPSPayload build() {
           if (result != null && !isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return buildPartial();
         }
         
-        private SensorsPacket.sensors_packet.LocationPayload buildParsed()
+        private SensorsPacket.sensors_packet.GPSPayload buildParsed()
             throws com.google.protobuf.InvalidProtocolBufferException {
           if (!isInitialized()) {
             throw newUninitializedMessageException(
@@ -4803,27 +4803,27 @@ public final class SensorsPacket {
           return buildPartial();
         }
         
-        public SensorsPacket.sensors_packet.LocationPayload buildPartial() {
+        public SensorsPacket.sensors_packet.GPSPayload buildPartial() {
           if (result == null) {
             throw new IllegalStateException(
               "build() has already been called on this Builder.");
           }
-          SensorsPacket.sensors_packet.LocationPayload returnMe = result;
+          SensorsPacket.sensors_packet.GPSPayload returnMe = result;
           result = null;
           return returnMe;
         }
         
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof SensorsPacket.sensors_packet.LocationPayload) {
-            return mergeFrom((SensorsPacket.sensors_packet.LocationPayload)other);
+          if (other instanceof SensorsPacket.sensors_packet.GPSPayload) {
+            return mergeFrom((SensorsPacket.sensors_packet.GPSPayload)other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
         
-        public Builder mergeFrom(SensorsPacket.sensors_packet.LocationPayload other) {
-          if (other == SensorsPacket.sensors_packet.LocationPayload.getDefaultInstance()) return this;
+        public Builder mergeFrom(SensorsPacket.sensors_packet.GPSPayload other) {
+          if (other == SensorsPacket.sensors_packet.GPSPayload.getDefaultInstance()) return this;
           if (other.hasStatus()) {
             setStatus(other.getStatus());
           }
@@ -4866,7 +4866,7 @@ public final class SensorsPacket {
               }
               case 8: {
                 int rawValue = input.readEnum();
-                SensorsPacket.sensors_packet.LocationPayload.GPSStatusType value = SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.valueOf(rawValue);
+                SensorsPacket.sensors_packet.GPSPayload.GPSStatusType value = SensorsPacket.sensors_packet.GPSPayload.GPSStatusType.valueOf(rawValue);
                 if (value == null) {
                   unknownFields.mergeVarintField(1, rawValue);
                 } else {
@@ -4895,14 +4895,14 @@ public final class SensorsPacket {
         }
         
         
-        // optional .sensors_packet.LocationPayload.GPSStatusType status = 1 [default = ENABLED];
+        // optional .sensors_packet.GPSPayload.GPSStatusType status = 1 [default = ENABLED];
         public boolean hasStatus() {
           return result.hasStatus();
         }
-        public SensorsPacket.sensors_packet.LocationPayload.GPSStatusType getStatus() {
+        public SensorsPacket.sensors_packet.GPSPayload.GPSStatusType getStatus() {
           return result.getStatus();
         }
-        public Builder setStatus(SensorsPacket.sensors_packet.LocationPayload.GPSStatusType value) {
+        public Builder setStatus(SensorsPacket.sensors_packet.GPSPayload.GPSStatusType value) {
           if (value == null) {
             throw new NullPointerException();
           }
@@ -4912,7 +4912,7 @@ public final class SensorsPacket {
         }
         public Builder clearStatus() {
           result.hasStatus = false;
-          result.status_ = SensorsPacket.sensors_packet.LocationPayload.GPSStatusType.ENABLED;
+          result.status_ = SensorsPacket.sensors_packet.GPSPayload.GPSStatusType.ENABLED;
           return this;
         }
         
@@ -4988,131 +4988,131 @@ public final class SensorsPacket {
           return this;
         }
         
-        // @@protoc_insertion_point(builder_scope:sensors_packet.LocationPayload)
+        // @@protoc_insertion_point(builder_scope:sensors_packet.GPSPayload)
       }
       
       static {
-        defaultInstance = new LocationPayload(true);
+        defaultInstance = new GPSPayload(true);
         SensorsPacket.internalForceInit();
         defaultInstance.initFields();
       }
       
-      // @@protoc_insertion_point(class_scope:sensors_packet.LocationPayload)
+      // @@protoc_insertion_point(class_scope:sensors_packet.GPSPayload)
     }
     
-    // optional .sensors_packet.SensorAcceleroPayload accelero = 1;
-    public static final int ACCELERO_FIELD_NUMBER = 1;
-    private boolean hasAccelero;
-    private SensorsPacket.sensors_packet.SensorAcceleroPayload accelero_;
-    public boolean hasAccelero() { return hasAccelero; }
-    public SensorsPacket.sensors_packet.SensorAcceleroPayload getAccelero() { return accelero_; }
+    // optional .sensors_packet.SensorAccelerometerPayload sensor_accelerometer = 1;
+    public static final int SENSOR_ACCELEROMETER_FIELD_NUMBER = 1;
+    private boolean hasSensorAccelerometer;
+    private SensorsPacket.sensors_packet.SensorAccelerometerPayload sensorAccelerometer_;
+    public boolean hasSensorAccelerometer() { return hasSensorAccelerometer; }
+    public SensorsPacket.sensors_packet.SensorAccelerometerPayload getSensorAccelerometer() { return sensorAccelerometer_; }
     
-    // optional .sensors_packet.SensorMagnetoPayload magneto = 2;
-    public static final int MAGNETO_FIELD_NUMBER = 2;
-    private boolean hasMagneto;
-    private SensorsPacket.sensors_packet.SensorMagnetoPayload magneto_;
-    public boolean hasMagneto() { return hasMagneto; }
-    public SensorsPacket.sensors_packet.SensorMagnetoPayload getMagneto() { return magneto_; }
+    // optional .sensors_packet.SensorMagnetometerPayload sensor_magnetometer = 2;
+    public static final int SENSOR_MAGNETOMETER_FIELD_NUMBER = 2;
+    private boolean hasSensorMagnetometer;
+    private SensorsPacket.sensors_packet.SensorMagnetometerPayload sensorMagnetometer_;
+    public boolean hasSensorMagnetometer() { return hasSensorMagnetometer; }
+    public SensorsPacket.sensors_packet.SensorMagnetometerPayload getSensorMagnetometer() { return sensorMagnetometer_; }
     
-    // optional .sensors_packet.SensorOrientationPayload orientation = 3;
-    public static final int ORIENTATION_FIELD_NUMBER = 3;
-    private boolean hasOrientation;
-    private SensorsPacket.sensors_packet.SensorOrientationPayload orientation_;
-    public boolean hasOrientation() { return hasOrientation; }
-    public SensorsPacket.sensors_packet.SensorOrientationPayload getOrientation() { return orientation_; }
+    // optional .sensors_packet.SensorOrientationPayload sensor_orientation = 3;
+    public static final int SENSOR_ORIENTATION_FIELD_NUMBER = 3;
+    private boolean hasSensorOrientation;
+    private SensorsPacket.sensors_packet.SensorOrientationPayload sensorOrientation_;
+    public boolean hasSensorOrientation() { return hasSensorOrientation; }
+    public SensorsPacket.sensors_packet.SensorOrientationPayload getSensorOrientation() { return sensorOrientation_; }
     
-    // optional .sensors_packet.SensorGyroPayload gyroscope = 4;
-    public static final int GYROSCOPE_FIELD_NUMBER = 4;
-    private boolean hasGyroscope;
-    private SensorsPacket.sensors_packet.SensorGyroPayload gyroscope_;
-    public boolean hasGyroscope() { return hasGyroscope; }
-    public SensorsPacket.sensors_packet.SensorGyroPayload getGyroscope() { return gyroscope_; }
+    // optional .sensors_packet.SensorGyroscopePayload sensor_gyroscope = 4;
+    public static final int SENSOR_GYROSCOPE_FIELD_NUMBER = 4;
+    private boolean hasSensorGyroscope;
+    private SensorsPacket.sensors_packet.SensorGyroscopePayload sensorGyroscope_;
+    public boolean hasSensorGyroscope() { return hasSensorGyroscope; }
+    public SensorsPacket.sensors_packet.SensorGyroscopePayload getSensorGyroscope() { return sensorGyroscope_; }
     
-    // optional .sensors_packet.SensorGravityPayload gravity = 5;
-    public static final int GRAVITY_FIELD_NUMBER = 5;
-    private boolean hasGravity;
-    private SensorsPacket.sensors_packet.SensorGravityPayload gravity_;
-    public boolean hasGravity() { return hasGravity; }
-    public SensorsPacket.sensors_packet.SensorGravityPayload getGravity() { return gravity_; }
+    // optional .sensors_packet.SensorGravityPayload sensor_gravity = 5;
+    public static final int SENSOR_GRAVITY_FIELD_NUMBER = 5;
+    private boolean hasSensorGravity;
+    private SensorsPacket.sensors_packet.SensorGravityPayload sensorGravity_;
+    public boolean hasSensorGravity() { return hasSensorGravity; }
+    public SensorsPacket.sensors_packet.SensorGravityPayload getSensorGravity() { return sensorGravity_; }
     
-    // optional .sensors_packet.SensorLinearAccPayload linear_acc = 6;
-    public static final int LINEAR_ACC_FIELD_NUMBER = 6;
-    private boolean hasLinearAcc;
-    private SensorsPacket.sensors_packet.SensorLinearAccPayload linearAcc_;
-    public boolean hasLinearAcc() { return hasLinearAcc; }
-    public SensorsPacket.sensors_packet.SensorLinearAccPayload getLinearAcc() { return linearAcc_; }
+    // optional .sensors_packet.SensorLinearAccPayload sensor_linear_acc = 6;
+    public static final int SENSOR_LINEAR_ACC_FIELD_NUMBER = 6;
+    private boolean hasSensorLinearAcc;
+    private SensorsPacket.sensors_packet.SensorLinearAccPayload sensorLinearAcc_;
+    public boolean hasSensorLinearAcc() { return hasSensorLinearAcc; }
+    public SensorsPacket.sensors_packet.SensorLinearAccPayload getSensorLinearAcc() { return sensorLinearAcc_; }
     
-    // optional .sensors_packet.SensorRotVectorPayload rotvector = 7;
-    public static final int ROTVECTOR_FIELD_NUMBER = 7;
-    private boolean hasRotvector;
-    private SensorsPacket.sensors_packet.SensorRotVectorPayload rotvector_;
-    public boolean hasRotvector() { return hasRotvector; }
-    public SensorsPacket.sensors_packet.SensorRotVectorPayload getRotvector() { return rotvector_; }
+    // optional .sensors_packet.SensorRotVectorPayload sensor_rot_vector = 7;
+    public static final int SENSOR_ROT_VECTOR_FIELD_NUMBER = 7;
+    private boolean hasSensorRotVector;
+    private SensorsPacket.sensors_packet.SensorRotVectorPayload sensorRotVector_;
+    public boolean hasSensorRotVector() { return hasSensorRotVector; }
+    public SensorsPacket.sensors_packet.SensorRotVectorPayload getSensorRotVector() { return sensorRotVector_; }
     
-    // optional .sensors_packet.SensorTemperaturePayload thermometer = 8;
-    public static final int THERMOMETER_FIELD_NUMBER = 8;
-    private boolean hasThermometer;
-    private SensorsPacket.sensors_packet.SensorTemperaturePayload thermometer_;
-    public boolean hasThermometer() { return hasThermometer; }
-    public SensorsPacket.sensors_packet.SensorTemperaturePayload getThermometer() { return thermometer_; }
+    // optional .sensors_packet.SensorTemperaturePayload sensor_temperature = 8;
+    public static final int SENSOR_TEMPERATURE_FIELD_NUMBER = 8;
+    private boolean hasSensorTemperature;
+    private SensorsPacket.sensors_packet.SensorTemperaturePayload sensorTemperature_;
+    public boolean hasSensorTemperature() { return hasSensorTemperature; }
+    public SensorsPacket.sensors_packet.SensorTemperaturePayload getSensorTemperature() { return sensorTemperature_; }
     
-    // optional .sensors_packet.SensorProximityPayload proximity = 9;
-    public static final int PROXIMITY_FIELD_NUMBER = 9;
-    private boolean hasProximity;
-    private SensorsPacket.sensors_packet.SensorProximityPayload proximity_;
-    public boolean hasProximity() { return hasProximity; }
-    public SensorsPacket.sensors_packet.SensorProximityPayload getProximity() { return proximity_; }
+    // optional .sensors_packet.SensorProximityPayload sensor_proximity = 9;
+    public static final int SENSOR_PROXIMITY_FIELD_NUMBER = 9;
+    private boolean hasSensorProximity;
+    private SensorsPacket.sensors_packet.SensorProximityPayload sensorProximity_;
+    public boolean hasSensorProximity() { return hasSensorProximity; }
+    public SensorsPacket.sensors_packet.SensorProximityPayload getSensorProximity() { return sensorProximity_; }
     
-    // optional .sensors_packet.SensorLightPayload luxmeter = 10;
-    public static final int LUXMETER_FIELD_NUMBER = 10;
-    private boolean hasLuxmeter;
-    private SensorsPacket.sensors_packet.SensorLightPayload luxmeter_;
-    public boolean hasLuxmeter() { return hasLuxmeter; }
-    public SensorsPacket.sensors_packet.SensorLightPayload getLuxmeter() { return luxmeter_; }
+    // optional .sensors_packet.SensorLightPayload sensor_light = 10;
+    public static final int SENSOR_LIGHT_FIELD_NUMBER = 10;
+    private boolean hasSensorLight;
+    private SensorsPacket.sensors_packet.SensorLightPayload sensorLight_;
+    public boolean hasSensorLight() { return hasSensorLight; }
+    public SensorsPacket.sensors_packet.SensorLightPayload getSensorLight() { return sensorLight_; }
     
-    // optional .sensors_packet.SensorPressurePayload barometer = 11;
-    public static final int BAROMETER_FIELD_NUMBER = 11;
-    private boolean hasBarometer;
-    private SensorsPacket.sensors_packet.SensorPressurePayload barometer_;
-    public boolean hasBarometer() { return hasBarometer; }
-    public SensorsPacket.sensors_packet.SensorPressurePayload getBarometer() { return barometer_; }
+    // optional .sensors_packet.SensorPressurePayload sensor_pressure = 11;
+    public static final int SENSOR_PRESSURE_FIELD_NUMBER = 11;
+    private boolean hasSensorPressure;
+    private SensorsPacket.sensors_packet.SensorPressurePayload sensorPressure_;
+    public boolean hasSensorPressure() { return hasSensorPressure; }
+    public SensorsPacket.sensors_packet.SensorPressurePayload getSensorPressure() { return sensorPressure_; }
     
-    // optional .sensors_packet.SensorRelativeHumidityPayload hygrometer = 12;
-    public static final int HYGROMETER_FIELD_NUMBER = 12;
-    private boolean hasHygrometer;
-    private SensorsPacket.sensors_packet.SensorRelativeHumidityPayload hygrometer_;
-    public boolean hasHygrometer() { return hasHygrometer; }
-    public SensorsPacket.sensors_packet.SensorRelativeHumidityPayload getHygrometer() { return hygrometer_; }
+    // optional .sensors_packet.SensorRelativeHumidityPayload sensor_relative_humidity = 12;
+    public static final int SENSOR_RELATIVE_HUMIDITY_FIELD_NUMBER = 12;
+    private boolean hasSensorRelativeHumidity;
+    private SensorsPacket.sensors_packet.SensorRelativeHumidityPayload sensorRelativeHumidity_;
+    public boolean hasSensorRelativeHumidity() { return hasSensorRelativeHumidity; }
+    public SensorsPacket.sensors_packet.SensorRelativeHumidityPayload getSensorRelativeHumidity() { return sensorRelativeHumidity_; }
     
-    // optional .sensors_packet.BatteryPayload Battery = 100;
+    // optional .sensors_packet.BatteryPayload battery = 100;
     public static final int BATTERY_FIELD_NUMBER = 100;
     private boolean hasBattery;
     private SensorsPacket.sensors_packet.BatteryPayload battery_;
     public boolean hasBattery() { return hasBattery; }
     public SensorsPacket.sensors_packet.BatteryPayload getBattery() { return battery_; }
     
-    // optional .sensors_packet.LocationPayload GPS = 200;
+    // optional .sensors_packet.GPSPayload gps = 200;
     public static final int GPS_FIELD_NUMBER = 200;
-    private boolean hasGPS;
-    private SensorsPacket.sensors_packet.LocationPayload gPS_;
-    public boolean hasGPS() { return hasGPS; }
-    public SensorsPacket.sensors_packet.LocationPayload getGPS() { return gPS_; }
+    private boolean hasGps;
+    private SensorsPacket.sensors_packet.GPSPayload gps_;
+    public boolean hasGps() { return hasGps; }
+    public SensorsPacket.sensors_packet.GPSPayload getGps() { return gps_; }
     
     private void initFields() {
-      accelero_ = SensorsPacket.sensors_packet.SensorAcceleroPayload.getDefaultInstance();
-      magneto_ = SensorsPacket.sensors_packet.SensorMagnetoPayload.getDefaultInstance();
-      orientation_ = SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance();
-      gyroscope_ = SensorsPacket.sensors_packet.SensorGyroPayload.getDefaultInstance();
-      gravity_ = SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance();
-      linearAcc_ = SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance();
-      rotvector_ = SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance();
-      thermometer_ = SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance();
-      proximity_ = SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance();
-      luxmeter_ = SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance();
-      barometer_ = SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance();
-      hygrometer_ = SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance();
+      sensorAccelerometer_ = SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDefaultInstance();
+      sensorMagnetometer_ = SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDefaultInstance();
+      sensorOrientation_ = SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance();
+      sensorGyroscope_ = SensorsPacket.sensors_packet.SensorGyroscopePayload.getDefaultInstance();
+      sensorGravity_ = SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance();
+      sensorLinearAcc_ = SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance();
+      sensorRotVector_ = SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance();
+      sensorTemperature_ = SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance();
+      sensorProximity_ = SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance();
+      sensorLight_ = SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance();
+      sensorPressure_ = SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance();
+      sensorRelativeHumidity_ = SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance();
       battery_ = SensorsPacket.sensors_packet.BatteryPayload.getDefaultInstance();
-      gPS_ = SensorsPacket.sensors_packet.LocationPayload.getDefaultInstance();
+      gps_ = SensorsPacket.sensors_packet.GPSPayload.getDefaultInstance();
     }
     public final boolean isInitialized() {
       return true;
@@ -5121,47 +5121,47 @@ public final class SensorsPacket {
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
       getSerializedSize();
-      if (hasAccelero()) {
-        output.writeMessage(1, getAccelero());
+      if (hasSensorAccelerometer()) {
+        output.writeMessage(1, getSensorAccelerometer());
       }
-      if (hasMagneto()) {
-        output.writeMessage(2, getMagneto());
+      if (hasSensorMagnetometer()) {
+        output.writeMessage(2, getSensorMagnetometer());
       }
-      if (hasOrientation()) {
-        output.writeMessage(3, getOrientation());
+      if (hasSensorOrientation()) {
+        output.writeMessage(3, getSensorOrientation());
       }
-      if (hasGyroscope()) {
-        output.writeMessage(4, getGyroscope());
+      if (hasSensorGyroscope()) {
+        output.writeMessage(4, getSensorGyroscope());
       }
-      if (hasGravity()) {
-        output.writeMessage(5, getGravity());
+      if (hasSensorGravity()) {
+        output.writeMessage(5, getSensorGravity());
       }
-      if (hasLinearAcc()) {
-        output.writeMessage(6, getLinearAcc());
+      if (hasSensorLinearAcc()) {
+        output.writeMessage(6, getSensorLinearAcc());
       }
-      if (hasRotvector()) {
-        output.writeMessage(7, getRotvector());
+      if (hasSensorRotVector()) {
+        output.writeMessage(7, getSensorRotVector());
       }
-      if (hasThermometer()) {
-        output.writeMessage(8, getThermometer());
+      if (hasSensorTemperature()) {
+        output.writeMessage(8, getSensorTemperature());
       }
-      if (hasProximity()) {
-        output.writeMessage(9, getProximity());
+      if (hasSensorProximity()) {
+        output.writeMessage(9, getSensorProximity());
       }
-      if (hasLuxmeter()) {
-        output.writeMessage(10, getLuxmeter());
+      if (hasSensorLight()) {
+        output.writeMessage(10, getSensorLight());
       }
-      if (hasBarometer()) {
-        output.writeMessage(11, getBarometer());
+      if (hasSensorPressure()) {
+        output.writeMessage(11, getSensorPressure());
       }
-      if (hasHygrometer()) {
-        output.writeMessage(12, getHygrometer());
+      if (hasSensorRelativeHumidity()) {
+        output.writeMessage(12, getSensorRelativeHumidity());
       }
       if (hasBattery()) {
         output.writeMessage(100, getBattery());
       }
-      if (hasGPS()) {
-        output.writeMessage(200, getGPS());
+      if (hasGps()) {
+        output.writeMessage(200, getGps());
       }
       getUnknownFields().writeTo(output);
     }
@@ -5172,61 +5172,61 @@ public final class SensorsPacket {
       if (size != -1) return size;
     
       size = 0;
-      if (hasAccelero()) {
+      if (hasSensorAccelerometer()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getAccelero());
+          .computeMessageSize(1, getSensorAccelerometer());
       }
-      if (hasMagneto()) {
+      if (hasSensorMagnetometer()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getMagneto());
+          .computeMessageSize(2, getSensorMagnetometer());
       }
-      if (hasOrientation()) {
+      if (hasSensorOrientation()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, getOrientation());
+          .computeMessageSize(3, getSensorOrientation());
       }
-      if (hasGyroscope()) {
+      if (hasSensorGyroscope()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getGyroscope());
+          .computeMessageSize(4, getSensorGyroscope());
       }
-      if (hasGravity()) {
+      if (hasSensorGravity()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getGravity());
+          .computeMessageSize(5, getSensorGravity());
       }
-      if (hasLinearAcc()) {
+      if (hasSensorLinearAcc()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, getLinearAcc());
+          .computeMessageSize(6, getSensorLinearAcc());
       }
-      if (hasRotvector()) {
+      if (hasSensorRotVector()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, getRotvector());
+          .computeMessageSize(7, getSensorRotVector());
       }
-      if (hasThermometer()) {
+      if (hasSensorTemperature()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(8, getThermometer());
+          .computeMessageSize(8, getSensorTemperature());
       }
-      if (hasProximity()) {
+      if (hasSensorProximity()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, getProximity());
+          .computeMessageSize(9, getSensorProximity());
       }
-      if (hasLuxmeter()) {
+      if (hasSensorLight()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getLuxmeter());
+          .computeMessageSize(10, getSensorLight());
       }
-      if (hasBarometer()) {
+      if (hasSensorPressure()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getBarometer());
+          .computeMessageSize(11, getSensorPressure());
       }
-      if (hasHygrometer()) {
+      if (hasSensorRelativeHumidity()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getHygrometer());
+          .computeMessageSize(12, getSensorRelativeHumidity());
       }
       if (hasBattery()) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(100, getBattery());
       }
-      if (hasGPS()) {
+      if (hasGps()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(200, getGPS());
+          .computeMessageSize(200, getGps());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -5386,47 +5386,47 @@ public final class SensorsPacket {
       
       public Builder mergeFrom(SensorsPacket.sensors_packet other) {
         if (other == SensorsPacket.sensors_packet.getDefaultInstance()) return this;
-        if (other.hasAccelero()) {
-          mergeAccelero(other.getAccelero());
+        if (other.hasSensorAccelerometer()) {
+          mergeSensorAccelerometer(other.getSensorAccelerometer());
         }
-        if (other.hasMagneto()) {
-          mergeMagneto(other.getMagneto());
+        if (other.hasSensorMagnetometer()) {
+          mergeSensorMagnetometer(other.getSensorMagnetometer());
         }
-        if (other.hasOrientation()) {
-          mergeOrientation(other.getOrientation());
+        if (other.hasSensorOrientation()) {
+          mergeSensorOrientation(other.getSensorOrientation());
         }
-        if (other.hasGyroscope()) {
-          mergeGyroscope(other.getGyroscope());
+        if (other.hasSensorGyroscope()) {
+          mergeSensorGyroscope(other.getSensorGyroscope());
         }
-        if (other.hasGravity()) {
-          mergeGravity(other.getGravity());
+        if (other.hasSensorGravity()) {
+          mergeSensorGravity(other.getSensorGravity());
         }
-        if (other.hasLinearAcc()) {
-          mergeLinearAcc(other.getLinearAcc());
+        if (other.hasSensorLinearAcc()) {
+          mergeSensorLinearAcc(other.getSensorLinearAcc());
         }
-        if (other.hasRotvector()) {
-          mergeRotvector(other.getRotvector());
+        if (other.hasSensorRotVector()) {
+          mergeSensorRotVector(other.getSensorRotVector());
         }
-        if (other.hasThermometer()) {
-          mergeThermometer(other.getThermometer());
+        if (other.hasSensorTemperature()) {
+          mergeSensorTemperature(other.getSensorTemperature());
         }
-        if (other.hasProximity()) {
-          mergeProximity(other.getProximity());
+        if (other.hasSensorProximity()) {
+          mergeSensorProximity(other.getSensorProximity());
         }
-        if (other.hasLuxmeter()) {
-          mergeLuxmeter(other.getLuxmeter());
+        if (other.hasSensorLight()) {
+          mergeSensorLight(other.getSensorLight());
         }
-        if (other.hasBarometer()) {
-          mergeBarometer(other.getBarometer());
+        if (other.hasSensorPressure()) {
+          mergeSensorPressure(other.getSensorPressure());
         }
-        if (other.hasHygrometer()) {
-          mergeHygrometer(other.getHygrometer());
+        if (other.hasSensorRelativeHumidity()) {
+          mergeSensorRelativeHumidity(other.getSensorRelativeHumidity());
         }
         if (other.hasBattery()) {
           mergeBattery(other.getBattery());
         }
-        if (other.hasGPS()) {
-          mergeGPS(other.getGPS());
+        if (other.hasGps()) {
+          mergeGps(other.getGps());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -5454,111 +5454,111 @@ public final class SensorsPacket {
               break;
             }
             case 10: {
-              SensorsPacket.sensors_packet.SensorAcceleroPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorAcceleroPayload.newBuilder();
-              if (hasAccelero()) {
-                subBuilder.mergeFrom(getAccelero());
+              SensorsPacket.sensors_packet.SensorAccelerometerPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorAccelerometerPayload.newBuilder();
+              if (hasSensorAccelerometer()) {
+                subBuilder.mergeFrom(getSensorAccelerometer());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setAccelero(subBuilder.buildPartial());
+              setSensorAccelerometer(subBuilder.buildPartial());
               break;
             }
             case 18: {
-              SensorsPacket.sensors_packet.SensorMagnetoPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorMagnetoPayload.newBuilder();
-              if (hasMagneto()) {
-                subBuilder.mergeFrom(getMagneto());
+              SensorsPacket.sensors_packet.SensorMagnetometerPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorMagnetometerPayload.newBuilder();
+              if (hasSensorMagnetometer()) {
+                subBuilder.mergeFrom(getSensorMagnetometer());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setMagneto(subBuilder.buildPartial());
+              setSensorMagnetometer(subBuilder.buildPartial());
               break;
             }
             case 26: {
               SensorsPacket.sensors_packet.SensorOrientationPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorOrientationPayload.newBuilder();
-              if (hasOrientation()) {
-                subBuilder.mergeFrom(getOrientation());
+              if (hasSensorOrientation()) {
+                subBuilder.mergeFrom(getSensorOrientation());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setOrientation(subBuilder.buildPartial());
+              setSensorOrientation(subBuilder.buildPartial());
               break;
             }
             case 34: {
-              SensorsPacket.sensors_packet.SensorGyroPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorGyroPayload.newBuilder();
-              if (hasGyroscope()) {
-                subBuilder.mergeFrom(getGyroscope());
+              SensorsPacket.sensors_packet.SensorGyroscopePayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorGyroscopePayload.newBuilder();
+              if (hasSensorGyroscope()) {
+                subBuilder.mergeFrom(getSensorGyroscope());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setGyroscope(subBuilder.buildPartial());
+              setSensorGyroscope(subBuilder.buildPartial());
               break;
             }
             case 42: {
               SensorsPacket.sensors_packet.SensorGravityPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorGravityPayload.newBuilder();
-              if (hasGravity()) {
-                subBuilder.mergeFrom(getGravity());
+              if (hasSensorGravity()) {
+                subBuilder.mergeFrom(getSensorGravity());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setGravity(subBuilder.buildPartial());
+              setSensorGravity(subBuilder.buildPartial());
               break;
             }
             case 50: {
               SensorsPacket.sensors_packet.SensorLinearAccPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorLinearAccPayload.newBuilder();
-              if (hasLinearAcc()) {
-                subBuilder.mergeFrom(getLinearAcc());
+              if (hasSensorLinearAcc()) {
+                subBuilder.mergeFrom(getSensorLinearAcc());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setLinearAcc(subBuilder.buildPartial());
+              setSensorLinearAcc(subBuilder.buildPartial());
               break;
             }
             case 58: {
               SensorsPacket.sensors_packet.SensorRotVectorPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorRotVectorPayload.newBuilder();
-              if (hasRotvector()) {
-                subBuilder.mergeFrom(getRotvector());
+              if (hasSensorRotVector()) {
+                subBuilder.mergeFrom(getSensorRotVector());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setRotvector(subBuilder.buildPartial());
+              setSensorRotVector(subBuilder.buildPartial());
               break;
             }
             case 66: {
               SensorsPacket.sensors_packet.SensorTemperaturePayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorTemperaturePayload.newBuilder();
-              if (hasThermometer()) {
-                subBuilder.mergeFrom(getThermometer());
+              if (hasSensorTemperature()) {
+                subBuilder.mergeFrom(getSensorTemperature());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setThermometer(subBuilder.buildPartial());
+              setSensorTemperature(subBuilder.buildPartial());
               break;
             }
             case 74: {
               SensorsPacket.sensors_packet.SensorProximityPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorProximityPayload.newBuilder();
-              if (hasProximity()) {
-                subBuilder.mergeFrom(getProximity());
+              if (hasSensorProximity()) {
+                subBuilder.mergeFrom(getSensorProximity());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setProximity(subBuilder.buildPartial());
+              setSensorProximity(subBuilder.buildPartial());
               break;
             }
             case 82: {
               SensorsPacket.sensors_packet.SensorLightPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorLightPayload.newBuilder();
-              if (hasLuxmeter()) {
-                subBuilder.mergeFrom(getLuxmeter());
+              if (hasSensorLight()) {
+                subBuilder.mergeFrom(getSensorLight());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setLuxmeter(subBuilder.buildPartial());
+              setSensorLight(subBuilder.buildPartial());
               break;
             }
             case 90: {
               SensorsPacket.sensors_packet.SensorPressurePayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorPressurePayload.newBuilder();
-              if (hasBarometer()) {
-                subBuilder.mergeFrom(getBarometer());
+              if (hasSensorPressure()) {
+                subBuilder.mergeFrom(getSensorPressure());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setBarometer(subBuilder.buildPartial());
+              setSensorPressure(subBuilder.buildPartial());
               break;
             }
             case 98: {
               SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.Builder subBuilder = SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.newBuilder();
-              if (hasHygrometer()) {
-                subBuilder.mergeFrom(getHygrometer());
+              if (hasSensorRelativeHumidity()) {
+                subBuilder.mergeFrom(getSensorRelativeHumidity());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setHygrometer(subBuilder.buildPartial());
+              setSensorRelativeHumidity(subBuilder.buildPartial());
               break;
             }
             case 802: {
@@ -5571,12 +5571,12 @@ public final class SensorsPacket {
               break;
             }
             case 1602: {
-              SensorsPacket.sensors_packet.LocationPayload.Builder subBuilder = SensorsPacket.sensors_packet.LocationPayload.newBuilder();
-              if (hasGPS()) {
-                subBuilder.mergeFrom(getGPS());
+              SensorsPacket.sensors_packet.GPSPayload.Builder subBuilder = SensorsPacket.sensors_packet.GPSPayload.newBuilder();
+              if (hasGps()) {
+                subBuilder.mergeFrom(getGps());
               }
               input.readMessage(subBuilder, extensionRegistry);
-              setGPS(subBuilder.buildPartial());
+              setGps(subBuilder.buildPartial());
               break;
             }
           }
@@ -5584,451 +5584,451 @@ public final class SensorsPacket {
       }
       
       
-      // optional .sensors_packet.SensorAcceleroPayload accelero = 1;
-      public boolean hasAccelero() {
-        return result.hasAccelero();
+      // optional .sensors_packet.SensorAccelerometerPayload sensor_accelerometer = 1;
+      public boolean hasSensorAccelerometer() {
+        return result.hasSensorAccelerometer();
       }
-      public SensorsPacket.sensors_packet.SensorAcceleroPayload getAccelero() {
-        return result.getAccelero();
+      public SensorsPacket.sensors_packet.SensorAccelerometerPayload getSensorAccelerometer() {
+        return result.getSensorAccelerometer();
       }
-      public Builder setAccelero(SensorsPacket.sensors_packet.SensorAcceleroPayload value) {
+      public Builder setSensorAccelerometer(SensorsPacket.sensors_packet.SensorAccelerometerPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasAccelero = true;
-        result.accelero_ = value;
+        result.hasSensorAccelerometer = true;
+        result.sensorAccelerometer_ = value;
         return this;
       }
-      public Builder setAccelero(SensorsPacket.sensors_packet.SensorAcceleroPayload.Builder builderForValue) {
-        result.hasAccelero = true;
-        result.accelero_ = builderForValue.build();
+      public Builder setSensorAccelerometer(SensorsPacket.sensors_packet.SensorAccelerometerPayload.Builder builderForValue) {
+        result.hasSensorAccelerometer = true;
+        result.sensorAccelerometer_ = builderForValue.build();
         return this;
       }
-      public Builder mergeAccelero(SensorsPacket.sensors_packet.SensorAcceleroPayload value) {
-        if (result.hasAccelero() &&
-            result.accelero_ != SensorsPacket.sensors_packet.SensorAcceleroPayload.getDefaultInstance()) {
-          result.accelero_ =
-            SensorsPacket.sensors_packet.SensorAcceleroPayload.newBuilder(result.accelero_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorAccelerometer(SensorsPacket.sensors_packet.SensorAccelerometerPayload value) {
+        if (result.hasSensorAccelerometer() &&
+            result.sensorAccelerometer_ != SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDefaultInstance()) {
+          result.sensorAccelerometer_ =
+            SensorsPacket.sensors_packet.SensorAccelerometerPayload.newBuilder(result.sensorAccelerometer_).mergeFrom(value).buildPartial();
         } else {
-          result.accelero_ = value;
+          result.sensorAccelerometer_ = value;
         }
-        result.hasAccelero = true;
+        result.hasSensorAccelerometer = true;
         return this;
       }
-      public Builder clearAccelero() {
-        result.hasAccelero = false;
-        result.accelero_ = SensorsPacket.sensors_packet.SensorAcceleroPayload.getDefaultInstance();
+      public Builder clearSensorAccelerometer() {
+        result.hasSensorAccelerometer = false;
+        result.sensorAccelerometer_ = SensorsPacket.sensors_packet.SensorAccelerometerPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorMagnetoPayload magneto = 2;
-      public boolean hasMagneto() {
-        return result.hasMagneto();
+      // optional .sensors_packet.SensorMagnetometerPayload sensor_magnetometer = 2;
+      public boolean hasSensorMagnetometer() {
+        return result.hasSensorMagnetometer();
       }
-      public SensorsPacket.sensors_packet.SensorMagnetoPayload getMagneto() {
-        return result.getMagneto();
+      public SensorsPacket.sensors_packet.SensorMagnetometerPayload getSensorMagnetometer() {
+        return result.getSensorMagnetometer();
       }
-      public Builder setMagneto(SensorsPacket.sensors_packet.SensorMagnetoPayload value) {
+      public Builder setSensorMagnetometer(SensorsPacket.sensors_packet.SensorMagnetometerPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasMagneto = true;
-        result.magneto_ = value;
+        result.hasSensorMagnetometer = true;
+        result.sensorMagnetometer_ = value;
         return this;
       }
-      public Builder setMagneto(SensorsPacket.sensors_packet.SensorMagnetoPayload.Builder builderForValue) {
-        result.hasMagneto = true;
-        result.magneto_ = builderForValue.build();
+      public Builder setSensorMagnetometer(SensorsPacket.sensors_packet.SensorMagnetometerPayload.Builder builderForValue) {
+        result.hasSensorMagnetometer = true;
+        result.sensorMagnetometer_ = builderForValue.build();
         return this;
       }
-      public Builder mergeMagneto(SensorsPacket.sensors_packet.SensorMagnetoPayload value) {
-        if (result.hasMagneto() &&
-            result.magneto_ != SensorsPacket.sensors_packet.SensorMagnetoPayload.getDefaultInstance()) {
-          result.magneto_ =
-            SensorsPacket.sensors_packet.SensorMagnetoPayload.newBuilder(result.magneto_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorMagnetometer(SensorsPacket.sensors_packet.SensorMagnetometerPayload value) {
+        if (result.hasSensorMagnetometer() &&
+            result.sensorMagnetometer_ != SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDefaultInstance()) {
+          result.sensorMagnetometer_ =
+            SensorsPacket.sensors_packet.SensorMagnetometerPayload.newBuilder(result.sensorMagnetometer_).mergeFrom(value).buildPartial();
         } else {
-          result.magneto_ = value;
+          result.sensorMagnetometer_ = value;
         }
-        result.hasMagneto = true;
+        result.hasSensorMagnetometer = true;
         return this;
       }
-      public Builder clearMagneto() {
-        result.hasMagneto = false;
-        result.magneto_ = SensorsPacket.sensors_packet.SensorMagnetoPayload.getDefaultInstance();
+      public Builder clearSensorMagnetometer() {
+        result.hasSensorMagnetometer = false;
+        result.sensorMagnetometer_ = SensorsPacket.sensors_packet.SensorMagnetometerPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorOrientationPayload orientation = 3;
-      public boolean hasOrientation() {
-        return result.hasOrientation();
+      // optional .sensors_packet.SensorOrientationPayload sensor_orientation = 3;
+      public boolean hasSensorOrientation() {
+        return result.hasSensorOrientation();
       }
-      public SensorsPacket.sensors_packet.SensorOrientationPayload getOrientation() {
-        return result.getOrientation();
+      public SensorsPacket.sensors_packet.SensorOrientationPayload getSensorOrientation() {
+        return result.getSensorOrientation();
       }
-      public Builder setOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload value) {
+      public Builder setSensorOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasOrientation = true;
-        result.orientation_ = value;
+        result.hasSensorOrientation = true;
+        result.sensorOrientation_ = value;
         return this;
       }
-      public Builder setOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload.Builder builderForValue) {
-        result.hasOrientation = true;
-        result.orientation_ = builderForValue.build();
+      public Builder setSensorOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload.Builder builderForValue) {
+        result.hasSensorOrientation = true;
+        result.sensorOrientation_ = builderForValue.build();
         return this;
       }
-      public Builder mergeOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload value) {
-        if (result.hasOrientation() &&
-            result.orientation_ != SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance()) {
-          result.orientation_ =
-            SensorsPacket.sensors_packet.SensorOrientationPayload.newBuilder(result.orientation_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorOrientation(SensorsPacket.sensors_packet.SensorOrientationPayload value) {
+        if (result.hasSensorOrientation() &&
+            result.sensorOrientation_ != SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance()) {
+          result.sensorOrientation_ =
+            SensorsPacket.sensors_packet.SensorOrientationPayload.newBuilder(result.sensorOrientation_).mergeFrom(value).buildPartial();
         } else {
-          result.orientation_ = value;
+          result.sensorOrientation_ = value;
         }
-        result.hasOrientation = true;
+        result.hasSensorOrientation = true;
         return this;
       }
-      public Builder clearOrientation() {
-        result.hasOrientation = false;
-        result.orientation_ = SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance();
+      public Builder clearSensorOrientation() {
+        result.hasSensorOrientation = false;
+        result.sensorOrientation_ = SensorsPacket.sensors_packet.SensorOrientationPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorGyroPayload gyroscope = 4;
-      public boolean hasGyroscope() {
-        return result.hasGyroscope();
+      // optional .sensors_packet.SensorGyroscopePayload sensor_gyroscope = 4;
+      public boolean hasSensorGyroscope() {
+        return result.hasSensorGyroscope();
       }
-      public SensorsPacket.sensors_packet.SensorGyroPayload getGyroscope() {
-        return result.getGyroscope();
+      public SensorsPacket.sensors_packet.SensorGyroscopePayload getSensorGyroscope() {
+        return result.getSensorGyroscope();
       }
-      public Builder setGyroscope(SensorsPacket.sensors_packet.SensorGyroPayload value) {
+      public Builder setSensorGyroscope(SensorsPacket.sensors_packet.SensorGyroscopePayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasGyroscope = true;
-        result.gyroscope_ = value;
+        result.hasSensorGyroscope = true;
+        result.sensorGyroscope_ = value;
         return this;
       }
-      public Builder setGyroscope(SensorsPacket.sensors_packet.SensorGyroPayload.Builder builderForValue) {
-        result.hasGyroscope = true;
-        result.gyroscope_ = builderForValue.build();
+      public Builder setSensorGyroscope(SensorsPacket.sensors_packet.SensorGyroscopePayload.Builder builderForValue) {
+        result.hasSensorGyroscope = true;
+        result.sensorGyroscope_ = builderForValue.build();
         return this;
       }
-      public Builder mergeGyroscope(SensorsPacket.sensors_packet.SensorGyroPayload value) {
-        if (result.hasGyroscope() &&
-            result.gyroscope_ != SensorsPacket.sensors_packet.SensorGyroPayload.getDefaultInstance()) {
-          result.gyroscope_ =
-            SensorsPacket.sensors_packet.SensorGyroPayload.newBuilder(result.gyroscope_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorGyroscope(SensorsPacket.sensors_packet.SensorGyroscopePayload value) {
+        if (result.hasSensorGyroscope() &&
+            result.sensorGyroscope_ != SensorsPacket.sensors_packet.SensorGyroscopePayload.getDefaultInstance()) {
+          result.sensorGyroscope_ =
+            SensorsPacket.sensors_packet.SensorGyroscopePayload.newBuilder(result.sensorGyroscope_).mergeFrom(value).buildPartial();
         } else {
-          result.gyroscope_ = value;
+          result.sensorGyroscope_ = value;
         }
-        result.hasGyroscope = true;
+        result.hasSensorGyroscope = true;
         return this;
       }
-      public Builder clearGyroscope() {
-        result.hasGyroscope = false;
-        result.gyroscope_ = SensorsPacket.sensors_packet.SensorGyroPayload.getDefaultInstance();
+      public Builder clearSensorGyroscope() {
+        result.hasSensorGyroscope = false;
+        result.sensorGyroscope_ = SensorsPacket.sensors_packet.SensorGyroscopePayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorGravityPayload gravity = 5;
-      public boolean hasGravity() {
-        return result.hasGravity();
+      // optional .sensors_packet.SensorGravityPayload sensor_gravity = 5;
+      public boolean hasSensorGravity() {
+        return result.hasSensorGravity();
       }
-      public SensorsPacket.sensors_packet.SensorGravityPayload getGravity() {
-        return result.getGravity();
+      public SensorsPacket.sensors_packet.SensorGravityPayload getSensorGravity() {
+        return result.getSensorGravity();
       }
-      public Builder setGravity(SensorsPacket.sensors_packet.SensorGravityPayload value) {
+      public Builder setSensorGravity(SensorsPacket.sensors_packet.SensorGravityPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasGravity = true;
-        result.gravity_ = value;
+        result.hasSensorGravity = true;
+        result.sensorGravity_ = value;
         return this;
       }
-      public Builder setGravity(SensorsPacket.sensors_packet.SensorGravityPayload.Builder builderForValue) {
-        result.hasGravity = true;
-        result.gravity_ = builderForValue.build();
+      public Builder setSensorGravity(SensorsPacket.sensors_packet.SensorGravityPayload.Builder builderForValue) {
+        result.hasSensorGravity = true;
+        result.sensorGravity_ = builderForValue.build();
         return this;
       }
-      public Builder mergeGravity(SensorsPacket.sensors_packet.SensorGravityPayload value) {
-        if (result.hasGravity() &&
-            result.gravity_ != SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance()) {
-          result.gravity_ =
-            SensorsPacket.sensors_packet.SensorGravityPayload.newBuilder(result.gravity_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorGravity(SensorsPacket.sensors_packet.SensorGravityPayload value) {
+        if (result.hasSensorGravity() &&
+            result.sensorGravity_ != SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance()) {
+          result.sensorGravity_ =
+            SensorsPacket.sensors_packet.SensorGravityPayload.newBuilder(result.sensorGravity_).mergeFrom(value).buildPartial();
         } else {
-          result.gravity_ = value;
+          result.sensorGravity_ = value;
         }
-        result.hasGravity = true;
+        result.hasSensorGravity = true;
         return this;
       }
-      public Builder clearGravity() {
-        result.hasGravity = false;
-        result.gravity_ = SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance();
+      public Builder clearSensorGravity() {
+        result.hasSensorGravity = false;
+        result.sensorGravity_ = SensorsPacket.sensors_packet.SensorGravityPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorLinearAccPayload linear_acc = 6;
-      public boolean hasLinearAcc() {
-        return result.hasLinearAcc();
+      // optional .sensors_packet.SensorLinearAccPayload sensor_linear_acc = 6;
+      public boolean hasSensorLinearAcc() {
+        return result.hasSensorLinearAcc();
       }
-      public SensorsPacket.sensors_packet.SensorLinearAccPayload getLinearAcc() {
-        return result.getLinearAcc();
+      public SensorsPacket.sensors_packet.SensorLinearAccPayload getSensorLinearAcc() {
+        return result.getSensorLinearAcc();
       }
-      public Builder setLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload value) {
+      public Builder setSensorLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasLinearAcc = true;
-        result.linearAcc_ = value;
+        result.hasSensorLinearAcc = true;
+        result.sensorLinearAcc_ = value;
         return this;
       }
-      public Builder setLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload.Builder builderForValue) {
-        result.hasLinearAcc = true;
-        result.linearAcc_ = builderForValue.build();
+      public Builder setSensorLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload.Builder builderForValue) {
+        result.hasSensorLinearAcc = true;
+        result.sensorLinearAcc_ = builderForValue.build();
         return this;
       }
-      public Builder mergeLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload value) {
-        if (result.hasLinearAcc() &&
-            result.linearAcc_ != SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance()) {
-          result.linearAcc_ =
-            SensorsPacket.sensors_packet.SensorLinearAccPayload.newBuilder(result.linearAcc_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorLinearAcc(SensorsPacket.sensors_packet.SensorLinearAccPayload value) {
+        if (result.hasSensorLinearAcc() &&
+            result.sensorLinearAcc_ != SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance()) {
+          result.sensorLinearAcc_ =
+            SensorsPacket.sensors_packet.SensorLinearAccPayload.newBuilder(result.sensorLinearAcc_).mergeFrom(value).buildPartial();
         } else {
-          result.linearAcc_ = value;
+          result.sensorLinearAcc_ = value;
         }
-        result.hasLinearAcc = true;
+        result.hasSensorLinearAcc = true;
         return this;
       }
-      public Builder clearLinearAcc() {
-        result.hasLinearAcc = false;
-        result.linearAcc_ = SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance();
+      public Builder clearSensorLinearAcc() {
+        result.hasSensorLinearAcc = false;
+        result.sensorLinearAcc_ = SensorsPacket.sensors_packet.SensorLinearAccPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorRotVectorPayload rotvector = 7;
-      public boolean hasRotvector() {
-        return result.hasRotvector();
+      // optional .sensors_packet.SensorRotVectorPayload sensor_rot_vector = 7;
+      public boolean hasSensorRotVector() {
+        return result.hasSensorRotVector();
       }
-      public SensorsPacket.sensors_packet.SensorRotVectorPayload getRotvector() {
-        return result.getRotvector();
+      public SensorsPacket.sensors_packet.SensorRotVectorPayload getSensorRotVector() {
+        return result.getSensorRotVector();
       }
-      public Builder setRotvector(SensorsPacket.sensors_packet.SensorRotVectorPayload value) {
+      public Builder setSensorRotVector(SensorsPacket.sensors_packet.SensorRotVectorPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasRotvector = true;
-        result.rotvector_ = value;
+        result.hasSensorRotVector = true;
+        result.sensorRotVector_ = value;
         return this;
       }
-      public Builder setRotvector(SensorsPacket.sensors_packet.SensorRotVectorPayload.Builder builderForValue) {
-        result.hasRotvector = true;
-        result.rotvector_ = builderForValue.build();
+      public Builder setSensorRotVector(SensorsPacket.sensors_packet.SensorRotVectorPayload.Builder builderForValue) {
+        result.hasSensorRotVector = true;
+        result.sensorRotVector_ = builderForValue.build();
         return this;
       }
-      public Builder mergeRotvector(SensorsPacket.sensors_packet.SensorRotVectorPayload value) {
-        if (result.hasRotvector() &&
-            result.rotvector_ != SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance()) {
-          result.rotvector_ =
-            SensorsPacket.sensors_packet.SensorRotVectorPayload.newBuilder(result.rotvector_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorRotVector(SensorsPacket.sensors_packet.SensorRotVectorPayload value) {
+        if (result.hasSensorRotVector() &&
+            result.sensorRotVector_ != SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance()) {
+          result.sensorRotVector_ =
+            SensorsPacket.sensors_packet.SensorRotVectorPayload.newBuilder(result.sensorRotVector_).mergeFrom(value).buildPartial();
         } else {
-          result.rotvector_ = value;
+          result.sensorRotVector_ = value;
         }
-        result.hasRotvector = true;
+        result.hasSensorRotVector = true;
         return this;
       }
-      public Builder clearRotvector() {
-        result.hasRotvector = false;
-        result.rotvector_ = SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance();
+      public Builder clearSensorRotVector() {
+        result.hasSensorRotVector = false;
+        result.sensorRotVector_ = SensorsPacket.sensors_packet.SensorRotVectorPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorTemperaturePayload thermometer = 8;
-      public boolean hasThermometer() {
-        return result.hasThermometer();
+      // optional .sensors_packet.SensorTemperaturePayload sensor_temperature = 8;
+      public boolean hasSensorTemperature() {
+        return result.hasSensorTemperature();
       }
-      public SensorsPacket.sensors_packet.SensorTemperaturePayload getThermometer() {
-        return result.getThermometer();
+      public SensorsPacket.sensors_packet.SensorTemperaturePayload getSensorTemperature() {
+        return result.getSensorTemperature();
       }
-      public Builder setThermometer(SensorsPacket.sensors_packet.SensorTemperaturePayload value) {
+      public Builder setSensorTemperature(SensorsPacket.sensors_packet.SensorTemperaturePayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasThermometer = true;
-        result.thermometer_ = value;
+        result.hasSensorTemperature = true;
+        result.sensorTemperature_ = value;
         return this;
       }
-      public Builder setThermometer(SensorsPacket.sensors_packet.SensorTemperaturePayload.Builder builderForValue) {
-        result.hasThermometer = true;
-        result.thermometer_ = builderForValue.build();
+      public Builder setSensorTemperature(SensorsPacket.sensors_packet.SensorTemperaturePayload.Builder builderForValue) {
+        result.hasSensorTemperature = true;
+        result.sensorTemperature_ = builderForValue.build();
         return this;
       }
-      public Builder mergeThermometer(SensorsPacket.sensors_packet.SensorTemperaturePayload value) {
-        if (result.hasThermometer() &&
-            result.thermometer_ != SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance()) {
-          result.thermometer_ =
-            SensorsPacket.sensors_packet.SensorTemperaturePayload.newBuilder(result.thermometer_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorTemperature(SensorsPacket.sensors_packet.SensorTemperaturePayload value) {
+        if (result.hasSensorTemperature() &&
+            result.sensorTemperature_ != SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance()) {
+          result.sensorTemperature_ =
+            SensorsPacket.sensors_packet.SensorTemperaturePayload.newBuilder(result.sensorTemperature_).mergeFrom(value).buildPartial();
         } else {
-          result.thermometer_ = value;
+          result.sensorTemperature_ = value;
         }
-        result.hasThermometer = true;
+        result.hasSensorTemperature = true;
         return this;
       }
-      public Builder clearThermometer() {
-        result.hasThermometer = false;
-        result.thermometer_ = SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance();
+      public Builder clearSensorTemperature() {
+        result.hasSensorTemperature = false;
+        result.sensorTemperature_ = SensorsPacket.sensors_packet.SensorTemperaturePayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorProximityPayload proximity = 9;
-      public boolean hasProximity() {
-        return result.hasProximity();
+      // optional .sensors_packet.SensorProximityPayload sensor_proximity = 9;
+      public boolean hasSensorProximity() {
+        return result.hasSensorProximity();
       }
-      public SensorsPacket.sensors_packet.SensorProximityPayload getProximity() {
-        return result.getProximity();
+      public SensorsPacket.sensors_packet.SensorProximityPayload getSensorProximity() {
+        return result.getSensorProximity();
       }
-      public Builder setProximity(SensorsPacket.sensors_packet.SensorProximityPayload value) {
+      public Builder setSensorProximity(SensorsPacket.sensors_packet.SensorProximityPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasProximity = true;
-        result.proximity_ = value;
+        result.hasSensorProximity = true;
+        result.sensorProximity_ = value;
         return this;
       }
-      public Builder setProximity(SensorsPacket.sensors_packet.SensorProximityPayload.Builder builderForValue) {
-        result.hasProximity = true;
-        result.proximity_ = builderForValue.build();
+      public Builder setSensorProximity(SensorsPacket.sensors_packet.SensorProximityPayload.Builder builderForValue) {
+        result.hasSensorProximity = true;
+        result.sensorProximity_ = builderForValue.build();
         return this;
       }
-      public Builder mergeProximity(SensorsPacket.sensors_packet.SensorProximityPayload value) {
-        if (result.hasProximity() &&
-            result.proximity_ != SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance()) {
-          result.proximity_ =
-            SensorsPacket.sensors_packet.SensorProximityPayload.newBuilder(result.proximity_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorProximity(SensorsPacket.sensors_packet.SensorProximityPayload value) {
+        if (result.hasSensorProximity() &&
+            result.sensorProximity_ != SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance()) {
+          result.sensorProximity_ =
+            SensorsPacket.sensors_packet.SensorProximityPayload.newBuilder(result.sensorProximity_).mergeFrom(value).buildPartial();
         } else {
-          result.proximity_ = value;
+          result.sensorProximity_ = value;
         }
-        result.hasProximity = true;
+        result.hasSensorProximity = true;
         return this;
       }
-      public Builder clearProximity() {
-        result.hasProximity = false;
-        result.proximity_ = SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance();
+      public Builder clearSensorProximity() {
+        result.hasSensorProximity = false;
+        result.sensorProximity_ = SensorsPacket.sensors_packet.SensorProximityPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorLightPayload luxmeter = 10;
-      public boolean hasLuxmeter() {
-        return result.hasLuxmeter();
+      // optional .sensors_packet.SensorLightPayload sensor_light = 10;
+      public boolean hasSensorLight() {
+        return result.hasSensorLight();
       }
-      public SensorsPacket.sensors_packet.SensorLightPayload getLuxmeter() {
-        return result.getLuxmeter();
+      public SensorsPacket.sensors_packet.SensorLightPayload getSensorLight() {
+        return result.getSensorLight();
       }
-      public Builder setLuxmeter(SensorsPacket.sensors_packet.SensorLightPayload value) {
+      public Builder setSensorLight(SensorsPacket.sensors_packet.SensorLightPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasLuxmeter = true;
-        result.luxmeter_ = value;
+        result.hasSensorLight = true;
+        result.sensorLight_ = value;
         return this;
       }
-      public Builder setLuxmeter(SensorsPacket.sensors_packet.SensorLightPayload.Builder builderForValue) {
-        result.hasLuxmeter = true;
-        result.luxmeter_ = builderForValue.build();
+      public Builder setSensorLight(SensorsPacket.sensors_packet.SensorLightPayload.Builder builderForValue) {
+        result.hasSensorLight = true;
+        result.sensorLight_ = builderForValue.build();
         return this;
       }
-      public Builder mergeLuxmeter(SensorsPacket.sensors_packet.SensorLightPayload value) {
-        if (result.hasLuxmeter() &&
-            result.luxmeter_ != SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance()) {
-          result.luxmeter_ =
-            SensorsPacket.sensors_packet.SensorLightPayload.newBuilder(result.luxmeter_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorLight(SensorsPacket.sensors_packet.SensorLightPayload value) {
+        if (result.hasSensorLight() &&
+            result.sensorLight_ != SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance()) {
+          result.sensorLight_ =
+            SensorsPacket.sensors_packet.SensorLightPayload.newBuilder(result.sensorLight_).mergeFrom(value).buildPartial();
         } else {
-          result.luxmeter_ = value;
+          result.sensorLight_ = value;
         }
-        result.hasLuxmeter = true;
+        result.hasSensorLight = true;
         return this;
       }
-      public Builder clearLuxmeter() {
-        result.hasLuxmeter = false;
-        result.luxmeter_ = SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance();
+      public Builder clearSensorLight() {
+        result.hasSensorLight = false;
+        result.sensorLight_ = SensorsPacket.sensors_packet.SensorLightPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorPressurePayload barometer = 11;
-      public boolean hasBarometer() {
-        return result.hasBarometer();
+      // optional .sensors_packet.SensorPressurePayload sensor_pressure = 11;
+      public boolean hasSensorPressure() {
+        return result.hasSensorPressure();
       }
-      public SensorsPacket.sensors_packet.SensorPressurePayload getBarometer() {
-        return result.getBarometer();
+      public SensorsPacket.sensors_packet.SensorPressurePayload getSensorPressure() {
+        return result.getSensorPressure();
       }
-      public Builder setBarometer(SensorsPacket.sensors_packet.SensorPressurePayload value) {
+      public Builder setSensorPressure(SensorsPacket.sensors_packet.SensorPressurePayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasBarometer = true;
-        result.barometer_ = value;
+        result.hasSensorPressure = true;
+        result.sensorPressure_ = value;
         return this;
       }
-      public Builder setBarometer(SensorsPacket.sensors_packet.SensorPressurePayload.Builder builderForValue) {
-        result.hasBarometer = true;
-        result.barometer_ = builderForValue.build();
+      public Builder setSensorPressure(SensorsPacket.sensors_packet.SensorPressurePayload.Builder builderForValue) {
+        result.hasSensorPressure = true;
+        result.sensorPressure_ = builderForValue.build();
         return this;
       }
-      public Builder mergeBarometer(SensorsPacket.sensors_packet.SensorPressurePayload value) {
-        if (result.hasBarometer() &&
-            result.barometer_ != SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance()) {
-          result.barometer_ =
-            SensorsPacket.sensors_packet.SensorPressurePayload.newBuilder(result.barometer_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorPressure(SensorsPacket.sensors_packet.SensorPressurePayload value) {
+        if (result.hasSensorPressure() &&
+            result.sensorPressure_ != SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance()) {
+          result.sensorPressure_ =
+            SensorsPacket.sensors_packet.SensorPressurePayload.newBuilder(result.sensorPressure_).mergeFrom(value).buildPartial();
         } else {
-          result.barometer_ = value;
+          result.sensorPressure_ = value;
         }
-        result.hasBarometer = true;
+        result.hasSensorPressure = true;
         return this;
       }
-      public Builder clearBarometer() {
-        result.hasBarometer = false;
-        result.barometer_ = SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance();
+      public Builder clearSensorPressure() {
+        result.hasSensorPressure = false;
+        result.sensorPressure_ = SensorsPacket.sensors_packet.SensorPressurePayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.SensorRelativeHumidityPayload hygrometer = 12;
-      public boolean hasHygrometer() {
-        return result.hasHygrometer();
+      // optional .sensors_packet.SensorRelativeHumidityPayload sensor_relative_humidity = 12;
+      public boolean hasSensorRelativeHumidity() {
+        return result.hasSensorRelativeHumidity();
       }
-      public SensorsPacket.sensors_packet.SensorRelativeHumidityPayload getHygrometer() {
-        return result.getHygrometer();
+      public SensorsPacket.sensors_packet.SensorRelativeHumidityPayload getSensorRelativeHumidity() {
+        return result.getSensorRelativeHumidity();
       }
-      public Builder setHygrometer(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload value) {
+      public Builder setSensorRelativeHumidity(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasHygrometer = true;
-        result.hygrometer_ = value;
+        result.hasSensorRelativeHumidity = true;
+        result.sensorRelativeHumidity_ = value;
         return this;
       }
-      public Builder setHygrometer(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.Builder builderForValue) {
-        result.hasHygrometer = true;
-        result.hygrometer_ = builderForValue.build();
+      public Builder setSensorRelativeHumidity(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.Builder builderForValue) {
+        result.hasSensorRelativeHumidity = true;
+        result.sensorRelativeHumidity_ = builderForValue.build();
         return this;
       }
-      public Builder mergeHygrometer(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload value) {
-        if (result.hasHygrometer() &&
-            result.hygrometer_ != SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance()) {
-          result.hygrometer_ =
-            SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.newBuilder(result.hygrometer_).mergeFrom(value).buildPartial();
+      public Builder mergeSensorRelativeHumidity(SensorsPacket.sensors_packet.SensorRelativeHumidityPayload value) {
+        if (result.hasSensorRelativeHumidity() &&
+            result.sensorRelativeHumidity_ != SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance()) {
+          result.sensorRelativeHumidity_ =
+            SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.newBuilder(result.sensorRelativeHumidity_).mergeFrom(value).buildPartial();
         } else {
-          result.hygrometer_ = value;
+          result.sensorRelativeHumidity_ = value;
         }
-        result.hasHygrometer = true;
+        result.hasSensorRelativeHumidity = true;
         return this;
       }
-      public Builder clearHygrometer() {
-        result.hasHygrometer = false;
-        result.hygrometer_ = SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance();
+      public Builder clearSensorRelativeHumidity() {
+        result.hasSensorRelativeHumidity = false;
+        result.sensorRelativeHumidity_ = SensorsPacket.sensors_packet.SensorRelativeHumidityPayload.getDefaultInstance();
         return this;
       }
       
-      // optional .sensors_packet.BatteryPayload Battery = 100;
+      // optional .sensors_packet.BatteryPayload battery = 100;
       public boolean hasBattery() {
         return result.hasBattery();
       }
@@ -6065,40 +6065,40 @@ public final class SensorsPacket {
         return this;
       }
       
-      // optional .sensors_packet.LocationPayload GPS = 200;
-      public boolean hasGPS() {
-        return result.hasGPS();
+      // optional .sensors_packet.GPSPayload gps = 200;
+      public boolean hasGps() {
+        return result.hasGps();
       }
-      public SensorsPacket.sensors_packet.LocationPayload getGPS() {
-        return result.getGPS();
+      public SensorsPacket.sensors_packet.GPSPayload getGps() {
+        return result.getGps();
       }
-      public Builder setGPS(SensorsPacket.sensors_packet.LocationPayload value) {
+      public Builder setGps(SensorsPacket.sensors_packet.GPSPayload value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        result.hasGPS = true;
-        result.gPS_ = value;
+        result.hasGps = true;
+        result.gps_ = value;
         return this;
       }
-      public Builder setGPS(SensorsPacket.sensors_packet.LocationPayload.Builder builderForValue) {
-        result.hasGPS = true;
-        result.gPS_ = builderForValue.build();
+      public Builder setGps(SensorsPacket.sensors_packet.GPSPayload.Builder builderForValue) {
+        result.hasGps = true;
+        result.gps_ = builderForValue.build();
         return this;
       }
-      public Builder mergeGPS(SensorsPacket.sensors_packet.LocationPayload value) {
-        if (result.hasGPS() &&
-            result.gPS_ != SensorsPacket.sensors_packet.LocationPayload.getDefaultInstance()) {
-          result.gPS_ =
-            SensorsPacket.sensors_packet.LocationPayload.newBuilder(result.gPS_).mergeFrom(value).buildPartial();
+      public Builder mergeGps(SensorsPacket.sensors_packet.GPSPayload value) {
+        if (result.hasGps() &&
+            result.gps_ != SensorsPacket.sensors_packet.GPSPayload.getDefaultInstance()) {
+          result.gps_ =
+            SensorsPacket.sensors_packet.GPSPayload.newBuilder(result.gps_).mergeFrom(value).buildPartial();
         } else {
-          result.gPS_ = value;
+          result.gps_ = value;
         }
-        result.hasGPS = true;
+        result.hasGps = true;
         return this;
       }
-      public Builder clearGPS() {
-        result.hasGPS = false;
-        result.gPS_ = SensorsPacket.sensors_packet.LocationPayload.getDefaultInstance();
+      public Builder clearGps() {
+        result.hasGps = false;
+        result.gps_ = SensorsPacket.sensors_packet.GPSPayload.getDefaultInstance();
         return this;
       }
       
@@ -6120,25 +6120,25 @@ public final class SensorsPacket {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_sensors_packet_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_sensors_packet_SensorAcceleroPayload_descriptor;
+    internal_static_sensors_packet_SensorAccelerometerPayload_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_sensors_packet_SensorAcceleroPayload_fieldAccessorTable;
+      internal_static_sensors_packet_SensorAccelerometerPayload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_sensors_packet_SensorMagnetoPayload_descriptor;
+    internal_static_sensors_packet_SensorMagnetometerPayload_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_sensors_packet_SensorMagnetoPayload_fieldAccessorTable;
+      internal_static_sensors_packet_SensorMagnetometerPayload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_sensors_packet_SensorOrientationPayload_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_sensors_packet_SensorOrientationPayload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_sensors_packet_SensorGyroPayload_descriptor;
+    internal_static_sensors_packet_SensorGyroscopePayload_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_sensors_packet_SensorGyroPayload_fieldAccessorTable;
+      internal_static_sensors_packet_SensorGyroscopePayload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
     internal_static_sensors_packet_SensorGravityPayload_descriptor;
   private static
@@ -6185,10 +6185,10 @@ public final class SensorsPacket {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_sensors_packet_BatteryPayload_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_sensors_packet_LocationPayload_descriptor;
+    internal_static_sensors_packet_GPSPayload_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_sensors_packet_LocationPayload_fieldAccessorTable;
+      internal_static_sensors_packet_GPSPayload_fieldAccessorTable;
   
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6198,56 +6198,59 @@ public final class SensorsPacket {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\024sensors_packet.proto\"\221\017\n\016sensors_packe" +
-      "t\0227\n\010accelero\030\001 \001(\0132%.sensors_packet.Sen" +
-      "sorAcceleroPayload\0225\n\007magneto\030\002 \001(\0132$.se" +
-      "nsors_packet.SensorMagnetoPayload\022=\n\013ori" +
-      "entation\030\003 \001(\0132(.sensors_packet.SensorOr" +
-      "ientationPayload\0224\n\tgyroscope\030\004 \001(\0132!.se" +
-      "nsors_packet.SensorGyroPayload\0225\n\007gravit" +
-      "y\030\005 \001(\0132$.sensors_packet.SensorGravityPa" +
-      "yload\022:\n\nlinear_acc\030\006 \001(\0132&.sensors_pack" +
-      "et.SensorLinearAccPayload\0229\n\trotvector\030\007",
-      " \001(\0132&.sensors_packet.SensorRotVectorPay" +
-      "load\022=\n\013thermometer\030\010 \001(\0132(.sensors_pack" +
-      "et.SensorTemperaturePayload\0229\n\tproximity" +
-      "\030\t \001(\0132&.sensors_packet.SensorProximityP" +
-      "ayload\0224\n\010luxmeter\030\n \001(\0132\".sensors_packe" +
-      "t.SensorLightPayload\0228\n\tbarometer\030\013 \001(\0132" +
-      "%.sensors_packet.SensorPressurePayload\022A" +
-      "\n\nhygrometer\030\014 \001(\0132-.sensors_packet.Sens" +
-      "orRelativeHumidityPayload\022/\n\007Battery\030d \001" +
-      "(\0132\036.sensors_packet.BatteryPayload\022-\n\003GP",
-      "S\030\310\001 \001(\0132\037.sensors_packet.LocationPayloa" +
-      "d\0328\n\025SensorAcceleroPayload\022\t\n\001x\030\001 \001(\001\022\t\n" +
-      "\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\0327\n\024SensorMagnetoPayl" +
-      "oad\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\032H\n\030" +
-      "SensorOrientationPayload\022\017\n\007azimuth\030\001 \001(" +
-      "\001\022\r\n\005pitch\030\002 \001(\001\022\014\n\004roll\030\003 \001(\001\032A\n\021Sensor" +
-      "GyroPayload\022\017\n\007azimuth\030\001 \001(\001\022\r\n\005pitch\030\002 " +
-      "\001(\001\022\014\n\004roll\030\003 \001(\001\0327\n\024SensorGravityPayloa" +
-      "d\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\0329\n\026Se" +
-      "nsorLinearAccPayload\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001",
-      "(\001\022\t\n\001z\030\003 \001(\001\0328\n\026SensorRotVectorPayload\022" +
-      "\014\n\004size\030\001 \001(\r\022\020\n\004data\030\002 \003(\001B\002\020\001\032/\n\030Senso" +
-      "rTemperaturePayload\022\023\n\013temperature\030\001 \001(\001" +
-      "\032*\n\026SensorProximityPayload\022\020\n\010distance\030\001" +
-      " \001(\001\032#\n\022SensorLightPayload\022\r\n\005light\030\001 \001(" +
-      "\001\032)\n\025SensorPressurePayload\022\020\n\010pressure\030\001" +
-      " \001(\001\032:\n\035SensorRelativeHumidityPayload\022\031\n" +
-      "\021relative_humidity\030\001 \001(\001\032\367\001\n\016BatteryPayl" +
-      "oad\022\024\n\014BatteryLevel\030\001 \001(\004\022\023\n\013BatteryFull" +
-      "\030\002 \001(\004\022N\n\rBatteryStatus\030\003 \001(\0162-.sensors_",
-      "packet.BatteryPayload.BattStatusType:\010CH" +
-      "ARGING\022\021\n\tAC_Online\030\004 \001(\r\"W\n\016BattStatusT" +
-      "ype\022\014\n\010CHARGING\020\000\022\017\n\013DISCHARGING\020\002\022\017\n\013NO" +
-      "TCHARGING\020\003\022\010\n\004FULL\020\004\022\013\n\007UNKNOWN\020\005\032\315\001\n\017L" +
-      "ocationPayload\022F\n\006status\030\001 \001(\0162-.sensors" +
-      "_packet.LocationPayload.GPSStatusType:\007E" +
-      "NABLED\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongitude\030\003 " +
-      "\001(\001\022\020\n\010altitude\030\004 \001(\001\022\017\n\007bearing\030\005 \001(\001\"*" +
-      "\n\rGPSStatusType\022\014\n\010DISABLED\020\000\022\013\n\007ENABLED" +
-      "\020\001"
+      "\n\024sensors_packet.proto\"\213\020\n\016sensors_packe" +
+      "t\022H\n\024sensor_accelerometer\030\001 \001(\0132*.sensor" +
+      "s_packet.SensorAccelerometerPayload\022F\n\023s" +
+      "ensor_magnetometer\030\002 \001(\0132).sensors_packe" +
+      "t.SensorMagnetometerPayload\022D\n\022sensor_or" +
+      "ientation\030\003 \001(\0132(.sensors_packet.SensorO" +
+      "rientationPayload\022@\n\020sensor_gyroscope\030\004 " +
+      "\001(\0132&.sensors_packet.SensorGyroscopePayl" +
+      "oad\022<\n\016sensor_gravity\030\005 \001(\0132$.sensors_pa" +
+      "cket.SensorGravityPayload\022A\n\021sensor_line",
+      "ar_acc\030\006 \001(\0132&.sensors_packet.SensorLine" +
+      "arAccPayload\022A\n\021sensor_rot_vector\030\007 \001(\0132" +
+      "&.sensors_packet.SensorRotVectorPayload\022" +
+      "D\n\022sensor_temperature\030\010 \001(\0132(.sensors_pa" +
+      "cket.SensorTemperaturePayload\022@\n\020sensor_" +
+      "proximity\030\t \001(\0132&.sensors_packet.SensorP" +
+      "roximityPayload\0228\n\014sensor_light\030\n \001(\0132\"." +
+      "sensors_packet.SensorLightPayload\022>\n\017sen" +
+      "sor_pressure\030\013 \001(\0132%.sensors_packet.Sens" +
+      "orPressurePayload\022O\n\030sensor_relative_hum",
+      "idity\030\014 \001(\0132-.sensors_packet.SensorRelat" +
+      "iveHumidityPayload\022/\n\007battery\030d \001(\0132\036.se" +
+      "nsors_packet.BatteryPayload\022(\n\003gps\030\310\001 \001(" +
+      "\0132\032.sensors_packet.GPSPayload\032=\n\032SensorA" +
+      "ccelerometerPayload\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(" +
+      "\001\022\t\n\001z\030\003 \001(\001\032<\n\031SensorMagnetometerPayloa" +
+      "d\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\032H\n\030Se" +
+      "nsorOrientationPayload\022\017\n\007azimuth\030\001 \001(\001\022" +
+      "\r\n\005pitch\030\002 \001(\001\022\014\n\004roll\030\003 \001(\001\032F\n\026SensorGy" +
+      "roscopePayload\022\017\n\007azimuth\030\001 \001(\001\022\r\n\005pitch",
+      "\030\002 \001(\001\022\014\n\004roll\030\003 \001(\001\0327\n\024SensorGravityPay" +
+      "load\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030\002 \001(\001\022\t\n\001z\030\003 \001(\001\0329\n" +
+      "\026SensorLinearAccPayload\022\t\n\001x\030\001 \001(\001\022\t\n\001y\030" +
+      "\002 \001(\001\022\t\n\001z\030\003 \001(\001\0328\n\026SensorRotVectorPaylo" +
+      "ad\022\014\n\004size\030\001 \001(\r\022\020\n\004data\030\002 \003(\001B\002\020\001\032/\n\030Se" +
+      "nsorTemperaturePayload\022\023\n\013temperature\030\001 " +
+      "\001(\001\032*\n\026SensorProximityPayload\022\020\n\010distanc" +
+      "e\030\001 \001(\001\032#\n\022SensorLightPayload\022\r\n\005light\030\001" +
+      " \001(\001\032)\n\025SensorPressurePayload\022\020\n\010pressur" +
+      "e\030\001 \001(\001\032:\n\035SensorRelativeHumidityPayload",
+      "\022\031\n\021relative_humidity\030\001 \001(\001\032\200\002\n\016BatteryP" +
+      "ayload\022\025\n\rbattery_level\030\001 \001(\004\022\024\n\014battery" +
+      "_full\030\002 \001(\004\022R\n\016battery_status\030\003 \001(\01620.se" +
+      "nsors_packet.BatteryPayload.BatteryStatu" +
+      "sType:\010CHARGING\022\021\n\tac_online\030\004 \001(\r\"Z\n\021Ba" +
+      "tteryStatusType\022\014\n\010CHARGING\020\000\022\017\n\013DISCHAR" +
+      "GING\020\002\022\017\n\013NOTCHARGING\020\003\022\010\n\004FULL\020\004\022\013\n\007UNK" +
+      "NOWN\020\005\032\303\001\n\nGPSPayload\022A\n\006status\030\001 \001(\0162(." +
+      "sensors_packet.GPSPayload.GPSStatusType:" +
+      "\007ENABLED\022\020\n\010latitude\030\002 \001(\001\022\021\n\tlongitude\030",
+      "\003 \001(\001\022\020\n\010altitude\030\004 \001(\001\022\017\n\007bearing\030\005 \001(\001" +
+      "\"*\n\rGPSStatusType\022\014\n\010DISABLED\020\000\022\013\n\007ENABL" +
+      "ED\020\001"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -6259,25 +6262,25 @@ public final class SensorsPacket {
           internal_static_sensors_packet_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_sensors_packet_descriptor,
-              new java.lang.String[] { "Accelero", "Magneto", "Orientation", "Gyroscope", "Gravity", "LinearAcc", "Rotvector", "Thermometer", "Proximity", "Luxmeter", "Barometer", "Hygrometer", "Battery", "GPS", },
+              new java.lang.String[] { "SensorAccelerometer", "SensorMagnetometer", "SensorOrientation", "SensorGyroscope", "SensorGravity", "SensorLinearAcc", "SensorRotVector", "SensorTemperature", "SensorProximity", "SensorLight", "SensorPressure", "SensorRelativeHumidity", "Battery", "Gps", },
               SensorsPacket.sensors_packet.class,
               SensorsPacket.sensors_packet.Builder.class);
-          internal_static_sensors_packet_SensorAcceleroPayload_descriptor =
+          internal_static_sensors_packet_SensorAccelerometerPayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(0);
-          internal_static_sensors_packet_SensorAcceleroPayload_fieldAccessorTable = new
+          internal_static_sensors_packet_SensorAccelerometerPayload_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_sensors_packet_SensorAcceleroPayload_descriptor,
+              internal_static_sensors_packet_SensorAccelerometerPayload_descriptor,
               new java.lang.String[] { "X", "Y", "Z", },
-              SensorsPacket.sensors_packet.SensorAcceleroPayload.class,
-              SensorsPacket.sensors_packet.SensorAcceleroPayload.Builder.class);
-          internal_static_sensors_packet_SensorMagnetoPayload_descriptor =
+              SensorsPacket.sensors_packet.SensorAccelerometerPayload.class,
+              SensorsPacket.sensors_packet.SensorAccelerometerPayload.Builder.class);
+          internal_static_sensors_packet_SensorMagnetometerPayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(1);
-          internal_static_sensors_packet_SensorMagnetoPayload_fieldAccessorTable = new
+          internal_static_sensors_packet_SensorMagnetometerPayload_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_sensors_packet_SensorMagnetoPayload_descriptor,
+              internal_static_sensors_packet_SensorMagnetometerPayload_descriptor,
               new java.lang.String[] { "X", "Y", "Z", },
-              SensorsPacket.sensors_packet.SensorMagnetoPayload.class,
-              SensorsPacket.sensors_packet.SensorMagnetoPayload.Builder.class);
+              SensorsPacket.sensors_packet.SensorMagnetometerPayload.class,
+              SensorsPacket.sensors_packet.SensorMagnetometerPayload.Builder.class);
           internal_static_sensors_packet_SensorOrientationPayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(2);
           internal_static_sensors_packet_SensorOrientationPayload_fieldAccessorTable = new
@@ -6286,14 +6289,14 @@ public final class SensorsPacket {
               new java.lang.String[] { "Azimuth", "Pitch", "Roll", },
               SensorsPacket.sensors_packet.SensorOrientationPayload.class,
               SensorsPacket.sensors_packet.SensorOrientationPayload.Builder.class);
-          internal_static_sensors_packet_SensorGyroPayload_descriptor =
+          internal_static_sensors_packet_SensorGyroscopePayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(3);
-          internal_static_sensors_packet_SensorGyroPayload_fieldAccessorTable = new
+          internal_static_sensors_packet_SensorGyroscopePayload_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_sensors_packet_SensorGyroPayload_descriptor,
+              internal_static_sensors_packet_SensorGyroscopePayload_descriptor,
               new java.lang.String[] { "Azimuth", "Pitch", "Roll", },
-              SensorsPacket.sensors_packet.SensorGyroPayload.class,
-              SensorsPacket.sensors_packet.SensorGyroPayload.Builder.class);
+              SensorsPacket.sensors_packet.SensorGyroscopePayload.class,
+              SensorsPacket.sensors_packet.SensorGyroscopePayload.Builder.class);
           internal_static_sensors_packet_SensorGravityPayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(4);
           internal_static_sensors_packet_SensorGravityPayload_fieldAccessorTable = new
@@ -6363,17 +6366,17 @@ public final class SensorsPacket {
           internal_static_sensors_packet_BatteryPayload_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_sensors_packet_BatteryPayload_descriptor,
-              new java.lang.String[] { "BatteryLevel", "BatteryFull", "BatteryStatus", "ACOnline", },
+              new java.lang.String[] { "BatteryLevel", "BatteryFull", "BatteryStatus", "AcOnline", },
               SensorsPacket.sensors_packet.BatteryPayload.class,
               SensorsPacket.sensors_packet.BatteryPayload.Builder.class);
-          internal_static_sensors_packet_LocationPayload_descriptor =
+          internal_static_sensors_packet_GPSPayload_descriptor =
             internal_static_sensors_packet_descriptor.getNestedTypes().get(13);
-          internal_static_sensors_packet_LocationPayload_fieldAccessorTable = new
+          internal_static_sensors_packet_GPSPayload_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-              internal_static_sensors_packet_LocationPayload_descriptor,
+              internal_static_sensors_packet_GPSPayload_descriptor,
               new java.lang.String[] { "Status", "Latitude", "Longitude", "Altitude", "Bearing", },
-              SensorsPacket.sensors_packet.LocationPayload.class,
-              SensorsPacket.sensors_packet.LocationPayload.Builder.class);
+              SensorsPacket.sensors_packet.GPSPayload.class,
+              SensorsPacket.sensors_packet.GPSPayload.Builder.class);
           return null;
         }
       };
