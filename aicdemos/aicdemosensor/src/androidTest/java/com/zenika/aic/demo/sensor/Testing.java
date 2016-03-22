@@ -23,17 +23,15 @@ public class Testing extends InstrumentationTestCase {
 	}
 
 	@Test
-	public void testToto() {
+	public void test_one() {
 		device.startRecording();
 		device.stopRecording();
 		device.takeScreenshot();
-		device.startRecording();
-		device.stopRecording();
 		device.getUiDevice().waitForIdle();
 	}
 
 	@Test
-	public void superTest() {
-		//device.getBatteryInstance().setLevel(5, 100);
+	public void test_two() {
+		device.getBatteryInstance().setLevel(5, 100);
 	}
 }

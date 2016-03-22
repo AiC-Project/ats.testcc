@@ -17,19 +17,13 @@ public class SDLRecord {
         recordBuilder.setRecFilename("video_coucou.mp4");
         recordBuilder.setStartStop(1);
         record = recordBuilder.build();
-        Log.v("flemme", "1");
 
         if (t==null) {
-            Log.v("flemme", "2");
             t = TCPServer.getInstance();
-            Log.v("flemme", "8");
             TCPServer.getInstance().setRecord(record);
-            Log.v("flemme", "10");
             t.start();
-            Log.v("flemme", "14");
         }
         else {
-            Log.v("flemme", "2");
             TCPServer.getInstance().setRecord(record);
             t.start();
         }
