@@ -1,14 +1,11 @@
 	
 package com.zenika.aic.demo.sensor;
-	
-import android.hardware.Sensor;
+
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 import android.test.InstrumentationTestCase;
-import android.util.Log;
 
 import com.zenika.aic.core.libs.sensor.Device;
-import com.zenika.aic.core.libs.sensor.SensorsPacket;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.Before;
@@ -27,11 +24,16 @@ public class Testing extends InstrumentationTestCase {
 
 	@Test
 	public void testToto() {
+		device.startRecording();
+		device.stopRecording();
 		device.takeScreenshot();
+		device.startRecording();
+		device.stopRecording();
+		device.getUiDevice().waitForIdle();
 	}
 
 	@Test
 	public void superTest() {
-		device.getBatteryInstance().setLevel(5, 100);
+		//device.getBatteryInstance().setLevel(5, 100);
 	}
 }

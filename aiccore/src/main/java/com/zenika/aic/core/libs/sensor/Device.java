@@ -14,9 +14,11 @@ import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
 import android.test.InstrumentationTestCase;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.zenika.aic.core.libs.network.ByteUtils;
+import com.zenika.aic.core.libs.network.TCPServer;
 
 
 /**
@@ -34,7 +36,11 @@ public class Device extends InstrumentationTestCase {
 
     public Device(String appName, Instrumentation newInstru) {
         this.appName = appName;
-
+        try {
+            //new TCPServer(32500);
+        } catch(Exception e) {
+            Log.v("tcp_server", "Fail to launch tcp server");
+        }
         try {
             instru = newInstru;
             gps = new Gps().getInstance();
