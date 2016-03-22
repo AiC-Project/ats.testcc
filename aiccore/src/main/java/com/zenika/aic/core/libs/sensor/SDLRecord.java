@@ -17,7 +17,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename(getTimestamp()+".mp4");
+        recordBuilder.setRecFilename("video_"+getTimestamp()+".mp4");
         recordBuilder.setStartStop(1);
         record = recordBuilder.build();
 
@@ -37,7 +37,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename(getTimestamp()+".mp4");
+        recordBuilder.setRecFilename("video_"+getTimestamp()+".mp4");
         recordBuilder.setStartStop(0);
         record = recordBuilder.build();
 
@@ -57,7 +57,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename(getTimestamp()+".bmp");
+        recordBuilder.setRecFilename("snap_"+getTimestamp()+".bmp");
         recordBuilder.setStartStop(2);
         record = recordBuilder.build();
 
