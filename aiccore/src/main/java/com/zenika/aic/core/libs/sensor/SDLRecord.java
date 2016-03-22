@@ -3,6 +3,9 @@ package com.zenika.aic.core.libs.sensor;
 import android.util.Log;
 import com.zenika.aic.core.libs.network.TCPServer;
 
+import java.security.Timestamp;
+import java.util.Calendar;
+
 /**
  * Created by zenika on 02/02/16.
  */
@@ -14,7 +17,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename("video_coucou.mp4");
+        recordBuilder.setRecFilename(getTimestamp()+".mp4");
         recordBuilder.setStartStop(1);
         record = recordBuilder.build();
 
@@ -34,7 +37,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename("video_coucou.mp4");
+        recordBuilder.setRecFilename(getTimestamp()+".mp4");
         recordBuilder.setStartStop(0);
         record = recordBuilder.build();
 
@@ -54,7 +57,7 @@ public class SDLRecord {
         Recording.recordingPayload record;
         Recording.recordingPayload.Builder recordBuilder = Recording.recordingPayload.newBuilder();
 
-        recordBuilder.setRecFilename("snap_coucou.bmp");
+        recordBuilder.setRecFilename(getTimestamp()+".bmp");
         recordBuilder.setStartStop(2);
         record = recordBuilder.build();
 
@@ -68,5 +71,12 @@ public class SDLRecord {
             t.start();
         }
         Log.v("screenshot", "Take screenshot");
+    }
+
+    private static java.sql.Timestamp getTimestamp() {
+        Calendar calendar = Calendar.getInstance();
+        java.util.Date now = calendar.getTime();
+        java.sql.Timestamp currentTimestamp = new java.sql.Timestamp(now.getTime());
+        return currentTimestamp;
     }
 }
