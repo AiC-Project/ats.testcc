@@ -1,0 +1,3 @@
+
+install:
+	cp -a . $(TARGET)/
