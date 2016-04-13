@@ -1,0 +1,15 @@
+set timeout 3600
+spawn android update sdk --no-ui -a --filter tools,platform-tools,$env(ANDROID_API_LEVELS),build-tools-$env(ANDROID_BUILD_TOOLS_VERSION),build-tools-22.0.0,build-tools-23.0.2,build-tools-21.1.2,extra-android-support,extra-android-m2repository,extra-google-m2repository
+
+expect {
+    "Do you accept the license" {
+        send "y\n"
+        exp_continue
+    }
+    Downloading {
+        exp_continue
+    }
+    Installing {
+        exp_continue
+    }
+}
