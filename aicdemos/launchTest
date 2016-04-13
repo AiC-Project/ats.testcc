@@ -1,7 +1,7 @@
 #!/bin/bash
 
-cp $HOME/AiC/runtime-EclipseXtext/Tests/src-gen/Testing.java ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
-gradle generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest
+# cp $HOME/AiC/runtime-EclipseXtext/Tests/src-gen/Testing.java ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
+# gradle generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest
 
 cd aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
 adb shell am instrument -w \

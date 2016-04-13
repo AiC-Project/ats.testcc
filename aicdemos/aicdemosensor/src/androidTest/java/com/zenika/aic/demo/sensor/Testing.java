@@ -24,10 +24,7 @@ public class Testing extends InstrumentationTestCase {
 
 	@Test
 	public void test_one() {
-		device.startRecording();
-		device.stopRecording();
-		device.takeScreenshot();
-		device.getUiDevice().waitForIdle();
+		device.getBatteryInstance().setLevel(100, 100);
 	}
 
 	@Test

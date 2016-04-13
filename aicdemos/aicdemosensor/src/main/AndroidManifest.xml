@@ -19,6 +19,22 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+    <uses-permission android:name="android.permission.NFC" />
+
+    <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+        <tech-list>
+            <tech>android.nfc.tech.IsoDep</tech>
+            <tech>android.nfc.tech.NfcA</tech>
+            <tech>android.nfc.tech.NfcB</tech>
+            <tech>android.nfc.tech.NfcF</tech>
+            <tech>android.nfc.tech.NfcV</tech>
+            <tech>android.nfc.tech.Ndef</tech>
+            <tech>android.nfc.tech.NdefFormatable</tech>
+            <tech>android.nfc.tech.MifareClassic</tech>
+            <tech>android.nfc.tech.MifareUltralight</tech>
+        </tech-list>
+    </resources>
+
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
