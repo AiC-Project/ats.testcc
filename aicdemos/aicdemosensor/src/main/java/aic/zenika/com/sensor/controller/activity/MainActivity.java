@@ -1,6 +1,8 @@
 package aic.zenika.com.sensor.controller.activity;
 
 import android.app.Fragment;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -39,6 +41,13 @@ import aic.zenika.com.sensor.view.adapter.DrawerAdapter;
 import aic.zenika.com.sensor.view.element.DrawerItem;
 
 public class MainActivity extends BaseActivity {
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, this.getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        //mAdapter.enableForegroundDispatch(this, pendingIntent, null, null);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

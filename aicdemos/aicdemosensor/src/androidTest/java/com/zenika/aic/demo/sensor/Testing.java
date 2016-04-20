@@ -6,6 +6,8 @@ import android.support.test.runner.AndroidJUnit4;
 import android.test.InstrumentationTestCase;
 
 import com.zenika.aic.core.libs.sensor.Device;
+import com.zenika.aic.core.libs.sensor.SDLRecord;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.Before;
@@ -25,10 +27,8 @@ public class Testing extends InstrumentationTestCase {
 	@Test
 	public void test_one() {
 		device.getBatteryInstance().setLevel(100, 100);
-	}
-
-	@Test
-	public void test_two() {
-		device.getBatteryInstance().setLevel(5, 100);
+		device.takeScreenshot();
+		device.startRecording();
+		device.stopRecording();
 	}
 }
