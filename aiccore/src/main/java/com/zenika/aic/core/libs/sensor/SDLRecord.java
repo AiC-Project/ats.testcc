@@ -15,6 +15,7 @@ public class SDLRecord {
 
     public static void startTCPServer(int port) {
         t = TCPServer.getInstance(port);
+        t.start();
     }
 
     public static void sendProtoRequestToStartRecording() {
