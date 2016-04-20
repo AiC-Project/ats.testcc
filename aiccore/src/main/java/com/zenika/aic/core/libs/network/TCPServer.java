@@ -7,6 +7,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.net.*;
 import java.io.*;
+import java.util.LinkedList;
 
 /**
  * Created by zenika on 15/03/16.
@@ -16,9 +17,11 @@ public class TCPServer extends Thread {
     private Recording.recordingPayload record;
     private Socket server;
     private static TCPServer INSTANCE;
+    private LinkedList ll;
 
     private TCPServer(int port){
         try{
+            ll = new LinkedList();
             createSocket(port);
         }catch (IOException e) {
             e.printStackTrace();
@@ -51,28 +54,49 @@ public class TCPServer extends Thread {
 
     }
 
-    public void setRecord(Recording.recordingPayload record) {
-        this.record = record;
-    }
+//    public void setRecord(Recording.recordingPayload record) {
+//        this.record = record;
+//    }
 
     public void run()
     {
         Log.v("tcp_logs", "Run Thread");
-        try
-        {
-            DataOutputStream out = new DataOutputStream(server.getOutputStream());
-            byte[] byteRecord = record.toByteArray();
-            out.write(byteRecord);
-            Log.v("tcp_logs", "Sending data");
-        }
-        catch(SocketTimeoutException s)
-        {
-            Log.v("tcp_logs", "Socket timed out!");
+
+        while(true) {
+            if(!ll.isEmpty()) {
+                try {
+                    DataOutputStream out = new DataOutputStream(server.getOutputStream());
+                    Recording.recordingPayload rp = (Recording.recordingPayload)ll.getFirst();
+                    byte[] byteRecord = rp.toByteArray();
+                    out.write(byteRecord);
+                    ll.removeFirst();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
-        catch(IOException e)
-        {
-            e.printStackTrace();
-        }
+
+
+//        try
+//        {
+//            DataOutputStream out = new DataOutputStream(server.getOutputStream());
+//            byte[] byteRecord = record.toByteArray();
+//            out.write(byteRecord);
+//            Log.v("tcp_logs", "Sending data");
+//        }
+//        catch(SocketTimeoutException s)
+//        {
+//            Log.v("tcp_logs", "Socket timed out!");
+//        }
+//
+//        catch(IOException e)
+//        {
+//            e.printStackTrace();
+//        }
+    }
+
+    public void addRecord(Recording.recordingPayload record) {
+        ll.add(record);
     }
 }

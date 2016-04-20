@@ -27,11 +27,11 @@ public class SDLRecord {
 
         //if (t==null) {
             Log.v("tcp_logs","Start new TCP Server...");
-            t = TCPServer.getInstance(32500);
+            //t = TCPServer.getInstance(32500);
             Log.v("tcp_logs","Set Record");
-            TCPServer.getInstance(32500).setRecord(record);
+            TCPServer.getInstance(32500).addRecord(record);
             Log.v("tcp_logs","Start thread");
-            t.start();
+            //t.start();
 //        }
 //        else {
 //            TCPServer.getInstance(32500).setRecord(record);
@@ -50,11 +50,11 @@ public class SDLRecord {
 
       //  if (t==null) {
         Log.v("tcp_logs","Start new TCP Server...");
-        t = TCPServer.getInstance(32500);
+        //t = TCPServer.getInstance(32500);
         Log.v("tcp_logs","Set Record");
-        TCPServer.getInstance(32500).setRecord(record);
+        TCPServer.getInstance(32500).addRecord(record);
         Log.v("tcp_logs","Start thread");
-        t.start();
+        //t.start();
 //        }
 //        else {
 //            TCPServer.getInstance(32500).setRecord(record);
@@ -73,11 +73,11 @@ public class SDLRecord {
 
         //f (t==null) {
         Log.v("tcp_logs","Start new TCP Server...");
-        t = TCPServer.getInstance(32500);
+        //t = TCPServer.getInstance(32500);
         Log.v("tcp_logs","Set Record");
-        TCPServer.getInstance(32500).setRecord(record);
+        TCPServer.getInstance(32500).addRecord(record);
         Log.v("tcp_logs","Start thread");
-        t.start();
+        //t.start();
 //        }
 //        else {
 //            TCPServer.getInstance(32500).setRecord(record);
