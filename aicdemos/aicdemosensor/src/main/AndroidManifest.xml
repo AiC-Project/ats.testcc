@@ -39,6 +39,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc"/>
 
     <uses-permission android:name="aic.zenika.com.sensor.permission.MAPS_RECEIVE"/>
     <permission android:name="aic.zenika.com.sensor.permission.MAPS_RECEIVE"
@@ -64,6 +66,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
             </intent-filter>
         </activity>
         <activity

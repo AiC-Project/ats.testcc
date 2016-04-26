@@ -28,7 +28,6 @@ import aic.zenika.com.sensor.controller.fragment.HomeFragment;
 import aic.zenika.com.sensor.controller.fragment.LinearAccelerometerFragment;
 import aic.zenika.com.sensor.controller.fragment.MagnetometerFragment;
 import aic.zenika.com.sensor.controller.fragment.MapFragment;
-import aic.zenika.com.sensor.controller.fragment.NFCFragment;
 import aic.zenika.com.sensor.controller.fragment.PhotometerFragment;
 import aic.zenika.com.sensor.controller.fragment.PictureFragment;
 import aic.zenika.com.sensor.controller.fragment.PodometerFragment;
@@ -170,9 +169,6 @@ public class MainActivity extends BaseActivity {
                 break;
             case 16:
                 fragment = new RotVectorSensorFragment();
-                break;
-            case 17:
-                fragment = new NFCFragment();
                 break;
             default:
                 fragment = new HomeFragment();
