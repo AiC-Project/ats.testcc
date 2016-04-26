@@ -21,6 +21,7 @@
     <string name="podometer">Podometer</string>
     <string name="rot_vector_sensor">Rotation Vector Sensor</string>
     <string name="cos_rot">Cos</string>
+    <string name="nfc">NFC</string>
 
     <!--Battery fragment-->
     <string name="battery_level_label">Battery level</string>
@@ -49,4 +50,6 @@
     <string name="title_activity_base">BaseActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="nfc_message_label">Message : </string>
 </resources>

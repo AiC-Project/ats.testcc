@@ -37,7 +37,7 @@ public class Device extends InstrumentationTestCase {
     public Device(String appName, Instrumentation newInstru) {
         this.appName = appName;
         try {
-            //new TCPServer(32500);
+            SDLRecord.startTCPServer(32500);
         } catch(Exception e) {
             Log.v("tcp_server", "Fail to launch tcp server");
         }

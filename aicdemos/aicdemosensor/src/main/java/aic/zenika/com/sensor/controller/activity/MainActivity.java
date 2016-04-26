@@ -1,6 +1,8 @@
 package aic.zenika.com.sensor.controller.activity;
 
 import android.app.Fragment;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
@@ -40,6 +42,13 @@ import aic.zenika.com.sensor.view.element.DrawerItem;
 public class MainActivity extends BaseActivity {
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, new Intent(this, this.getClass()).addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP), 0);
+        //mAdapter.enableForegroundDispatch(this, pendingIntent, null, null);
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -66,6 +75,7 @@ public class MainActivity extends BaseActivity {
         mNavigationArray.add(new DrawerItem(R.string.podometer,R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.gyroscope,R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.rot_vector_sensor, R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.nfc, R.drawable.ic_action_battery_red));
 
 
         mDrawerList.setAdapter(new DrawerAdapter(this,R.layout.drawer_item, mNavigationArray));
