@@ -21,26 +21,18 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 import java.io.UnsupportedEncodingException;
 
+import java.net.URI;
 import java.util.Arrays;
 
 import android.nfc.NdefMessage;
 import android.os.AsyncTask;
-/**
- * Activity for reading data from an NDEF Tag.
- *
- * @author Ralf Wondratschek
- */
+
 public class MainActivity extends Activity {
 
     public static final String MIME_TEXT_PLAIN = "text/plain";
     public static final String TAG = "NfcDemo";
-
     private TextView mTextView;
     private NfcAdapter mNfcAdapter;
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
     private GoogleApiClient client;
 
     @Override
@@ -53,11 +45,9 @@ public class MainActivity extends Activity {
         mNfcAdapter = NfcAdapter.getDefaultAdapter(this);
 
         if (mNfcAdapter == null) {
-            // Stop here, we definitely need NFC
             Toast.makeText(this, "This device doesn't support NFC.", Toast.LENGTH_LONG).show();
             finish();
             return;
-
         }
 
         if (!mNfcAdapter.isEnabled()) {
@@ -67,41 +57,23 @@ public class MainActivity extends Activity {
         }
 
         handleIntent(getIntent());
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-        /**
-         * It's important, that the activity is in the foreground (resumed). Otherwise
-         * an IllegalStateException is thrown.
-         */
         setupForegroundDispatch(this, mNfcAdapter);
     }
 
     @Override
     protected void onPause() {
-        /**
-         * Call this before onPause, otherwise an IllegalArgumentException is thrown as well.
-         */
         stopForegroundDispatch(this, mNfcAdapter);
-
         super.onPause();
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
-        /**
-         * This method gets called, when a new Intent gets associated with the current activity instance.
-         * Instead of creating a new activity, onNewIntent will be called. For more information have a look
-         * at the documentation.
-         *
-         * In our case this method gets called, when the user attaches a Tag to the device.
-         */
         handleIntent(intent);
     }
 
@@ -118,7 +90,6 @@ public class MainActivity extends Activity {
         IntentFilter[] filters = new IntentFilter[1];
         String[][] techList = new String[][]{};
 
-        // Notice that this is the same filter as in our manifest.
         filters[0] = new IntentFilter();
         filters[0].addAction(NfcAdapter.ACTION_NDEF_DISCOVERED);
         filters[0].addCategory(Intent.CATEGORY_DEFAULT);
@@ -144,17 +115,19 @@ public class MainActivity extends Activity {
         if (NfcAdapter.ACTION_NDEF_DISCOVERED.equals(action)) {
 
             String type = intent.getType();
+
+            Log.d("logs_nfc", "Type: " + type);
             if (MIME_TEXT_PLAIN.equals(type)) {
 
                 Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
                 new NdefReaderTask().execute(tag);
-
+                Log.d("logs_nfc", "Text detected");
+            } else if(type == "T"){
+                Log.d("logs_nfc", "URI detected");
             } else {
-                Log.d(TAG, "Wrong mime type: " + type);
+                Log.d("logs_nfc", "Wrong mime type: " + type);
             }
         } else if (NfcAdapter.ACTION_TECH_DISCOVERED.equals(action)) {
-
-            // In case we would still use the Tech Discovered Intent
             Tag tag = intent.getParcelableExtra(NfcAdapter.EXTRA_TAG);
             String[] techList = tag.getTechList();
             String searchedTech = Ndef.class.getName();
@@ -171,16 +144,10 @@ public class MainActivity extends Activity {
     @Override
     public void onStart() {
         super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         client.connect();
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
                 "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
                 Uri.parse("http://host/path"),
                 // TODO: Make sure this auto-generated app URL is correct.
                 Uri.parse("android-app://com.example.aicnfc/http/host/path")
@@ -191,15 +158,10 @@ public class MainActivity extends Activity {
     @Override
     public void onStop() {
         super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
         Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
                 "Main Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
+                // TODO: If you have web page content that matches this app activity's content
                 Uri.parse("http://host/path"),
                 // TODO: Make sure this auto-generated app URL is correct.
                 Uri.parse("android-app://com.example.aicnfc/http/host/path")
@@ -213,15 +175,10 @@ public class MainActivity extends Activity {
         @Override
         protected String doInBackground(Tag... params) {
             Tag tag = params[0];
-
             Ndef ndef = Ndef.get(tag);
-            if (ndef == null) {
-                // NDEF is not supported by this Tag.
+            if (ndef == null)
                 return null;
-            }
-
             NdefMessage ndefMessage = ndef.getCachedNdefMessage();
-
             NdefRecord[] records = ndefMessage.getRecords();
             for (NdefRecord ndefRecord : records) {
                 if (ndefRecord.getTnf() == NdefRecord.TNF_WELL_KNOWN && Arrays.equals(ndefRecord.getType(), NdefRecord.RTD_TEXT)) {
@@ -237,36 +194,28 @@ public class MainActivity extends Activity {
         }
 
         private String readText(NdefRecord record) throws UnsupportedEncodingException {
-        /*
-         * See NFC forum specification for "Text Record Type Definition" at 3.2.1
-         *
-         * http://www.nfc-forum.org/specs/
-         *
-         * bit_7 defines encoding
-         * bit_6 reserved for future use, must be 0
-         * bit_5..0 length of IANA language code
-         */
 
-            byte[] payload = record.getPayload();
+            Log.d("logs_nfc", "Try to read Text");
+
             byte[] type = record.getType();
-            byte[] id = record.getId();
-            short tnf = record.getTnf();
-            // Get the Text Encoding
-            String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
+            String truc = record.getPayload().toString();
+            String typeString = new String(type, "UTF-8");
+            return truc;
 
-            // Get the Language Code
-            int languageCodeLength = 5;
-
-            String languageCode = new String(payload, 1, languageCodeLength, "US-ASCII");
-            // e.g. "en"
-
-            // Get the Text
-            //return new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
-            String typeString = new String(type, textEncoding);
-            String idString = new String(id, textEncoding);
-            String messageString = new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
-            //return new String("\nType: " + type + "\nId: " + id + "\nTnf:" + tnf + "\nText Encoding: " + textEncoding + "\nLanguage Code: " + languageCode + "\nMessage: " + payload, textEncoding);
-            return "\nType: " + typeString + "\nId: " + idString + "\nTnf:" + tnf + "\nText Encoding: " + textEncoding + "\nLanguage Code: " + languageCode + "\nMessage: " + messageString;
+//            byte[] payload = record.getPayload();
+//            byte[] type = record.getType();
+//            byte[] id = record.getId();
+//            short tnf = record.getTnf();
+//            String textEncoding = ((payload[0] & 128) == 0) ? "UTF-8" : "UTF-16";
+//
+//            int languageCodeLength = 5;
+//
+//            String languageCode = new String(payload, 1, languageCodeLength, "US-ASCII");
+//            String typeString = new String(type, textEncoding);
+//            String idString = new String(id, textEncoding);
+//            String messageString = new String(payload, languageCodeLength + 1, payload.length - languageCodeLength - 1, textEncoding);
+//
+//            return "\nType: " + typeString + "\nId: " + idString + "\nTnf:" + tnf + "\nText Encoding: " + textEncoding + "\nLanguage Code: " + languageCode + "\nMessage: " + messageString;
         }
 
         @Override
