@@ -101,6 +101,7 @@ public class MainActivity extends BaseActivity {
 
         BatteryDelegate.getInstance().setMainActivity(this);
         SensorDelegate.getInstance().setMainActivity(this);
+        MainDelegate.getInstance().replaceFragment(R.id.content_frame,new HomeFragment(),this);
     }
 
     @Override
