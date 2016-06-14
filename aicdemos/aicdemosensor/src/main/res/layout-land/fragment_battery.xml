@@ -14,7 +14,7 @@
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:textSize="40sp"
-        android:textColor="@color/DarkRed"
+        android:textColor="@color/White"
         android:gravity="center"
         android:layout_margin="@dimen/default_margin"/>
 
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -113,7 +113,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
 
@@ -159,7 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="50"
                 android:paddingStart="@dimen/default_margin"
-                android:textColor="@color/DarkRed"
+                android:textColor="@color/White"
                 android:textStyle="bold"/>
         </LinearLayout>
     </LinearLayout>
