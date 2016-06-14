@@ -28,8 +28,8 @@ public class AccelerometerFragment extends Fragment implements SensorEventListen
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         final View v = inflater.inflate(R.layout.fragment_accelerometer, container, false);
 
-        sensorDelegate.initializeSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorDelegate.registerListener(Sensor.TYPE_ACCELEROMETER,this);
+        sensorDelegate.initializeSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+        sensorDelegate.registerListener(Sensor.TYPE_LINEAR_ACCELERATION,this);
         sensorDelegate.createAccelerometerHistory(v.getContext(), (XYPlot) v.findViewById(R.id.aprHistoryPlot));
 
         return v;
@@ -44,14 +44,14 @@ public class AccelerometerFragment extends Fragment implements SensorEventListen
     @Override
     public void onDestroy() {
         super.onDestroy();
-        sensorDelegate.unregisterListener(Sensor.TYPE_ACCELEROMETER, this);
+        sensorDelegate.unregisterListener(Sensor.TYPE_LINEAR_ACCELERATION, this);
     }
 
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
     public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() != Sensor.TYPE_ACCELEROMETER)
+        if (event.sensor.getType() != Sensor.TYPE_LINEAR_ACCELERATION)
             return;
 
         Sensor s = event.sensor;
