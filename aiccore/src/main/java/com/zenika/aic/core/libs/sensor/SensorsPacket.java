@@ -3,6 +3,8 @@
 
 package com.zenika.aic.core.libs.sensor;
 
+import com.google.protobuf.*;
+
 public final class SensorsPacket {
   private SensorsPacket() {}
   public static void registerAllExtensions(
