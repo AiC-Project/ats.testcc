@@ -24,12 +24,12 @@ You must install the android SDK into your computer. The latest version is provi
 
 Now setup your $ANDROID_HOME and export it into the PATH variable
 
-    export ANDROID_HOME=/home/thomas/Documents/android-sdk-linux
+    export ANDROID_HOME=$HOME/Documents/android-sdk-linux
     export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/plateform-tools:$PATH
 
 ## Google utils
 
-To run this applications, your virtual machine needs 
+To run all applications, your virtual machine needs 
 
 - google services
 - google applications
@@ -46,11 +46,11 @@ In the versions list, search the last version which match `Google Play services 
 
 __________________________________________
 
-Download the latest version of google+ from [apkmirror](http://www.apkmirror.com/apk/google-inc/google/google-5-0-0-85934159-android-4-4-x86-android-apk-download/)
+Download the latest version of google+ from [apkmirror](http://www.apkmirror.com/apk/google-inc/google/google-8-9-1-136414806-release/google-8-9-1-136414806-7-android-apk-download/)
 
 __________________________________________
 
-Download the needed version of Gapps from [cyanogenmod](http://wiki.cyanogenmod.org/w/Google_Apps) or [itvends](https://itvends.com/gapps/).
+Download the needed version of Gapps from [cyanogenmod](http://wiki.cyanogenmod.org/w/Google_Apps)
 
 Extract it. It must contains a `system` folder
 
