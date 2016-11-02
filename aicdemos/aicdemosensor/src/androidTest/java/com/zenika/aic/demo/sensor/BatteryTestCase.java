@@ -1,4 +1,6 @@
 package com.zenika.aic.demo.sensor;
+import android.app.Activity;
+import android.app.Instrumentation;
 import android.hardware.Sensor;
 import android.os.RemoteException;
 import android.support.test.InstrumentationRegistry;
@@ -7,6 +9,7 @@ import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.test.InstrumentationTestCase;
+import android.view.View;
 
 import com.zenika.aic.core.libs.sensor.Device;
 
@@ -23,7 +26,10 @@ public class BatteryTestCase extends InstrumentationTestCase {
 
     @Before
     public void init() {
-        device = new Device(appName, InstrumentationRegistry.getInstrumentation());
+        Instrumentation.ActivityMonitor monitor =  getInstrumentation().addMonitor(Sensor.class.getName(), null, false);
+        Activity currentActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5);
+        View v = currentActivity.findViewById(android.R.id.content);
+        device = new Device(appName, InstrumentationRegistry.getInstrumentation(), v);
     }
 
     @Test
