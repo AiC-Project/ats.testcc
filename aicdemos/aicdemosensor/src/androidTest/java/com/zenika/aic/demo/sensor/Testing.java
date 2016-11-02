@@ -34,6 +34,7 @@ public class Testing extends InstrumentationTestCase {
 	@Test
 	public void test_one() {
 		device.clickOn("Sensor");
+        device.swipe();
 	}
 
 //	@Test

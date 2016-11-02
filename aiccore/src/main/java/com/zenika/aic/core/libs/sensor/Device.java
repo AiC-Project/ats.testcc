@@ -8,6 +8,7 @@ import android.support.test.espresso.action.CloseKeyboardAction;
 import android.support.test.espresso.action.CoordinatesProvider;
 import android.support.test.espresso.action.GeneralClickAction;
 import android.support.test.espresso.action.Press;
+import android.support.test.espresso.action.Swiper;
 import android.support.test.espresso.action.Tap;
 import android.support.test.espresso.action.Tapper;
 import android.support.test.uiautomator.By;
@@ -29,6 +30,9 @@ import com.zenika.aic.core.R;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.Swipe.FAST;
+import static android.support.test.espresso.action.Swipe.SLOW;
+import static android.support.test.espresso.action.Swiper.*;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.Visibility.VISIBLE;
 import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
@@ -47,8 +51,7 @@ public class Device extends InstrumentationTestCase {
     private Battery battery;
     private UiController uicontroller;
     private View v;
-
-    String appName;
+    private String appName;
 
     public Device(String appName, Instrumentation instrumentation, View v) {
         this.appName = appName;
@@ -100,7 +103,7 @@ public class Device extends InstrumentationTestCase {
         device.waitForWindowUpdate("", 10000);
     }
 
-    public void runApp(String appName) throws UiObjectNotFoundException, RemoteException {
+    private void runApp(String appName) throws UiObjectNotFoundException, RemoteException {
         device = UiDevice.getInstance(instrumentation);
         device.pressHome();
         device.waitForWindowUpdate("", 2000);
@@ -153,6 +156,10 @@ public class Device extends InstrumentationTestCase {
     public void closeKeyboard() {
         CloseKeyboardAction close = new CloseKeyboardAction();
         close.perform(uicontroller, v);
+    }
+
+    public void swipe() {
+        SLOW.sendSwipe(uicontroller, new float[]{10,50}, new float[]{500,50}, new float[]{5,5});
     }
 
     public void clickOn(int itemId) {
