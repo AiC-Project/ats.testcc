@@ -1,6 +1,0 @@
-#!/bin/bash
-
-cp $1 ./aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
-cd aicdemos 
-gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest 
-cp /home/developer/aic_tests/aicdemos/aicdemosensor/build/outputs/apk/aicdemosensor-debug-androidTest-unaligned.apk $2

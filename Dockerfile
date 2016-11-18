@@ -27,6 +27,9 @@ RUN dpkg --add-architecture i386 && \
         libc6:i386 \
         libncurses5:i386 \
         openjdk-8-jdk \
+        unzip \
+        zip \
+        zipalign \
         apt-utils \
         curl \
         vim && \
@@ -56,10 +59,11 @@ ENV GRADLE_USER_HOME /home/developer/
 USER developer
 WORKDIR /home/developer/aicdemos
 
-RUN gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest && \
-    chmod g+rsx ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
+RUN keytool -genkey -v -keystore /home/developer/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US"
 
-#    rm ./aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java && \
-#    rm -r /home/developer/aicdemos/aicdemosensor/build && \
+RUN gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest && \
+    rm aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java && \
+    rm -r /home/developer/aicdemos/aicdemosensor/build && \
+    chmod g+rsx ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
 
 CMD tail -f /dev/null
