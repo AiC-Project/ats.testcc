@@ -22,6 +22,7 @@
     <string name="rot_vector_sensor">Rotation Vector Sensor</string>
     <string name="cos_rot">Cos</string>
     <string name="nfc">NFC</string>
+    <string name="bluetooth">Bluetooth</string>
 
     <!--Battery fragment-->
     <string name="battery_level_label">Battery level</string>
