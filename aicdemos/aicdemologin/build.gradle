@@ -10,6 +10,8 @@ android {
     packagingOptions {
         exclude 'NOTICE'
         exclude 'LICENSE.txt'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.properties'
+        exclude 'META-INF/maven/com.google.guava/guava/pom.xml'
     }
     defaultConfig {
         minSdkVersion 19
