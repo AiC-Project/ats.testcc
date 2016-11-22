@@ -60,7 +60,7 @@ ENV GRADLE_USER_HOME /home/developer/
 USER developer
 WORKDIR /home/developer/aicdemos
 
-RUN keytool -genkey -v -keystore /home/developer/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US"
+RUN keytool -genkey -v -keystore /home/developer/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -validity 36500
 
 RUN cd /home/developer/aicdemos/ && \
     gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest && \
