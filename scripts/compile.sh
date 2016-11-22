@@ -2,6 +2,8 @@
 
 set -e
 
+cat /dev/fd/0 > /home/developer/aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java
+
 DIR=/home/developer/aicdemos/aicdemosensor/build/outputs/apk/
 APK=$DIR/aicdemosensor-debug-androidTest-unaligned.apk
 SIGNED=/home/developer/signed.apk
