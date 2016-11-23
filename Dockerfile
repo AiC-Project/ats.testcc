@@ -19,7 +19,7 @@ RUN dpkg --add-architecture i386 && \
         iputils-ping \
         mtr \
         android-tools-adb \
-        gradle-2.10 \
+        gradle-2.14.1 \
         lib32z1 \
         libstdc++6:i386 \
         lib32stdc++6 \
@@ -27,6 +27,9 @@ RUN dpkg --add-architecture i386 && \
         libc6:i386 \
         libncurses5:i386 \
         openjdk-8-jdk \
+        unzip \
+        zip \
+        zipalign \
         apt-utils \
         curl \
         vim && \
@@ -41,9 +44,10 @@ RUN dpkg --add-architecture i386 && \
 RUN echo y | android update sdk --no-ui --all --filter android-23 | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter android-22 | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter platform-tools | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter build-tools-23.0.2 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.1 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.0 | grep 'package installed'
+RUN echo y | android update sdk --no-ui --all --filter build-tools-25.0.0 | grep 'package installed'
+#RUN echo y | android update sdk --no-ui --all --filter build-tools-23.0.2 | grep 'package installed'
+#RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.1 | grep 'package installed'
+#RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.0 | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-android-support | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-android-m2repository | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-google-m2repository | grep 'package installed'
@@ -56,10 +60,12 @@ ENV GRADLE_USER_HOME /home/developer/
 USER developer
 WORKDIR /home/developer/aicdemos
 
-RUN gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest && \
-    chmod g+rsx ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
+RUN keytool -genkey -v -keystore /home/developer/debug.keystore -storepass android -alias androiddebugkey -keypass android -dname "CN=Android Debug,O=Android,C=US" -validity 36500
 
-#    rm ./aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java && \
-#    rm -r /home/developer/aicdemos/aicdemosensor/build && \
+RUN cd /home/developer/aicdemos/ && \
+    gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembleDebug assembleDebugAndroidTest && \
+    rm -f ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java && \
+    rm -r ./aicdemosensor/build && \
+    chmod g+rsx ./aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor
 
 CMD tail -f /dev/null

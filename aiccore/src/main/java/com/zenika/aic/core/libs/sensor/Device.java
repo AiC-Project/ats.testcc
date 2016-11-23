@@ -2,10 +2,12 @@ package com.zenika.aic.core.libs.sensor;
 
 import android.app.Instrumentation;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
 import android.os.RemoteException;
+import android.support.test.espresso.action.CloseKeyboardAction;
+import android.support.test.espresso.action.CoordinatesProvider;
+import android.support.test.espresso.action.GeneralClickAction;
+import android.support.test.espresso.action.Press;
+import android.support.test.espresso.action.Tap;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
@@ -13,12 +15,19 @@ import android.support.test.uiautomator.UiObject2;
 import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.support.test.uiautomator.UiScrollable;
 import android.support.test.uiautomator.UiSelector;
+import android.support.test.espresso.UiController;
 import android.test.InstrumentationTestCase;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
-import com.zenika.aic.core.libs.network.ByteUtils;
-import com.zenika.aic.core.libs.network.TCPServer;
+import com.zenika.aic.core.R;
+
+import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.clearText;
+import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 
 /**
@@ -27,24 +36,20 @@ import com.zenika.aic.core.libs.network.TCPServer;
 public class Device extends InstrumentationTestCase {
 
     private UiDevice device;
-    private Instrumentation instru;
+    private Instrumentation instrumentation;
     private Gps gps;
     private Battery battery;
 
-    String appName;
-
-
-    public Device(String appName, Instrumentation newInstru) {
-        this.appName = appName;
+    public Device(String appName, Instrumentation instrumentation) {
         try {
             SDLRecord.startTCPServer(32500);
         } catch(Exception e) {
             Log.v("tcp_server", "Fail to launch tcp server");
         }
         try {
-            instru = newInstru;
-            gps = new Gps().getInstance();
-            battery = new Battery().getInstance();
+            this.instrumentation = instrumentation;
+            this.gps = new Gps().getInstance();
+            this.battery = new Battery().getInstance();
             this.runApp(appName);
         } catch (UiObjectNotFoundException e) {
             e.printStackTrace();
@@ -57,8 +62,8 @@ public class Device extends InstrumentationTestCase {
         device.waitForWindowUpdate("", 10000);
     }
 
-    public void runApp(String appName) throws UiObjectNotFoundException, RemoteException {
-        device = UiDevice.getInstance(instru);
+    private void runApp(String appName) throws UiObjectNotFoundException, RemoteException {
+        device = UiDevice.getInstance(instrumentation);
         device.pressHome();
         device.waitForWindowUpdate("", 2000);
 
@@ -107,8 +112,6 @@ public class Device extends InstrumentationTestCase {
         battery.setLevel(level, levelMax, status, ACStatus);
     }
 
-<<<<<<< Updated upstream
-=======
     public void bringPictureToCamera(String path) {
         Camera.bringPictureToCamera(path);
     }
@@ -248,7 +251,6 @@ public class Device extends InstrumentationTestCase {
         onView(withId(id)).perform(typeText(text));
     }
 
->>>>>>> Stashed changes
     public void takeScreenshot(){
         SDLRecord.sendProtoRequestToTakeScreenshot();
     }

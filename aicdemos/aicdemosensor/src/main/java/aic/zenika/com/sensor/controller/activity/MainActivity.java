@@ -21,6 +21,7 @@ import aic.zenika.com.sensor.controller.fragment.AccelerometerFragment;
 import aic.zenika.com.sensor.controller.fragment.AmbientThermometerFragment;
 import aic.zenika.com.sensor.controller.fragment.BarometerFragment;
 import aic.zenika.com.sensor.controller.fragment.BatteryFragment;
+import aic.zenika.com.sensor.controller.fragment.BluetoothFragment;
 import aic.zenika.com.sensor.controller.fragment.GravitometerFragment;
 import aic.zenika.com.sensor.controller.fragment.GyroscopeFragment;
 import aic.zenika.com.sensor.controller.fragment.HomeFragment;
@@ -75,7 +76,7 @@ public class MainActivity extends BaseActivity {
         mNavigationArray.add(new DrawerItem(R.string.podometer,R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.gyroscope,R.drawable.ic_action_battery_red));
         mNavigationArray.add(new DrawerItem(R.string.rot_vector_sensor, R.drawable.ic_action_battery_red));
-        mNavigationArray.add(new DrawerItem(R.string.nfc, R.drawable.ic_action_battery_red));
+        mNavigationArray.add(new DrawerItem(R.string.bluetooth, R.drawable.ic_action_battery_red));
 
 
         mDrawerList.setAdapter(new DrawerAdapter(this,R.layout.drawer_item, mNavigationArray));
@@ -170,6 +171,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case 16:
                 fragment = new RotVectorSensorFragment();
+                break;
+            case 17:
+                fragment = new BluetoothFragment();
                 break;
             default:
                 fragment = new HomeFragment();
