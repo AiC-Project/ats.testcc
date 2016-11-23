@@ -2,6 +2,7 @@ package com.zenika.aic.core.libs.sensor;
 
 import com.zenika.aic.core.libs.network.ByteUtils;
 import com.zenika.aic.core.libs.network.TCPClient;
+import com.zenika.aic.core.libs.network.TCPServer;
 
 /**
  * Created by thomas on 30/04/15.
@@ -20,6 +21,8 @@ public final class Camera {
     }
 
     public static void bringPictureToCamera(String path) {
-        TCPClient tcpClient = new TCPClient("", 32600, ByteUtils.stringToBytes(path, path.length()));
+        TCPServer tcpServer = TCPServer.getInstance(32600);
+        tcpServer.addData(ByteUtils.stringToBytes(path, path.length()));
+        tcpServer.start();
     }
 }

@@ -27,6 +27,7 @@ public class Testing extends InstrumentationTestCase {
 
 	@Test
 	public void test_one() {
+		device.bringPictureToCamera("/data/project/camera/ballmer.mpg");
 		device.clickOn("Sensor");
         device.scrollOnFrom("Proximity Sensor", "Picture");
         device.clickOn("Proximity Sensor");

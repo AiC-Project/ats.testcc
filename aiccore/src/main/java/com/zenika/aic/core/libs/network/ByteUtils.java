@@ -70,9 +70,9 @@ public final class ByteUtils {
 
 	public static byte[] stringToBytes(String value, int size) {
 		byte[] stringToByte;
-		byte[] sizeToByte = new byte[String.valueOf(value.length()).toCharArray().length];
+		byte[] sizeToByte = new byte[2];
 		try {
-			intToBytes(value.length(), String.valueOf(value.length()).toCharArray().length);
+			sizeToByte = intToBytes(value.length(), 2);
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}

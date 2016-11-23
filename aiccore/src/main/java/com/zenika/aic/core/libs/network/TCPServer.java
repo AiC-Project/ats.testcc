@@ -18,10 +18,12 @@ public class TCPServer extends Thread {
     private Socket server;
     private static TCPServer INSTANCE;
     private LinkedList ll;
+    private LinkedList lld;
 
     private TCPServer(int port){
         try{
             ll = new LinkedList();
+            lld = new LinkedList();
             createSocket(port);
         }catch (IOException e) {
             e.printStackTrace();
@@ -63,40 +65,42 @@ public class TCPServer extends Thread {
         Log.v("tcp_logs", "Run Thread");
 
         while(true) {
-            if(!ll.isEmpty()) {
-                try {
-                    DataOutputStream out = new DataOutputStream(server.getOutputStream());
-                    Recording.recordingPayload rp = (Recording.recordingPayload)ll.getFirst();
-                    byte[] byteRecord = rp.toByteArray();
-                    out.write(byteRecord);
-                    ll.removeFirst();
-                } catch (IOException e) {
-                    e.printStackTrace();
+            if(lld != null) {
+                if(!lld.isEmpty()) {
+                    try {
+                        DataOutputStream out = new DataOutputStream(server.getOutputStream());
+                        byte[] byteRecord = (byte[]) lld.getFirst();
+                        out.write(byteRecord);
+                        lld.removeFirst();
+                        Log.v("tcp_logs", "Sending data");
+                    } catch (SocketTimeoutException s) {
+                        Log.v("tcp_logs", "Socket timed out!");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+            if(ll != null) {
+                if (!ll.isEmpty()) {
+                    try {
+                        DataOutputStream out = new DataOutputStream(server.getOutputStream());
+                        Recording.recordingPayload rp = (Recording.recordingPayload) ll.getFirst();
+                        byte[] byteRecord = rp.toByteArray();
+                        out.write(byteRecord);
+                        ll.removeFirst();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
-
-
-
-//        try
-//        {
-//            DataOutputStream out = new DataOutputStream(server.getOutputStream());
-//            byte[] byteRecord = record.toByteArray();
-//            out.write(byteRecord);
-//            Log.v("tcp_logs", "Sending data");
-//        }
-//        catch(SocketTimeoutException s)
-//        {
-//            Log.v("tcp_logs", "Socket timed out!");
-//        }
-//
-//        catch(IOException e)
-//        {
-//            e.printStackTrace();
-//        }
     }
 
     public void addRecord(Recording.recordingPayload record) {
         ll.add(record);
+    }
+
+    public void addData(byte[] data) {
+        lld.add(data);
     }
 }
