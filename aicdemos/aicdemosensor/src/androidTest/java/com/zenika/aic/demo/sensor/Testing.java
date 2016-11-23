@@ -32,7 +32,7 @@ public class Testing extends InstrumentationTestCase {
         device.clickOn("Proximity Sensor");
 		device.setText("It's working", R.id.input_exemple);
         device.replaceText("It's working again !", R.id.input_exemple);
-        device.isTextExists("It's workkjning again !");
+        device.isTextExists("It's working again !");
 	}
 
 //	@Test

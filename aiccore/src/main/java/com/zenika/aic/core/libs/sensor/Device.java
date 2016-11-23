@@ -112,6 +112,10 @@ public class Device extends InstrumentationTestCase {
         battery.setLevel(level, levelMax, status, ACStatus);
     }
 
+    public void bringPictureToCamera(String path) {
+        Camera.bringPictureToCamera(path);
+    }
+
     public static UiObject getUiObject(String description) {
         UiObject uiObject;
         UiSelector uiSelector = new UiSelector();
