@@ -29,7 +29,7 @@ public class BatteryTestCase extends InstrumentationTestCase {
         Instrumentation.ActivityMonitor monitor =  getInstrumentation().addMonitor(Sensor.class.getName(), null, false);
         Activity currentActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5);
         View v = currentActivity.findViewById(android.R.id.content);
-        device = new Device(appName, InstrumentationRegistry.getInstrumentation(), v);
+        device = new Device(appName, InstrumentationRegistry.getInstrumentation());
     }
 
     @Test

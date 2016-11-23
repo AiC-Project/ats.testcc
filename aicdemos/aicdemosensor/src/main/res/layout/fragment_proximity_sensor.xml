@@ -8,6 +8,13 @@
     android:orientation="vertical"
     tools:context="aic.zenika.com.sensor.controller.fragment.BarometerFragment">
 
+    <EditText
+        android:id="@+id/input_exemple"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="Input Exemple"
+        android:inputType="textEmailAddress" />
+
     <TextView
         android:id="@+id/proximity"
         android:layout_width="match_parent"
