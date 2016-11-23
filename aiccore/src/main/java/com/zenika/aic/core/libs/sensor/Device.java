@@ -3,14 +3,11 @@ package com.zenika.aic.core.libs.sensor;
 import android.app.Instrumentation;
 import android.hardware.Sensor;
 import android.os.RemoteException;
-import android.support.test.espresso.InjectEventSecurityException;
 import android.support.test.espresso.action.CloseKeyboardAction;
 import android.support.test.espresso.action.CoordinatesProvider;
 import android.support.test.espresso.action.GeneralClickAction;
 import android.support.test.espresso.action.Press;
-import android.support.test.espresso.action.Swiper;
 import android.support.test.espresso.action.Tap;
-import android.support.test.espresso.action.Tapper;
 import android.support.test.uiautomator.By;
 import android.support.test.uiautomator.UiDevice;
 import android.support.test.uiautomator.UiObject;
@@ -21,23 +18,16 @@ import android.support.test.uiautomator.UiSelector;
 import android.support.test.espresso.UiController;
 import android.test.InstrumentationTestCase;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
 import com.zenika.aic.core.R;
 
-import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
-import static android.support.test.espresso.action.Swipe.FAST;
-import static android.support.test.espresso.action.Swipe.SLOW;
-import static android.support.test.espresso.action.Swiper.*;
+import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
-import static android.support.test.espresso.matcher.ViewMatchers.Visibility.VISIBLE;
-import static android.support.test.espresso.matcher.ViewMatchers.withEffectiveVisibility;
+import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
-import static org.hamcrest.Matchers.allOf;
 
 
 /**
@@ -49,12 +39,8 @@ public class Device extends InstrumentationTestCase {
     private Instrumentation instrumentation;
     private Gps gps;
     private Battery battery;
-    private UiController uicontroller;
-    private View v;
-    private String appName;
 
-    public Device(String appName, Instrumentation instrumentation, View v) {
-        this.appName = appName;
+    public Device(String appName, Instrumentation instrumentation) {
         try {
             SDLRecord.startTCPServer(32500);
         } catch(Exception e) {
@@ -62,35 +48,8 @@ public class Device extends InstrumentationTestCase {
         }
         try {
             this.instrumentation = instrumentation;
-            this.v = v;
             this.gps = new Gps().getInstance();
             this.battery = new Battery().getInstance();
-            this.uicontroller = new UiController() {
-                @Override
-                public boolean injectMotionEvent(MotionEvent event) throws InjectEventSecurityException {
-                    return false;
-                }
-
-                @Override
-                public boolean injectKeyEvent(KeyEvent event) throws InjectEventSecurityException {
-                    return false;
-                }
-
-                @Override
-                public boolean injectString(String str) throws InjectEventSecurityException {
-                    return false;
-                }
-
-                @Override
-                public void loopMainThreadUntilIdle() {
-
-                }
-
-                @Override
-                public void loopMainThreadForAtLeast(long millisDelay) {
-
-                }
-            };
             this.runApp(appName);
         } catch (UiObjectNotFoundException e) {
             e.printStackTrace();
@@ -153,13 +112,63 @@ public class Device extends InstrumentationTestCase {
         battery.setLevel(level, levelMax, status, ACStatus);
     }
 
-    public void closeKeyboard() {
-        CloseKeyboardAction close = new CloseKeyboardAction();
-        close.perform(uicontroller, v);
+    public static UiObject getUiObject(String description) {
+        UiObject uiObject;
+        UiSelector uiSelector = new UiSelector();
+        uiObject = new UiObject(uiSelector.text(description));
+        if (!uiObject.exists()) {
+            uiObject = new UiObject(uiSelector.description(description));
+        }
+        if (!uiObject.exists()) {
+            uiObject = new UiObject(uiSelector.resourceId(description));
+        }
+        if (!uiObject.exists()) {
+            uiObject = null;
+        }
+        return uiObject;
     }
 
-    public void swipe() {
-        SLOW.sendSwipe(uicontroller, new float[]{10,50}, new float[]{500,50}, new float[]{5,5});
+
+    public void swipe(String direction, int steps) {
+        UiObject appViews =new UiObject(new UiSelector().resourceId("left_drawer"));
+        //SLOW.sendSwipe(uicontroller, new float[]{10,50}, new float[]{500,50}, new float[]{5,5});
+        try {
+            if(direction.equals("UP"))
+                appViews.swipeUp(steps);
+            else if(direction.equals("DOWN"))
+                appViews.swipeDown(steps);
+            else if(direction.equals("LEFT"))
+                appViews.swipeLeft(steps);
+            else if(direction.equals("RIGHT"))
+                appViews.swipeRight(steps);
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void scrollOnFrom(String on, String from) {
+//        UiScrollable listView = new UiScrollable(new UiSelector().textStartsWith("Picture"));
+//        listView.setMaxSearchSwipes(500);
+//        try {
+//            listView.scrollForward(400);
+//        } catch (UiObjectNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        listView.waitForExists(5000);
+        UiScrollable listView = new UiScrollable(new UiSelector().textStartsWith(from));
+        UiObject navigationDrawerApp = new UiObject(new UiSelector().text(on));
+
+        while (!navigationDrawerApp.exists()){
+            try {
+                //listView.scrollIntoView(navigationDrawerApp);
+                listView.setAsVerticalList();
+                listView.scrollForward(5);
+            } catch (UiObjectNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        listView.waitForExists(10000);
     }
 
     public void clickOn(int itemId) {
@@ -184,14 +193,58 @@ public class Device extends InstrumentationTestCase {
                     }
                 },
                 Press.FINGER);
-        gca.perform(uicontroller, v);
+        //gca.perform(uicontroller, v);
+    }
+
+    private void clickOn(final float[] values, float[] precision) {
+        GeneralClickAction gca = new GeneralClickAction(
+                Tap.LONG,
+                new CoordinatesProvider() {
+                    @Override
+                    public float[] calculateCoordinates(View view) {
+                        return new float[0];
+                    }
+                },
+                Press.FINGER);
+        //gca.perform(uicontroller, v);
     }
 
     public void clickOn(String itemString) {
         UiObject2 button = device.findObject(By.text(itemString));
         assertTrue(itemString+" object not found", button != null);
         button.click();
-        device.waitForWindowUpdate("", 1000);
+        device.waitForWindowUpdate("", 2000);
+    }
+
+    // Assert
+
+    public void isTextExists(String text) {
+        UiObject2 uio = device.findObject(By.text(text));
+        assertTrue(text+" object not found", uio != null);
+    }
+
+    // Type Text
+
+    public void setText(String text, String item) {
+        try {
+            new UiObject(new UiSelector().description(item)).setText(text);
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void replaceText(String text, int id) {
+        onView(withId(id)).perform(clearText());
+        onView(withId(id)).perform(typeText(text));
+    }
+
+    public void setText(String text, int id) {
+//        try {
+//            new UiObject(new UiSelector().resourceId(id)).setText(text);
+//        } catch (UiObjectNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        onView(withId(id)).perform(typeText(text));
     }
 
     public void takeScreenshot(){

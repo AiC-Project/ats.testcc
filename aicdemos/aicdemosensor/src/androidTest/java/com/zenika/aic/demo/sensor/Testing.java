@@ -2,17 +2,15 @@ package com.zenika.aic.demo.sensor;
 
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
-import android.support.test.uiautomator.By;
-import android.support.test.uiautomator.UiObject2;
-import android.support.test.uiautomator.UiObjectNotFoundException;
 import android.test.InstrumentationTestCase;
-import android.view.View;
 
 import com.zenika.aic.core.libs.sensor.Device;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.Before;
+
+import aic.zenika.com.sensor.R;
 
 
 @RunWith(AndroidJUnit4.class)
@@ -24,17 +22,17 @@ public class Testing extends InstrumentationTestCase {
 
     @Before
     public void init() {
-//		Instrumentation.ActivityMonitor monitor =  getInstrumentation().addMonitor(MainActivity.class.getName(), null, false);
-//		Activity currentActivity = getInstrumentation().waitForMonitorWithTimeout(monitor, 5);
-//		View v = currentActivity.findViewById(android.R.id.content);
-		View v = null;
-        device = new Device(appName, InstrumentationRegistry.getInstrumentation(), v);
+        device = new Device(appName, InstrumentationRegistry.getInstrumentation());
 	}
 
 	@Test
 	public void test_one() {
 		device.clickOn("Sensor");
-        device.swipe();
+        device.scrollOnFrom("Proximity Sensor", "Picture");
+        device.clickOn("Proximity Sensor");
+		device.setText("It's working", R.id.input_exemple);
+        device.replaceText("It's working again !", R.id.input_exemple);
+        device.isTextExists("It's workkjning again !");
 	}
 
 //	@Test
@@ -62,5 +60,4 @@ public class Testing extends InstrumentationTestCase {
 //		device.waitForUpdate();
 //		device.stopRecording();
 //	}
-
 }
