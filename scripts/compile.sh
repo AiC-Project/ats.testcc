@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Any error must exit the script with a status code
 set -e
 
 cat /dev/fd/0 > /home/developer/aicdemos/aicdemosensor/src/androidTest/java/com/zenika/aic/demo/sensor/Testing.java
