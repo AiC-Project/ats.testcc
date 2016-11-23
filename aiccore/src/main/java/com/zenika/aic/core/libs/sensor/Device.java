@@ -107,6 +107,148 @@ public class Device extends InstrumentationTestCase {
         battery.setLevel(level, levelMax, status, ACStatus);
     }
 
+<<<<<<< Updated upstream
+=======
+    public void bringPictureToCamera(String path) {
+        Camera.bringPictureToCamera(path);
+    }
+
+    public static UiObject getUiObject(String description) {
+        UiObject uiObject;
+        UiSelector uiSelector = new UiSelector();
+        uiObject = new UiObject(uiSelector.text(description));
+        if (!uiObject.exists()) {
+            uiObject = new UiObject(uiSelector.description(description));
+        }
+        if (!uiObject.exists()) {
+            uiObject = new UiObject(uiSelector.resourceId(description));
+        }
+        if (!uiObject.exists()) {
+            uiObject = null;
+        }
+        return uiObject;
+    }
+
+
+    public void swipe(String direction, int steps) {
+        UiObject appViews =new UiObject(new UiSelector().resourceId("left_drawer"));
+        //SLOW.sendSwipe(uicontroller, new float[]{10,50}, new float[]{500,50}, new float[]{5,5});
+        try {
+            if(direction.equals("UP"))
+                appViews.swipeUp(steps);
+            else if(direction.equals("DOWN"))
+                appViews.swipeDown(steps);
+            else if(direction.equals("LEFT"))
+                appViews.swipeLeft(steps);
+            else if(direction.equals("RIGHT"))
+                appViews.swipeRight(steps);
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void scrollOnFrom(String on, String from) {
+//        UiScrollable listView = new UiScrollable(new UiSelector().textStartsWith("Picture"));
+//        listView.setMaxSearchSwipes(500);
+//        try {
+//            listView.scrollForward(400);
+//        } catch (UiObjectNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//        listView.waitForExists(5000);
+        UiScrollable listView = new UiScrollable(new UiSelector().textStartsWith(from));
+        UiObject navigationDrawerApp = new UiObject(new UiSelector().text(on));
+
+        while (!navigationDrawerApp.exists()){
+            try {
+                //listView.scrollIntoView(navigationDrawerApp);
+                listView.setAsVerticalList();
+                listView.scrollForward(5);
+            } catch (UiObjectNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
+
+        listView.waitForExists(10000);
+    }
+
+    public void clickOn(int itemId) {
+        onView(withId(itemId)).perform(click());
+    }
+
+    public void clickOn(final float[] values) {
+        GeneralClickAction gca = new GeneralClickAction(
+                Tap.SINGLE,
+                new CoordinatesProvider() {
+                    @Override
+                    public float[] calculateCoordinates(View view) {
+
+                        final int[] screenPos = new int[2];
+                        view.getLocationOnScreen(screenPos);
+
+                        final float screenX = screenPos[0] + values[0];
+                        final float screenY = screenPos[1] + values[1];
+                        float[] coordinates = {screenX, screenY};
+
+                        return coordinates;
+                    }
+                },
+                Press.FINGER);
+        //gca.perform(uicontroller, v);
+    }
+
+    private void clickOn(final float[] values, float[] precision) {
+        GeneralClickAction gca = new GeneralClickAction(
+                Tap.LONG,
+                new CoordinatesProvider() {
+                    @Override
+                    public float[] calculateCoordinates(View view) {
+                        return new float[0];
+                    }
+                },
+                Press.FINGER);
+        //gca.perform(uicontroller, v);
+    }
+
+    public void clickOn(String itemString) {
+        UiObject2 button = device.findObject(By.text(itemString));
+        assertTrue(itemString+" object not found", button != null);
+        button.click();
+        device.waitForWindowUpdate("", 2000);
+    }
+
+    // Assert
+
+    public void isTextExists(String text) {
+        UiObject2 uio = device.findObject(By.text(text));
+        assertTrue(text+" object not found", uio != null);
+    }
+
+    // Type Text
+
+    public void setText(String text, String item) {
+        try {
+            new UiObject(new UiSelector().description(item)).setText(text);
+        } catch (UiObjectNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void replaceText(String text, int id) {
+        onView(withId(id)).perform(clearText());
+        onView(withId(id)).perform(typeText(text));
+    }
+
+    public void setText(String text, int id) {
+//        try {
+//            new UiObject(new UiSelector().resourceId(id)).setText(text);
+//        } catch (UiObjectNotFoundException e) {
+//            e.printStackTrace();
+//        }
+        onView(withId(id)).perform(typeText(text));
+    }
+
+>>>>>>> Stashed changes
     public void takeScreenshot(){
         SDLRecord.sendProtoRequestToTakeScreenshot();
     }

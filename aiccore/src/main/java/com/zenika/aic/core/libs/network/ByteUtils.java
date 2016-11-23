@@ -3,6 +3,8 @@ package com.zenika.aic.core.libs.network;
 import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
+// /data/project/camera/filename
+
 public final class ByteUtils {
 
 	private static volatile ByteUtils instance = null;
@@ -37,7 +39,7 @@ public final class ByteUtils {
 		return ByteBuffer.allocate(8).putLong(value).array();
 	}
 	
-	public byte[] intToBytes(int i,int size) throws UnsupportedEncodingException {
+	public static byte[] intToBytes(int i,int size) throws UnsupportedEncodingException {
 		byte[] result = new byte[size];
 
 		switch(size) {
@@ -63,6 +65,22 @@ public final class ByteUtils {
 
 			break;
 		}
+		return result;
+	}
+
+	public static byte[] stringToBytes(String value, int size) {
+		byte[] stringToByte;
+		byte[] sizeToByte = new byte[String.valueOf(value.length()).toCharArray().length];
+		try {
+			intToBytes(value.length(), String.valueOf(value.length()).toCharArray().length);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		stringToByte = value.getBytes();
+
+		byte[] result = new byte[size*2];
+		System.arraycopy(sizeToByte, 0, result, 0, sizeToByte.length);
+		System.arraycopy(stringToByte, 0, result, sizeToByte.length, stringToByte.length);
 		return result;
 	}
 }

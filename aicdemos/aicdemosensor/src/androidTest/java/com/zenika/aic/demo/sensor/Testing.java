@@ -31,6 +31,7 @@ public class Testing extends InstrumentationTestCase {
 
 	@Test
 	public void test_one() {
+<<<<<<< Updated upstream
 		device.getBatteryInstance().setLevel(100, 100);
 		device.takeScreenshot();
 		device.startRecording();
@@ -61,6 +62,14 @@ public class Testing extends InstrumentationTestCase {
 		}
 		device.waitForUpdate();
 		device.stopRecording();
+=======
+		device.clickOn("Sensor");
+        device.scrollOnFrom("Proximity Sensor", "Picture");
+        device.clickOn("Proximity Sensor");
+		device.setText("It's working", R.id.input_exemple);
+        device.replaceText("It's working again !", R.id.input_exemple);
+        device.isTextExists("It's working again !");
+>>>>>>> Stashed changes
 	}
 
 	public void selectSensor(String sensor, String from) throws UiObjectNotFoundException, RemoteException {
