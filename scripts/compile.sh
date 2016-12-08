@@ -14,4 +14,4 @@ gradle --stacktrace generateDebugSources generateDebugAndroidTestSources assembl
 zip "$APK" -d META-INF/*
 jarsigner -keystore /home/developer/debug.keystore -storepass android -keypass android "$APK" androiddebugkey
 zipalign -f 4 "$APK" "$SIGNED"
-
+aapt dump badging /home/developer/signed.apk | grep -Po "package: name='\K[^']*"

@@ -19,6 +19,7 @@ RUN dpkg --add-architecture i386 && \
         iputils-ping \
         mtr \
         android-tools-adb \
+        aapt \
         gradle-2.14.1 \
         lib32z1 \
         libstdc++6:i386 \
