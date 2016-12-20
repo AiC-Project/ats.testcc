@@ -120,3 +120,7 @@ Now you can login to a google account, so you will have access to :
 - Range
 - Resolution
 - History
+
+# Test Framework Integration
+
+To include AiC Test Framework into existing application, you just have to put in it the `aiccore` package. Just take a look to add `androidTestCompile project(path: ':aiccore')` into `build.gradle`
