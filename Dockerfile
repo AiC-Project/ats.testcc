@@ -49,7 +49,6 @@ RUN echo y | android update sdk --no-ui --all --filter build-tools-25.0.0 | grep
 #RUN echo y | android update sdk --no-ui --all --filter build-tools-23.0.2 | grep 'package installed'
 #RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.1 | grep 'package installed'
 #RUN echo y | android update sdk --no-ui --all --filter build-tools-22.0.0 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter extra-android-support | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-android-m2repository | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-google-m2repository | grep 'package installed'
 
