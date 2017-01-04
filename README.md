@@ -2,6 +2,7 @@
 
 ## EditText
 
+
 EditText xml must contains an hint
 
     <EditText
@@ -121,9 +122,12 @@ Now you can login to a google account, so you will have access to :
 - Resolution
 - History
 
-
 # How to create java protobuff
 
 ```
 protoc -I=./sdl/proto/. --java_out="/tmp/." sdl/proto/sensors_packet.proto
 ```
+
+# Test Framework Integration
+
+To include AiC Test Framework into existing application, you just have to put in it the `aiccore` package. Just take a look to add `androidTestCompile project(path: ':aiccore')` into `build.gradle`
